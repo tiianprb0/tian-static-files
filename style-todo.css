@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
@@ -10,68 +10,86 @@ body {
 
 .container {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
     text-align: center;
 }
 
 h1 {
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 30px;
+    color: #68828f;
+    font-weight: 700;
 }
 
 .input-section {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d5d6da;
+    padding: 5px;
+    border-radius: 50px;
     margin-bottom: 20px;
 }
 
 #taskInput {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    background-color: transparent;
+    color: #68828f;
+    font-size: 16px;
+}
+
+#taskInput::placeholder {
+    color: #8fcada;
 }
 
 #addTaskButton {
-    padding: 10px;
-    background-color: #28a745;
+    padding: 10px 20px;
+    background-color: #ff5c5c;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 50px;
     cursor: pointer;
-    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #addTaskButton:hover {
-    background-color: #218838;
+    background-color: #ff3b3b;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
     background-color: #f9f9f9;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #68828f;
+    font-size: 16px;
 }
 
 li .delete-button {
-    background-color: #dc3545;
+    background-color: #ff5c5c;
     color: #fff;
     border: none;
     padding: 5px;
-    border-radius: 3px;
+    border-radius: 50%;
     cursor: pointer;
 }
 
 li .delete-button:hover {
-    background-color: #c82333;
+    background-color: #ff3b3b;
 }
