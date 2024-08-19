@@ -12,13 +12,8 @@ function addTask() {
     if (taskText === '') return;
 
     const li = document.createElement('li');
-    li.textContent = taskText;
-
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.className = 'delete-button';
-    li.appendChild(deleteButton);
-
+    li.innerHTML = `<input type="radio"> ${taskText} <button class="delete-button">x</button>`;
+    
     taskList.appendChild(li);
     storeTaskInLocalStorage(taskText);
 
@@ -28,7 +23,7 @@ function addTask() {
 function removeTask(e) {
     if (e.target.classList.contains('delete-button')) {
         const taskItem = e.target.parentElement;
-        removeTaskFromLocalStorage(taskItem.textContent.replace('Delete', '').trim());
+        removeTaskFromLocalStorage(taskItem.textContent.trim());
         taskItem.remove();
     }
 }
@@ -50,13 +45,7 @@ function loadTasks() {
 
     tasks.forEach(task => {
         const li = document.createElement('li');
-        li.textContent = task;
-
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.className = 'delete-button';
-        li.appendChild(deleteButton);
-
+        li.innerHTML = `<input type="radio"> ${task} <button class="delete-button">x</button>`;
         taskList.appendChild(li);
     });
 }
