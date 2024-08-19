@@ -14,7 +14,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 400px;
-    text-align: center;
+    text-align: left;
 }
 
 h1 {
@@ -79,15 +79,36 @@ li {
     align-items: center;
     color: #68828f;
     font-size: 16px;
+    position: relative;
+}
+
+li input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #7e906a;
+}
+
+li input[type="checkbox"]:checked {
+    background-color: #7e906a;
+    border: 2px solid #7e906a;
+}
+
+li label {
+    flex: 1;
+    margin-left: 30px;
 }
 
 li .delete-button {
     background-color: #ff5c5c;
     color: #fff;
     border: none;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 50%;
     cursor: pointer;
+    font-size: 12px;
 }
 
 li .delete-button:hover {
