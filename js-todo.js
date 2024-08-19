@@ -55,4 +55,21 @@ function storeTaskInLocalStorage(task) {
 }
 
 function removeTaskFromLocalStorage(taskToDelete) {
-   
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    tasks = tasks.filter(task => task.text !== taskToDelete);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function loadTasks() {
+    const tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+
+    tasks.forEach(task => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <input type="checkbox" ${task.completed ? 'checked' : ''}>
+            <label>${task.text}</label>
+            <button class="delete-button">x</button>
+        `;
+        taskList.appendChild(li);
+    });
+}
