@@ -87,8 +87,8 @@ li {
     margin-bottom: 10px;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     color: #000;
     font-size: 16px;
     position: relative;
@@ -99,7 +99,7 @@ li {
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 12px;
-    margin-right: 10px;
+    margin-top: 5px;
     white-space: nowrap;
 }
 
@@ -121,6 +121,8 @@ li {
 li input[type="checkbox"] {
     position: absolute;
     left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -135,11 +137,12 @@ li input[type="checkbox"]:checked {
 
 li label {
     flex: 1;
-    margin-left: 50px;
-    margin-right: 10px;
-    white-space: nowrap;
+    margin-left: 40px; /* Adjust for checkbox space */
+    margin-bottom: 5px;
+    white-space: normal; /* Allow text to wrap */
     overflow: hidden;
     text-overflow: ellipsis; /* Ensure long text is truncated */
+    word-break: break-word; /* Ensure long words break properly */
 }
 
 li .delete-button {
@@ -150,8 +153,7 @@ li .delete-button {
     border-radius: 50%;
     cursor: pointer;
     font-size: 12px;
-    margin-left: 10px;
-    order: 1; /* ensure delete button is after priority */
+    align-self: flex-end;
 }
 
 li .delete-button:hover {
@@ -262,28 +264,27 @@ li .delete-button:hover {
     }
 
     li {
-        flex-direction: row; /* keep row direction on mobile */
-        align-items: center;
-        padding-left: 40px; /* accommodate the checkbox */
-        overflow: hidden; /* Ensure content does not overflow */
+        padding-left: 40px; /* Adjust for checkbox space */
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     li label {
         margin-left: 0;
         flex: 1; /* allow label to take up available space */
-        white-space: nowrap;
+        white-space: normal;
         overflow: hidden;
         text-overflow: ellipsis; /* Truncate text that is too long */
+        word-break: break-word; /* Ensure long words break properly */
     }
 
     li .priority {
-        margin-left: auto;
-        margin-bottom: 0;
-        white-space: nowrap;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        align-self: flex-start;
     }
 
     li .delete-button {
-        margin-left: 10px;
-        order: 1; /* ensure delete button is after priority */
+        align-self: flex-end;
     }
 }
