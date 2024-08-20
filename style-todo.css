@@ -92,13 +92,14 @@ li {
     color: #000;
     font-size: 16px;
     position: relative;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* ensures the elements stay on one line */
 }
 
 .priority {
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 12px;
+    margin-left: auto; /* move priority to the right */
     margin-right: 10px;
     white-space: nowrap;
 }
@@ -150,6 +151,7 @@ li .delete-button {
     border-radius: 50%;
     cursor: pointer;
     font-size: 12px;
+    margin-left: 10px;
 }
 
 li .delete-button:hover {
@@ -260,19 +262,23 @@ li .delete-button:hover {
     }
 
     li {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row; /* keep row direction on mobile */
+        align-items: center;
         padding-left: 40px; /* accommodate the checkbox */
     }
 
     li label {
         margin-left: 0;
-        margin-bottom: 10px;
-        width: 100%;
+        flex: 1; /* allow label to take up available space */
     }
 
     li .priority {
-        margin-bottom: 10px;
+        margin-left: auto;
+        margin-bottom: 0;
+    }
+
+    li .delete-button {
+        margin-left: 10px;
     }
 
     .popup-content {
