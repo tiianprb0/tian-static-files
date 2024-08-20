@@ -92,6 +92,7 @@ li {
     color: #000;
     font-size: 16px;
     position: relative;
+    overflow: hidden; /* Ensure content does not overflow */
 }
 
 .priority {
@@ -138,7 +139,7 @@ li label {
     margin-right: 10px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; /* Ensure long text is truncated */
 }
 
 li .delete-button {
@@ -150,6 +151,7 @@ li .delete-button {
     cursor: pointer;
     font-size: 12px;
     margin-left: 10px;
+    order: 1; /* ensure delete button is after priority */
 }
 
 li .delete-button:hover {
@@ -260,19 +262,24 @@ li .delete-button:hover {
     }
 
     li {
-        flex-direction: row; /* ensure horizontal layout */
+        flex-direction: row; /* keep row direction on mobile */
         align-items: center;
         padding-left: 40px; /* accommodate the checkbox */
+        overflow: hidden; /* Ensure content does not overflow */
     }
 
     li label {
         margin-left: 0;
         flex: 1; /* allow label to take up available space */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Truncate text that is too long */
     }
 
     li .priority {
         margin-left: auto;
         margin-bottom: 0;
+        white-space: nowrap;
     }
 
     li .delete-button {
