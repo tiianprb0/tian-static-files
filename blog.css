@@ -1,0 +1,182 @@
+/* Featured Post Styles */
+#featured-post {
+    background-color: #7E906A;
+    padding: 6px 20px 20px 20px;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+ #featured-post .post-divider {
+    display: none;
+} 
+  
+#featured-post h3 {
+    color: #ffd700;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#featured-post h2 a {
+    color: #ffd700; /* Warna judul postingan pada featured post */
+    font-size: 24px;
+    margin: 0;
+    text-decoration: none; /* Menghilangkan underline */
+}
+
+#featured-post p {
+    color: #dcdcdc;
+    font-size: 16px;
+    margin: 15px 0;
+}
+
+#featured-post .post-meta {
+    background-color: #6b7c5b; /* Background untuk penulis dan tanggal */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Recent Posts Styles */
+#recent-posts-container {
+    margin-top: 20px;
+}
+
+#recent-posts-container h3 {
+    border-left: 3px solid #7E906A;
+    padding-left: 10px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #7E906A;
+}
+
+#recent-posts-container .post-item {
+
+    position: relative;
+    padding-left: 20px; /* Adjusted padding for better alignment */
+}
+
+/* Pseudo-elements for vertical line and dot */
+#recent-posts-container .post-item:before,
+#recent-posts-container .post-item:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    background-color: #7E906A;
+}
+
+#recent-posts-container .post-item:before {
+    width: 10px; /* Increased dot size for visibility */
+    height: 10px;
+    border-radius: 50%; /* Keeping the dot round */
+    top: 10%;
+    transform: translateY(-50%);
+    left: -6px; /* Adjusted position to bring dot closer */
+}
+
+#recent-posts-container .post-item:after {
+    width: 2px;
+    height: calc(100% - 40px); /* Adjusted height based on dot size */
+    top: 18px; /* Adjusted to align with the new dot size */
+    left: -2px; /* Adjusted position to bring the vertical line closer */
+}
+
+#recent-posts-container .post-title-container {
+    display: flex;
+    align-items: center;
+}
+
+#recent-posts-container .post-title-container h2 {
+    margin: 0;
+}
+
+#recent-posts-container .post-title-container h2 a {
+    color: #7E906A; /* Warna judul postingan */
+    font-size: 20px;
+    text-decoration: none; /* Menghilangkan underline */
+}
+
+#recent-posts-container .post-item p {
+    color: #555;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+#recent-posts-container .post-item .post-meta {
+    font-size: 14px;
+    color: #777;
+    padding-top: 10px;
+    background-color: #e5e5e5; /* Background untuk penulis dan tanggal */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#recent-posts-container .post-item .post-divider {
+    margin-top: 20px;
+    border: 0;
+    height: 1px;
+    background: #ddd;
+}
+
+/* Label design for recent posts */
+.post-label {
+    display: inline-block;
+    background-color: transparent; /* Light background for the label */
+    color: #7E906A; /* Color matches the theme */
+    font-size: 12px;
+    padding: 5px 15px; /* Adjusted padding for better visibility */
+    border-radius: 50px; /* Increased radius for more rounded corners */
+    margin-bottom: 10px; /* Added more spacing below the label */
+    margin-right: 5px;
+    border: 1px solid #7E906A; /* Border color to match the theme */
+    text-align: center; /* Center align text */
+    font-weight: bold; /* Make text bold */
+     text-decoration: none;
+}
+
+/* Featured Post Styles */
+#featured-post .post-label {
+    display: inline-block;
+    background-color: transparent; /* No background color for featured labels */
+    color: #ffffff; /* White text color for contrast */
+    font-size: 12px;
+    padding: 5px 15px; /* Adjusted padding for better visibility */
+    border-radius: 50px; /* Increased radius for more rounded corners */
+    margin-bottom: 10px; /* Added more spacing below the label */
+    margin-right: 5px;
+    border: 1px solid #ffffff; /* White border for featured labels */
+    text-align: center; /* Center align text */
+    font-weight: bold; /* Make text bold */
+}
+
+
+/* Button Styles */
+#load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #7E906A;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#load-more-button:hover {
+    background-color: #6b7c5b;
+}
+
+/* Animation for Load More button */
+.loading {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+/* Ensure Load More button stays at the bottom */
+#recent-posts-container {
+    position: relative;
+    min-height: 200px; /* Biar kontainer ada tinggi minimal */
+}
+
