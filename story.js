@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function markAsViewed() {
-        storyButton.style.background = 'linear-gradient(90deg, #ccc, #ddd)';
+        storyButton.style.background = 'linear-gradient(90deg, #9e9d9d, #a8a8a8)';
         localStorage.setItem('storiesViewed', true);
     }
 
