@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showStory(currentStoryIndex);
         updatePopupBackground(currentStoryIndex); // Update background ketika popup muncul
         popup.style.display = 'flex';
+        document.body.classList.add('noscroll'); // Tambahkan class noscroll ke body
         startStoryTimer();
     }
 
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.log('Cerita terakhir, menutup popup');
             popup.style.display = 'none';
+            document.body.classList.remove('noscroll'); // Hapus class noscroll saat popup ditutup
             markAsViewed();
         }
     }
@@ -93,7 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-
+    function markAsViewed() {
+        // storyButton.style.background = 'linear-gradient(90deg, #9e9d9d, #a8a8a8)';
+        // Menghapus localStorage, tidak lagi menyimpan status cerita yang dilihat
+    }
 
     function updatePopupBackground(index) {
         const storyImage = stories[index].querySelector('img').src;
@@ -146,11 +151,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
     storyButton.addEventListener('click', showPopup);
 
     closeBtn.addEventListener('click', function() {
         console.log('Menutup popup');
         popup.style.display = 'none';
+        document.body.classList.remove('noscroll'); // Hapus class noscroll saat popup ditutup
         clearInterval(intervalId);
     });
 
