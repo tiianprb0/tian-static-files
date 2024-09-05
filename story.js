@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const storyButton = document.getElementById('story-button');
     const popup = document.getElementById('story-popup');
@@ -96,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function markAsViewed() {
         storyButton.style.background = 'linear-gradient(90deg, #9e9d9d, #a8a8a8)';
-        localStorage.setItem('storiesViewed', true);
+        // Menghapus localStorage, tidak lagi menyimpan status cerita yang dilihat
     }
 
     function updatePopupBackground(index) {
@@ -150,9 +149,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    if (localStorage.getItem('storiesViewed')) {
-        storyButton.style.background = 'linear-gradient(90deg, #ccc, #ddd)';
-    }
+    // Menghapus pemeriksaan localStorage
+    storyButton.style.background = 'linear-gradient(90deg, #ccc, #ddd)';
 
     storyButton.addEventListener('click', showPopup);
 
