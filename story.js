@@ -18,19 +18,23 @@ document.addEventListener('DOMContentLoaded', function() {
         return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }
 
-function showPopup() {
-    console.log('Popup dibuka');
-    currentStoryIndex = 0;
-    setupProgressBars();
-    resetAnimation(); // Pastikan animasi di-reset
-    showStory(currentStoryIndex);
-    updatePopupBackground(currentStoryIndex); // Update background ketika popup muncul
-    popup.style.display = 'flex';
-    document.body.classList.add('noscroll'); // Tambahkan class noscroll ke body
-    console.log('Class noscroll ditambahkan ke body');
-    startStoryTimer();
-}
+    function showPopup() {
+        console.log('Popup dibuka');
+        currentStoryIndex = 0;
+        setupProgressBars();
+        resetAnimation(); // Pastikan animasi di-reset
+        showStory(currentStoryIndex);
+        updatePopupBackground(currentStoryIndex); // Update background ketika popup muncul
+        popup.style.display = 'flex';
 
+        // Tambahkan class noscroll ke body dan html
+        document.body.classList.add('noscroll');
+        document.documentElement.classList.add('noscroll'); // Tambahkan ke html juga
+        document.body.offsetHeight; // Memaksa reflow untuk memastikan perubahan diterapkan
+        console.log('Class noscroll ditambahkan ke body dan html');
+
+        startStoryTimer();
+    }
 
     function setupProgressBars() {
         console.log('Mempersiapkan progress bar');
@@ -84,7 +88,13 @@ function showPopup() {
         } else {
             console.log('Cerita terakhir, menutup popup');
             popup.style.display = 'none';
-            document.body.classList.remove('noscroll'); // Hapus class noscroll saat popup ditutup
+
+            // Hapus class noscroll dari body dan html
+            document.body.classList.remove('noscroll');
+            document.documentElement.classList.remove('noscroll');
+            document.body.offsetHeight; // Memaksa reflow untuk memastikan perubahan diterapkan
+            console.log('Class noscroll dihapus dari body dan html');
+
             markAsViewed();
         }
     }
@@ -98,8 +108,8 @@ function showPopup() {
     }
 
     function markAsViewed() {
+        // Menghapus penggantian warna background jika tidak dibutuhkan
         // storyButton.style.background = 'linear-gradient(90deg, #9e9d9d, #a8a8a8)';
-        // Menghapus localStorage, tidak lagi menyimpan status cerita yang dilihat
     }
 
     function updatePopupBackground(index) {
@@ -153,16 +163,22 @@ function showPopup() {
         }
     });
 
+    storyButton.style.background = 'linear-gradient(90deg, #ccc, #ddd)';
 
     storyButton.addEventListener('click', showPopup);
 
-closeBtn.addEventListener('click', function() {
-    console.log('Menutup popup');
-    popup.style.display = 'none';
-    document.body.classList.remove('noscroll'); // Hapus class noscroll saat popup ditutup
-    console.log('Class noscroll dihapus dari body');
-    clearInterval(intervalId);
-});
+    closeBtn.addEventListener('click', function() {
+        console.log('Menutup popup');
+        popup.style.display = 'none';
+
+        // Hapus class noscroll dari body dan html
+        document.body.classList.remove('noscroll');
+        document.documentElement.classList.remove('noscroll');
+        document.body.offsetHeight; // Memaksa reflow untuk memastikan perubahan diterapkan
+        console.log('Class noscroll dihapus dari body dan html');
+
+        clearInterval(intervalId);
+    });
 
     popup.addEventListener('click', function(event) {
         const clickX = event.clientX;
