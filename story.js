@@ -93,10 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function markAsViewed() {
-        storyButton.style.background = 'linear-gradient(90deg, #9e9d9d, #a8a8a8)';
-        // Menghapus localStorage, tidak lagi menyimpan status cerita yang dilihat
-    }
+
 
     function updatePopupBackground(index) {
         const storyImage = stories[index].querySelector('img').src;
