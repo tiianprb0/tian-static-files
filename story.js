@@ -146,9 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Menghapus pemeriksaan localStorage
-    storyButton.style.background = 'linear-gradient(90deg, #ccc, #ddd)';
-
     storyButton.addEventListener('click', showPopup);
 
     closeBtn.addEventListener('click', function() {
