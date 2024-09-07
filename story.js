@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const storyButton = document.getElementById('story-button');
+    const storyButtons = document.querySelectorAll('.story-btn');
     const popup = document.getElementById('story-popup');
     const closeBtn = document.querySelector('.popup .close');
     const stories = document.querySelectorAll('.story-item');
