@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const storyButton = document.getElementById('story-button');
+    const storyButtons = document.querySelectorAll('.story-button'); // Mengambil semua tombol dengan class story-button
     const popup = document.getElementById('story-popup');
     const closeBtn = document.querySelector('.popup .close');
     const stories = document.querySelectorAll('.story-item');
@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-
     function updatePopupBackground(index) {
         const storyImage = stories[index].querySelector('img').src;
         popup.style.backgroundImage = `url(${storyImage})`;
@@ -128,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Fungsi untuk menangani swipe up dan membuka link
     function handleSwipeUp() {
         const activeStory = stories[currentStoryIndex];
         const storyLink = activeStory.getAttribute('data-link');
@@ -142,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Event listener untuk mendeteksi swipe up
     popup.addEventListener('touchstart', function(event) {
         touchstartY = event.changedTouches[0].screenY;
         console.log('Touch start Y:', touchstartY);
@@ -159,15 +156,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
-
-    storyButton.addEventListener('click', showPopup);
+    // Tambahkan event listener ke semua tombol story-button
+    storyButtons.forEach(button => {
+        button.addEventListener('click', showPopup);
+    });
 
     closeBtn.addEventListener('click', function() {
         console.log('Menutup popup');
         popup.style.display = 'none';
 
-        // Hapus class noscroll dari body dan html
         document.body.classList.remove('noscroll');
         document.documentElement.classList.remove('noscroll');
         document.body.offsetHeight; // Memaksa reflow untuk memastikan perubahan diterapkan
@@ -183,11 +180,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (clickX < screenWidth / 2) {
             console.log('Navigasi ke cerita sebelumnya');
             previousStory();
-            updatePopupBackground(currentStoryIndex); // Update background saat previous story
+            updatePopupBackground(currentStoryIndex);
         } else {
             console.log('Navigasi ke cerita berikutnya');
             nextStory();
-            updatePopupBackground(currentStoryIndex); // Update background saat next story
+            updatePopupBackground(currentStoryIndex);
         }
     });
 });
