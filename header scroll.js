@@ -1,25 +1,24 @@
-// scroll-header.js
+// Simpan posisi scroll sebelumnya
+let previousScrollY = window.scrollY;
 
-var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-var header = document.getElementById('scroll-header-new');
-
+// Tambahkan event listener untuk mendeteksi scroll
 window.addEventListener('scroll', function() {
-    var st = window.pageYOffset || document.documentElement.scrollTop;
-    var totalScrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var hideThreshold = totalScrollableHeight * 0.1; // 10% of total scrollable height
+    const currentScrollY = window.scrollY;
+    const scrollThreshold = 100; // 10% dari tinggi viewport atau bisa disesuaikan
 
-    if (st > lastScrollTop) {
-        // Scrolling down
-        header.classList.remove('show-scroll-header-new');
-    } else if (st < lastScrollTop) {
-        // Scrolling up
-        if (st <= hideThreshold) {
-            // Within 10% of the top; hide the header
-            header.classList.remove('show-scroll-header-new');
-        } else {
-            // Not near the top; show the header
-            header.classList.add('show-scroll-header-new');
-        }
+    const header = document.getElementById('scroll-header-new');
+
+    if (currentScrollY < scrollThreshold) {
+        // Jika mendekati bagian atas, sembunyikan header
+        header.classList.remove('show');
+    } else if (currentScrollY < previousScrollY) {
+        // Jika scroll ke atas, tampilkan header
+        header.classList.add('show');
+    } else {
+        // Jika scroll ke bawah, sembunyikan header
+        header.classList.remove('show');
     }
-    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+
+    // Update posisi scroll sebelumnya
+    previousScrollY = currentScrollY;
 });
