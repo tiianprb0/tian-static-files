@@ -4,7 +4,7 @@ let previousScrollY = window.scrollY;
 // Tambahkan event listener untuk mendeteksi scroll
 window.addEventListener('scroll', function() {
     const currentScrollY = window.scrollY;
-    const scrollThreshold = 100; // 10% dari tinggi viewport atau bisa disesuaikan
+    const scrollThreshold = 200; // 10% dari tinggi viewport atau bisa disesuaikan
 
     const header = document.getElementById('scroll-header-new');
 
