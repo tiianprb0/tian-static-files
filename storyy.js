@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressBarWrapper = document.querySelector('.promotion-progress-bar-wrapper');
     let currentStoryIndex = 0;
     let intervalId;
-    const storyDuration = 15000; // 15 detik
+    const storyDuration = 15000; // 15 detik fvrfrf
 
     // Variabel untuk mendeteksi swipe up
     let touchstartY = 0;
