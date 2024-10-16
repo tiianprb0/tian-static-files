@@ -1,115 +1,241 @@
-
-
-/* Popup Styling */
-.popup {
-    display: none; /* Awalnya disembunyikan */
-    position: fixed;
+/* Styling untuk efek blur dan overlay pada popup */
+.popup::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Background hitam transparan */
-    z-index: 9999;
-    align-items: center;
+    background-size: cover; /* Pastikan gambar memenuhi seluruh area */
+    background-position: center; /* Pastikan gambar terpusat */
+    backdrop-filter: blur(15px); /* Efek blur untuk browser yang mendukung */
+    -webkit-backdrop-filter: blur(15px); /* Efek blur khusus untuk Safari */
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay hitam dengan sedikit transparansi */
+    z-index: -1; /* Agar background berada di belakang konten popup */
+}
+  
+/* Popup Modal Styling */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     justify-content: center;
-    opacity: 0; /* Untuk animasi fade-in/fade-out */
-    transition: opacity 0.3s ease;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna background default untuk backup jika blur tidak didukung */
 }
 
-/* Konten di dalam popup */
 .popup-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 90%;
-    text-align: center;
     position: relative;
+    text-align: center;
+    max-width: 360px;
+    width: 90%;
 }
 
-.popup-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-/* Kontainer gambar story */
 .popup-img-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
 }
 
 .story-item {
     position: relative;
-}
-
-.story-item img {
+    display: none;
     width: 100%;
+    max-width: 360px;
+    height: 640px; /* Fixed height for all images */
+    overflow: hidden;
+}
+
+.story-item.active {
+    display: block;
+}
+
+.popup-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure all images fit within the same dimensions */
     border-radius: 10px;
+    position: relative;
+    z-index: 1;
 }
 
-.read-more-overlay {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.read-more-overlay:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Tombol close di pojok atas */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* Progress bar styling */
 .progress-bar-wrapper {
+    position: absolute;
+    top: 10px; /* Move progress bar slightly down */
+    left: 10px;
+    right: 10px;
+    height: 4px;
     display: flex;
     gap: 5px;
-    margin: 15px 0;
-}
-
-.progress {
-    flex: 1;
-    height: 5px;
-    background-color: #ddd;
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
+    z-index: 2;
 }
 
 .progress-inner {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
-    background-color: #007bff;
-    width: 0%; /* Awalnya 0% dan akan bertambah saat story berjalan */
-    transition: width 15s linear; /* Transisi sesuai durasi story */
+    background: white;
+    width: 0%;
+    transition: width 15s linear;
 }
 
-/* Menghilangkan scroll saat popup aktif */
+.progress {
+    background: rgba(255, 255, 255, 0.3);
+    height: 4px;
+    flex-grow: 1;
+    margin: 0 2px;
+    border-radius: 2px;
+    position: relative;
+}
+
+/* Gradasi hitam ke transparan, mengikuti lebar gambar dan diperbesar */
+.read-more-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 20px; /* Jarak teks dari bawah */
+    height: 80px; /* Tinggi gradasi */
+    text-align: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column; /* Agar panah berada di atas teks */
+    align-items: center; /* Teks dan panah berada di tengah secara horizontal */
+    justify-content: flex-end; /* Teks dan panah berada di bawah */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.read-more-overlay::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px; /* Jarak antara panah dan teks */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 15C18 15 13.5811 9.00001 12 9C10.4188 8.99999 6 15 6 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>'); /* SVG baru */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: bounce 1.5s infinite; /* Animasi naik-turun */
+    -webkit-animation: bounce 1.5s infinite; /* Animasi untuk Safari */
+    will-change: transform; /* Membantu Safari untuk mengoptimalkan animasi */
+}
+
+
+/* Animasi naik-turun */
+@-webkit-keyframes bounce {
+    0%, 100% {
+        -webkit-transform: translateY(0); /* Posisi awal dan akhir */
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-5px); /* Naik sedikit di tengah */
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        -webkit-transform: translateY(0); /* Posisi awal dan akhir */
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-5px); /* Naik sedikit di tengah */
+        transform: translateY(-5px);
+    }
+}
+
+
+.read-more-overlay:hover {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+
+
+.popup-title {
+    position: absolute;
+    top: 25px; /* Sesuai permintaan */
+    left: 20px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    z-index: 4;
+}
+
+  
+/* Close Button Styling */
+.popup .close {
+    position: absolute;
+    top: 15px; /* Sesuai permintaan */
+    right: 20px;
+    font-size: 30px;
+    color: #aaa;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.popup .close:hover {
+    color: #000;
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 768px) {
+    .popup-content {
+        max-width: 360px;
+    }
+
+    .story-item {
+        height: 640px; /* 9:16 ratio, sesuai untuk layar yang lebih kecil */
+        max-width: 360px;
+    }
+
+    .popup-img-container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .popup-content {
+        max-width: 320px;
+    }
+
+    .story-item {
+        height: 570px; /* 9:16 ratio, lebih kecil untuk layar yang lebih kecil */
+        max-width: 320px;
+    }
+
+    .popup-img-container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+  
+/* Tambahkan ini ke bagian CSS Anda */
+.progress-inner {
+    width: 0%;
+    transition: none; /* Hilangkan transisi saat di-reset */
+}
+
+
 .noscroll {
     overflow: hidden;
 }
 
-/* Responsif untuk layar kecil */
-@media (max-width: 600px) {
-    .popup-content {
-        max-width: 90%;
-    }
-
-    .read-more-overlay {
-        bottom: 5px;
-        right: 5px;
-        font-size: 12px;
-    }
-}
