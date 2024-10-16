@@ -9,18 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const storyDuration = 15000; // 15 detik
 
     // Fungsi untuk membuka popup
-    function showPopup(event) {
-        event.preventDefault(); // Cegah navigasi default <a>
-        console.log('Popup dibuka');
-        currentStoryIndex = 0;
-        setupProgressBars();
-        resetAnimation();
-        showStory(currentStoryIndex);
-        popup.style.display = 'flex';
+function showPopup(event) {
+    event.preventDefault(); // Cegah navigasi default <a>
+    console.log('Popup dibuka');
+    popup.style.display = 'flex'; // Tampilkan popup
+    console.log('Popup display:', popup.style.display); // Tambahan log
+    
+    document.body.classList.add('noscroll');
+    document.documentElement.classList.add('noscroll');
+}
 
-        document.body.classList.add('noscroll');
-        document.documentElement.classList.add('noscroll');
-    }
 
     // Fungsi untuk menutup popup
     function closePopup() {
