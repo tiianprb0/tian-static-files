@@ -1,84 +1,75 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const storyButton = document.getElementById('story-button-container');
-    const popup = document.getElementById('story-popup');
-    const closeBtn = document.querySelector('.popup .close');
-    const stories = document.querySelectorAll('.story-item');
-    const progressBarWrapper = document.querySelector('.progress-bar-wrapper');
+document.addEventListener('DOMContentLoaded', function() {
+    const promoPopup = document.getElementById('promo-story-popup');
+    const closeBtn = document.querySelector('.promo-close');
+    const stories = document.querySelectorAll('.promo-story-item');
+    const progressWrapper = document.querySelector('.promo-progress-wrapper');
     let currentStoryIndex = 0;
     let intervalId;
-    const storyDuration = 15000; // 15 detik
+    const storyDuration = 15000;
 
-    // Fungsi untuk membuka popup
-    function showPopup(event) {
-        event.preventDefault();
-        console.log('Popup dibuka');
-        popup.style.display = 'flex';
-        popup.style.opacity = '0'; // Set opacity to 0
-        popup.offsetHeight; // Force reflow
-        popup.style.transition = 'opacity 0.3s'; // Add transition
-        popup.style.opacity = '1'; // Fade in
-
-        document.body.classList.add('noscroll');
-        document.documentElement.classList.add('noscroll');
+    function showPopup() {
+        currentStoryIndex = 0;
+        setupProgressBars();
+        showStory(currentStoryIndex);
+        promoPopup.style.display = 'flex';
+        startStoryTimer();
     }
 
-    // Fungsi untuk menutup popup
-    function closePopup() {
-        console.log('Popup ditutup');
-        popup.style.opacity = '0'; // Fade out
-        popup.addEventListener('transitionend', function () {
-            popup.style.display = 'none'; // Hide after transition
-        }, { once: true });
+    function setupProgressBars() {
+        progressWrapper.innerHTML = '';
+        stories.forEach(() => {
+            const progressBar = document.createElement('div');
+            progressBar.classList.add('progress');
+            const progressInner = document.createElement('div');
+            progressInner.classList.add('progress-inner');
+            progressBar.appendChild(progressInner);
+            progressWrapper.appendChild(progressBar);
+        });
+    }
 
-        document.body.classList.remove('noscroll');
-        document.documentElement.classList.remove('noscroll');
+    function startStoryTimer() {
+        const progressBars = document.querySelectorAll('.progress-inner');
+        progressBars.forEach(bar => {
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
+        });
+        const activeProgressBar = progressBars[currentStoryIndex];
+        setTimeout(() => {
+            activeProgressBar.style.transition = `width ${storyDuration / 1000}s linear`;
+            activeProgressBar.style.width = '100%';
+        }, 50);
         clearInterval(intervalId);
+        intervalId = setInterval(nextStory, storyDuration);
     }
 
-    // Event listener untuk membuka popup
-    storyButton.addEventListener('click', showPopup);
+    function showStory(index) {
+        stories.forEach((story, i) => {
+            story.classList.toggle('active', i === index);
+        });
+    }
 
-    // Event listener untuk tombol close
-    closeBtn.addEventListener('click', closePopup);
-
-    // Navigasi cerita berdasarkan klik di dalam popup
-    popup.addEventListener('click', function (event) {
-        const clickX = event.clientX;
-        const screenWidth = window.innerWidth;
-
-        if (clickX < screenWidth / 2) {
-            console.log('Navigasi ke cerita sebelumnya');
-            previousStory();
-        } else {
-            console.log('Navigasi ke cerita berikutnya');
-            nextStory();
-        }
-    });
-
-    // Fungsi untuk cerita berikutnya
     function nextStory() {
         currentStoryIndex++;
         if (currentStoryIndex < stories.length) {
             showStory(currentStoryIndex);
             startStoryTimer();
         } else {
-            closePopup();
+            promoPopup.style.display = 'none';
+            clearInterval(intervalId);
         }
     }
 
-    // Fungsi untuk cerita sebelumnya
-    function previousStory() {
-        if (currentStoryIndex > 0) {
-            currentStoryIndex--;
-            showStory(currentStoryIndex);
-            startStoryTimer();
-        }
-    }
+    closeBtn.addEventListener('click', function() {
+        promoPopup.style.display = 'none';
+        clearInterval(intervalId);
+    });
 
-    // Fungsi untuk menampilkan cerita tertentu
-    function showStory(index) {
-        stories.forEach((story, i) => {
-            story.classList.toggle('active', i === index);
+    document.querySelectorAll('.promo-story-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const link = item.getAttribute('data-link');
+            if (link) window.open(link, '_blank');
         });
-    }
+    });
+
+    showPopup(); // For demo purposes, this will auto-show the popup.
 });
