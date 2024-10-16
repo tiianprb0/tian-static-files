@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showStory(currentStoryIndex);
         updatePopupBackground(currentStoryIndex);
         popup.style.display = 'flex';
+popup.offsetHeight;
 
         document.body.classList.add('noscroll');
         document.documentElement.classList.add('noscroll');
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             startStoryTimer();
         } else {
             popup.style.display = 'none';
+popup.offsetHeight;
             document.body.classList.remove('noscroll');
             document.documentElement.classList.remove('noscroll');
             document.body.offsetHeight;
@@ -154,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener untuk tombol close
     closeBtn.addEventListener('click', function() {
         popup.style.display = 'none';
+popup.offsetHeight;
         document.body.classList.remove('noscroll');
         document.documentElement.classList.remove('noscroll');
         document.body.offsetHeight;
