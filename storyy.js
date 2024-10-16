@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const activeProgressBar = progressBars[currentPromoIndex];
         setTimeout(() => {
-            console.log('Starting progress animation');
+            console.log('Starting progress animation for promo index:', currentPromoIndex);
             activeProgressBar.style.transition = `width ${promoDuration / 1000}s linear`; // Apply new transition
             activeProgressBar.style.width = '100%';
         }, 50); // Slight delay to ensure transition is applied
@@ -87,11 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function for the next promotion
     function nextPromo() {
         currentPromoIndex++;
+        console.log('Moving to next promo. Current promo index:', currentPromoIndex);
         if (currentPromoIndex < promos.length) {
             showPromo(currentPromoIndex);
             startPromoTimer();
         } else {
-            console.log('Last promo, closing popup');
+            console.log('Last promo reached, closing popup');
             popup.style.display = 'none';
 
             // Remove noscroll class from body and html
@@ -108,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function previousPromo() {
         if (currentPromoIndex > 0) {
             currentPromoIndex--;
+            console.log('Moving to previous promo. Current promo index:', currentPromoIndex);
             showPromo(currentPromoIndex);
             startPromoTimer();
         }
@@ -121,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.backgroundPosition = 'center'; // Center the image
         popup.style.backgroundRepeat = 'no-repeat'; // Prevent image repetition
         popup.offsetHeight; // Force reflow
-        console.log('Popup background updated');
+        console.log('Popup background updated for promo index:', index);
     }
 
     // Function to reset animations
@@ -139,13 +141,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function handleSwipeUp() {
         const activePromo = promos[currentPromoIndex];
         const promoLink = activePromo.getAttribute('data-link');
+        console.log('Attempting to open link:', promoLink);
         if (promoLink) {
-            console.log('Opening link:', promoLink);
             if (isSafari()) {
+                console.log('Detected Safari browser, opening link in the same tab.');
                 window.location.href = promoLink; // Open in the same tab in Safari
             } else {
+                console.log('Opening link in a new tab.');
                 window.open(promoLink, '_blank'); // Open in a new tab in other browsers
             }
+        } else {
+            console.log('No promo link found for the current promo.');
         }
     }
 
@@ -168,12 +174,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add event listener to all promo buttons
     promoButtons.forEach(button => {
-        button.addEventListener('click', showPopup);
+        button.addEventListener('click', function() {
+            console.log('Promo button clicked');
+            showPopup();
+        });
     });
 
     // Event listener for the close button
     closeBtn.addEventListener('click', function() {
-        console.log('Closing popup');
+        console.log('Close button clicked, closing popup');
         popup.style.display = 'none';
 
         document.body.classList.remove('noscroll');
@@ -188,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     popup.addEventListener('click', function(event) {
         const clickX = event.clientX;
         const screenWidth = window.innerWidth;
+        console.log('Popup clicked at X position:', clickX);
 
         if (clickX < screenWidth / 2) {
             console.log('Navigating to previous promo');
