@@ -1,218 +1,176 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const promoButtons = document.querySelectorAll('.custom-promo-button'); // Updated class for promo buttons
-    const popup = document.getElementById('custom-insta-promo-popup');
-    const closeBtn = document.querySelector('.custom-insta-promo-popup .custom-insta-close');
-    const promos = document.querySelectorAll('.custom-insta-promo-item');
-    const progressBarWrapper = document.querySelector('.custom-insta-progress-bar-wrapper');
-    let currentPromoIndex = 0;
+    const storyButtons = document.querySelectorAll('.promotion-story-button');
+    const popup = document.getElementById('promotion-story-popup');
+    const closeBtn = document.querySelector('.promotion-story-popup .promotion-close');
+    const stories = document.querySelectorAll('.promotion-story-item');
+    const progressBarWrapper = document.querySelector('.promotion-progress-bar-wrapper');
+    let currentStoryIndex = 0;
     let intervalId;
-    const promoDuration = 15000; // 15 seconds
+    const storyDuration = 15000; // 15 detik
 
-    // Variables to detect swipe up
+    // Variabel untuk mendeteksi swipe up
     let touchstartY = 0;
     let touchendY = 0;
-    const swipeThreshold = 50; // Pixel threshold for swipe up
+    const swipeThreshold = 50;
 
-    // Function to detect Safari
+    // Fungsi untuk mendeteksi Safari
     function isSafari() {
         return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }
 
-    // Function to open popup
+    // Fungsi untuk membuka popup
     function showPopup() {
-        console.log('Popup opened');
-        currentPromoIndex = 0;
+        currentStoryIndex = 0;
         setupProgressBars();
-        resetAnimation(); // Ensure animation is reset
-        showPromo(currentPromoIndex);
-        updatePopupBackground(currentPromoIndex); // Update background when popup appears
+        resetAnimation();
+        showStory(currentStoryIndex);
+        updatePopupBackground(currentStoryIndex);
         popup.style.display = 'flex';
 
-        // Add noscroll class to body and html
         document.body.classList.add('noscroll');
-        document.documentElement.classList.add('noscroll'); // Also add to html
-        document.body.offsetHeight; // Force reflow to ensure changes are applied
-        console.log('noscroll class added to body and html');
+        document.documentElement.classList.add('noscroll');
+        document.body.offsetHeight;
 
-        startPromoTimer();
+        startStoryTimer();
     }
 
-    // Function to prepare progress bars
+    // Fungsi untuk mempersiapkan progress bars
     function setupProgressBars() {
-        console.log('Setting up progress bars');
-        progressBarWrapper.innerHTML = ''; // Clear existing progress bars
-        promos.forEach(() => {
+        progressBarWrapper.innerHTML = '';
+        stories.forEach(() => {
             const progressBar = document.createElement('div');
-            progressBar.classList.add('custom-insta-progress');
+            progressBar.classList.add('promotion-progress');
 
             const progressInner = document.createElement('div');
-            progressInner.classList.add('custom-insta-progress-inner');
+            progressInner.classList.add('promotion-progress-inner');
             progressBar.appendChild(progressInner);
 
             progressBarWrapper.appendChild(progressBar);
         });
     }
 
-    // Timer for promotions
-    function startPromoTimer() {
-        console.log('Starting promo timer');
-        const progressBars = document.querySelectorAll('.custom-insta-progress-inner');
+    // Timer untuk cerita
+    function startStoryTimer() {
+        const progressBars = document.querySelectorAll('.promotion-progress-inner');
         progressBars.forEach(bar => {
-            bar.style.transition = 'none'; // Reset transition
-            bar.style.width = '0%'; // Reset width
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
         });
 
-        const activeProgressBar = progressBars[currentPromoIndex];
+        const activeProgressBar = progressBars[currentStoryIndex];
         setTimeout(() => {
-            console.log('Starting progress animation for promo index:', currentPromoIndex);
-            activeProgressBar.style.transition = `width ${promoDuration / 1000}s linear`; // Apply new transition
+            activeProgressBar.style.transition = `width ${storyDuration / 1000}s linear`;
             activeProgressBar.style.width = '100%';
-        }, 50); // Slight delay to ensure transition is applied
+        }, 50);
 
         clearInterval(intervalId);
         intervalId = setInterval(() => {
-            nextPromo();
-        }, promoDuration);
+            nextStory();
+        }, storyDuration);
     }
 
-    // Function to display a specific promotion
-    function showPromo(index) {
-        console.log('Displaying promo index:', index);
-        promos.forEach((promo, i) => {
-            promo.classList.toggle('active', i === index);
+    // Fungsi untuk menampilkan cerita tertentu
+    function showStory(index) {
+        stories.forEach((story, i) => {
+            story.classList.toggle('active', i === index);
         });
-        updatePopupBackground(index); // Update background each time promo changes
+        updatePopupBackground(index);
     }
 
-    // Function for the next promotion
-    function nextPromo() {
-        currentPromoIndex++;
-        console.log('Moving to next promo. Current promo index:', currentPromoIndex);
-        if (currentPromoIndex < promos.length) {
-            showPromo(currentPromoIndex);
-            startPromoTimer();
+    // Fungsi untuk cerita berikutnya
+    function nextStory() {
+        currentStoryIndex++;
+        if (currentStoryIndex < stories.length) {
+            showStory(currentStoryIndex);
+            startStoryTimer();
         } else {
-            console.log('Last promo reached, closing popup');
             popup.style.display = 'none';
-
-            // Remove noscroll class from body and html
             document.body.classList.remove('noscroll');
             document.documentElement.classList.remove('noscroll');
-            document.body.offsetHeight; // Force reflow to ensure changes are applied
-            console.log('noscroll class removed from body and html');
-
-            markAsViewed(); // Function to mark promos as viewed (implement as needed)
+            document.body.offsetHeight;
+            clearInterval(intervalId);
         }
     }
 
-    // Function for the previous promotion
-    function previousPromo() {
-        if (currentPromoIndex > 0) {
-            currentPromoIndex--;
-            console.log('Moving to previous promo. Current promo index:', currentPromoIndex);
-            showPromo(currentPromoIndex);
-            startPromoTimer();
+    // Fungsi untuk cerita sebelumnya
+    function previousStory() {
+        if (currentStoryIndex > 0) {
+            currentStoryIndex--;
+            showStory(currentStoryIndex);
+            startStoryTimer();
         }
     }
 
-    // Function to update popup background
+    // Fungsi untuk update background popup
     function updatePopupBackground(index) {
-        const promoImage = promos[index].querySelector('img').src;
-        popup.style.backgroundImage = `url(${promoImage})`;
-        popup.style.backgroundSize = 'cover'; // Ensure image covers entire area
-        popup.style.backgroundPosition = 'center'; // Center the image
-        popup.style.backgroundRepeat = 'no-repeat'; // Prevent image repetition
-        popup.offsetHeight; // Force reflow
-        console.log('Popup background updated for promo index:', index);
+        const storyImage = stories[index].querySelector('img').src;
+        popup.style.backgroundImage = `url(${storyImage})`;
+        popup.style.backgroundSize = 'cover';
+        popup.style.backgroundPosition = 'center';
+        popup.style.backgroundRepeat = 'no-repeat';
+        popup.offsetHeight;
     }
 
-    // Function to reset animations
+    // Fungsi untuk mereset animasi
     function resetAnimation() {
-        console.log('Resetting animations');
-        const progressBars = document.querySelectorAll('.custom-insta-progress-inner');
+        const progressBars = document.querySelectorAll('.promotion-progress-inner');
         progressBars.forEach(bar => {
             bar.style.width = '0%';
-            bar.style.transition = 'none'; // Remove transition when resetting
-            bar.offsetHeight; // Force reflow
+            bar.style.transition = 'none';
+            bar.offsetHeight;
         });
     }
 
-    // Function to handle swipe up and open link
+    // Fungsi untuk menangani swipe up dan membuka link
     function handleSwipeUp() {
-        const activePromo = promos[currentPromoIndex];
-        const promoLink = activePromo.getAttribute('data-link');
-        console.log('Attempting to open link:', promoLink);
-        if (promoLink) {
+        const activeStory = stories[currentStoryIndex];
+        const storyLink = activeStory.getAttribute('data-link');
+        if (storyLink) {
             if (isSafari()) {
-                console.log('Detected Safari browser, opening link in the same tab.');
-                window.location.href = promoLink; // Open in the same tab in Safari
+                window.location.href = storyLink;
             } else {
-                console.log('Opening link in a new tab.');
-                window.open(promoLink, '_blank'); // Open in a new tab in other browsers
+                window.open(storyLink, '_blank');
             }
-        } else {
-            console.log('No promo link found for the current promo.');
         }
     }
 
-    // Event listener to detect swipe up
+    // Event listener untuk mendeteksi swipe up
     popup.addEventListener('touchstart', function(event) {
         touchstartY = event.changedTouches[0].screenY;
-        console.log('Touch start Y:', touchstartY);
     });
 
     popup.addEventListener('touchend', function(event) {
         touchendY = event.changedTouches[0].screenY;
-        console.log('Touch end Y:', touchendY);
-        if (touchstartY - touchendY > swipeThreshold) { // If swipe up exceeds threshold
-            console.log('Swipe up detected');
+        if (touchstartY - touchendY > swipeThreshold) {
             handleSwipeUp();
-        } else {
-            console.log('Swipe up not sufficient');
         }
     });
 
-    // Add event listener to all promo buttons
-    promoButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            console.log('Promo button clicked');
-            showPopup();
-        });
+    // Tambahkan event listener ke semua tombol promotion-story-button
+    storyButtons.forEach(button => {
+        button.addEventListener('click', showPopup);
     });
 
-    // Event listener for the close button
+    // Event listener untuk tombol close
     closeBtn.addEventListener('click', function() {
-        console.log('Close button clicked, closing popup');
         popup.style.display = 'none';
-
         document.body.classList.remove('noscroll');
         document.documentElement.classList.remove('noscroll');
-        document.body.offsetHeight; // Force reflow to ensure changes are applied
-        console.log('noscroll class removed from body and html');
-
+        document.body.offsetHeight;
         clearInterval(intervalId);
     });
 
-    // Event listener for navigating between promos based on click
+    // Event listener untuk navigasi antar cerita berdasarkan klik
     popup.addEventListener('click', function(event) {
         const clickX = event.clientX;
         const screenWidth = window.innerWidth;
-        console.log('Popup clicked at X position:', clickX);
 
         if (clickX < screenWidth / 2) {
-            console.log('Navigating to previous promo');
-            previousPromo();
-            updatePopupBackground(currentPromoIndex); // Update background when previous promo
+            previousStory();
+            updatePopupBackground(currentStoryIndex);
         } else {
-            console.log('Navigating to next promo');
-            nextPromo();
-            updatePopupBackground(currentPromoIndex); // Update background when next promo
+            nextStory();
+            updatePopupBackground(currentStoryIndex);
         }
     });
-
-    // Placeholder function to mark promotions as viewed
-    function markAsViewed() {
-        // Implement functionality as needed, e.g., setting a flag in localStorage
-        console.log('Promotions marked as viewed');
-    }
 });
