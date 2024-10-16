@@ -13,8 +13,9 @@ function showPopup(event) {
     event.preventDefault(); // Cegah navigasi default <a>
     console.log('Popup dibuka');
     popup.style.display = 'flex'; // Tampilkan popup
-    console.log('Popup display:', popup.style.display); // Tambahan log
-    
+    popup.offsetHeight; // Force reflow
+    console.log('Popup display:', popup.style.display); // Log display style
+
     document.body.classList.add('noscroll');
     document.documentElement.classList.add('noscroll');
 }
