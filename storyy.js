@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const instaStoryButtons = document.querySelectorAll('.insta-story-button'); // Mengambil semua tombol dengan class insta-story-button
+    const instaStoryButton = document.getElementById('insta-story-button');
     const instaPopup = document.getElementById('insta-promotion-popup');
     const instaCloseBtn = document.querySelector('.insta-popup .insta-close');
     const instaStories = document.querySelectorAll('.insta-story-item');
