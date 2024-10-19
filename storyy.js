@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const instaStoryButton = document.getElementById('insta-story-button');
+    const instaStoryButton = document.getElementById('insta-story-button'); // Mengambil tombol dengan ID insta-story-button
     const instaPopup = document.getElementById('insta-promotion-popup');
     const instaCloseBtn = document.querySelector('.insta-popup .insta-close');
     const instaStories = document.querySelectorAll('.insta-story-item');
@@ -8,39 +8,34 @@ document.addEventListener('DOMContentLoaded', function() {
     let instaIntervalId;
     const instaStoryDuration = 15000; // 15 detik
 
-    // Variabel untuk mendeteksi swipe up
     let touchstartY = 0;
     let touchendY = 0;
     const instaSwipeThreshold = 50; // Pixel threshold untuk swipe up
 
-    // Fungsi untuk mendeteksi Safari
     function isSafari() {
         return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     }
 
-    // Fungsi untuk membuka popup
     function showInstaPopup() {
         console.log('Instagram Promotion Popup dibuka');
         currentInstaStoryIndex = 0;
         setupInstaProgressBars();
-        resetInstaAnimation(); // Pastikan animasi di-reset
+        resetInstaAnimation();
         showInstaStory(currentInstaStoryIndex);
-        updateInstaPopupBackground(currentInstaStoryIndex); // Update background ketika popup muncul
+        updateInstaPopupBackground(currentInstaStoryIndex);
         instaPopup.style.display = 'flex';
 
-        // Tambahkan class noscroll ke body dan html
         document.body.classList.add('noscroll');
-        document.documentElement.classList.add('noscroll'); // Tambahkan ke html juga
-        document.body.offsetHeight; // Memaksa reflow untuk memastikan perubahan diterapkan
+        document.documentElement.classList.add('noscroll');
+        document.body.offsetHeight;
         console.log('Class noscroll ditambahkan ke body dan html');
 
         startInstaStoryTimer();
     }
 
-    // Fungsi untuk mempersiapkan progress bars
     function setupInstaProgressBars() {
         console.log('Mempersiapkan Instagram progress bar');
-        instaProgressBarWrapper.innerHTML = ''; // Clear existing progress bars
+        instaProgressBarWrapper.innerHTML = '';
         instaStories.forEach(() => {
             const progressBar = document.createElement('div');
             progressBar.classList.add('insta-progress');
@@ -53,21 +48,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Timer untuk cerita Instagram
     function startInstaStoryTimer() {
         console.log('Memulai timer Instagram cerita');
         const instaProgressBars = document.querySelectorAll('.insta-progress-inner');
         instaProgressBars.forEach(bar => {
-            bar.style.transition = 'none'; // Reset transition
-            bar.style.width = '0%'; // Reset width
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
         });
 
         const activeProgressBar = instaProgressBars[currentInstaStoryIndex];
         setTimeout(() => {
             console.log('Animasi Instagram progress dimulai');
-            activeProgressBar.style.transition = `width ${instaStoryDuration / 1000}s linear`; // Apply new transition
+            activeProgressBar.style.transition = `width ${instaStoryDuration / 1000}s linear`;
             activeProgressBar.style.width = '100%';
-        }, 50); // Sedikit delay untuk memastikan transisi diterapkan
+        }, 50);
 
         clearInterval(instaIntervalId);
         instaIntervalId = setInterval(() => {
@@ -75,16 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, instaStoryDuration);
     }
 
-    // Fungsi untuk menampilkan cerita tertentu
     function showInstaStory(index) {
         console.log('Menampilkan Instagram cerita indeks:', index);
         instaStories.forEach((story, i) => {
             story.classList.toggle('active', i === index);
         });
-        updateInstaPopupBackground(index); // Update background setiap kali story berubah
+        updateInstaPopupBackground(index);
     }
 
-    // Fungsi untuk cerita berikutnya
     function nextInstaStory() {
         currentInstaStoryIndex++;
         if (currentInstaStoryIndex < instaStories.length) {
@@ -94,17 +86,15 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Instagram cerita terakhir, menutup popup');
             instaPopup.style.display = 'none';
 
-            // Hapus class noscroll dari body dan html
             document.body.classList.remove('noscroll');
             document.documentElement.classList.remove('noscroll');
-            document.body.offsetHeight; // Memaksa reflow untuk memastikan perubahan diterapkan
+            document.body.offsetHeight;
             console.log('Class noscroll dihapus dari body dan html');
 
             markAsViewed();
         }
     }
 
-    // Fungsi untuk cerita sebelumnya
     function previousInstaStory() {
         if (currentInstaStoryIndex > 0) {
             currentInstaStoryIndex--;
@@ -113,43 +103,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Fungsi untuk update background popup
     function updateInstaPopupBackground(index) {
         const storyImage = instaStories[index].querySelector('img').src;
         instaPopup.style.backgroundImage = `url(${storyImage})`;
-        instaPopup.style.backgroundSize = 'cover'; // Pastikan gambar memenuhi seluruh area
-        instaPopup.style.backgroundPosition = 'center'; // Pastikan gambar terpusat
-        instaPopup.style.backgroundRepeat = 'no-repeat'; // Pastikan gambar tidak mengulang
-        instaPopup.offsetHeight; // Force reflow
+        instaPopup.style.backgroundSize = 'cover';
+        instaPopup.style.backgroundPosition = 'center';
+        instaPopup.style.backgroundRepeat = 'no-repeat';
+        instaPopup.offsetHeight;
         console.log('Background Instagram popup diperbarui');
     }
 
-    // Fungsi untuk mereset animasi
     function resetInstaAnimation() {
         console.log('Mereset Instagram animasi');
         const instaProgressBars = document.querySelectorAll('.insta-progress-inner');
         instaProgressBars.forEach(bar => {
             bar.style.width = '0%';
-            bar.style.transition = 'none'; // Hilangkan transisi saat di-reset
-            bar.offsetHeight; // Force reflow
+            bar.style.transition = 'none';
+            bar.offsetHeight;
         });
     }
 
-    // Fungsi untuk menangani swipe up dan membuka link
     function handleInstaSwipeUp() {
         const activeInstaStory = instaStories[currentInstaStoryIndex];
         const instaStoryLink = activeInstaStory.getAttribute('data-link');
         if (instaStoryLink) {
             console.log('Membuka link Instagram:', instaStoryLink);
             if (isSafari()) {
-                window.location.href = instaStoryLink; // Buka di tab yang sama di Safari
+                window.location.href = instaStoryLink;
             } else {
-                window.open(instaStoryLink, '_blank'); // Buka di tab baru di browser lain
+                window.open(instaStoryLink, '_blank');
             }
         }
     }
 
-    // Event listener untuk mendeteksi swipe up
     instaPopup.addEventListener('touchstart', function(event) {
         touchstartY = event.changedTouches[0].screenY;
         console.log('Touch start Y:', touchstartY);
@@ -158,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     instaPopup.addEventListener('touchend', function(event) {
         touchendY = event.changedTouches[0].screenY;
         console.log('Touch end Y:', touchendY);
-        if (touchstartY - touchendY > instaSwipeThreshold) { // Jika swipe ke atas lebih dari threshold
+        if (touchstartY - touchendY > instaSwipeThreshold) {
             console.log('Swipe up Instagram terdeteksi');
             handleInstaSwipeUp();
         } else {
@@ -166,25 +152,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Tambahkan event listener ke semua tombol insta-story-button
-    instaStoryButtons.forEach(button => {
-        button.addEventListener('click', showInstaPopup);
-    });
+    if (instaStoryButton) {
+        instaStoryButton.addEventListener('click', showInstaPopup);
+    }
 
-    // Event listener untuk tombol close
     instaCloseBtn.addEventListener('click', function() {
         console.log('Menutup Instagram popup');
         instaPopup.style.display = 'none';
 
         document.body.classList.remove('noscroll');
         document.documentElement.classList.remove('noscroll');
-        document.body.offsetHeight; // Memaksa reflow untuk memastikan perubahan diterapkan
+        document.body.offsetHeight;
         console.log('Class noscroll dihapus dari body dan html');
 
         clearInterval(instaIntervalId);
     });
 
-    // Event listener untuk navigasi antar cerita berdasarkan klik
     instaPopup.addEventListener('click', function(event) {
         const clickX = event.clientX;
         const screenWidth = window.innerWidth;
@@ -192,15 +175,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (clickX < screenWidth / 2) {
             console.log('Navigasi ke Instagram cerita sebelumnya');
             previousInstaStory();
-            updateInstaPopupBackground(currentInstaStoryIndex); // Update background saat previous story
+            updateInstaPopupBackground(currentInstaStoryIndex);
         } else {
             console.log('Navigasi ke Instagram cerita berikutnya');
             nextInstaStory();
-            updateInstaPopupBackground(currentInstaStoryIndex); // Update background saat next story
+            updateInstaPopupBackground(currentInstaStoryIndex);
         }
     });
 
-    // Fungsi dummy untuk menandai cerita sebagai sudah dilihat
     function markAsViewed() {
         console.log('Menandai Instagram cerita sebagai sudah dilihat');
         // Implementasikan logika Anda di sini
