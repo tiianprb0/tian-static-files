@@ -1,133 +1,292 @@
-/* Asa Variables untuk Mode Day dan Night */
-:root {
-    --background-color: #FAF7F0 !important;
-    --text-color: #333333 !important;
-    --border-color: #cccccc !important;
-    --icon-color: #e74c3c !important;
-    --button-background: #f0f0f0 !important;
-    --button-color: #333333 !important;
-    --nar-background:  !important; 
-}
 
-.night-mode {
-    --background-color: #001f3f !important; /* Biru Tua */
-    --text-color: #ecf0f1 !important;
-    --border-color: #34495e !important;
-    --icon-color: #e74c3c !important;
-    --button-background: #34495e !important;
-    --button-color: #ecf0f1 !important;
-    --nar-background: #fff !important;
-}
-
-/* Styling untuk body */
-body {
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.5s, color 0.5s !important;
-}
-
-/* Bubble Percakapan Umum */
-.bubble {
-    position: relative !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    max-width: 75% !important;
-    padding: 15px !important;
-    margin-bottom: 20px !important;
-    border-radius: 20px !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-    background-color: inherit !important; /* Warna ditentukan oleh kelas karakter */
-}
-
-/* Bubble Kiri (Fani, Diana, Lainnya) */
-.bubble-left {
-    margin-right: auto !important;
-    flex-direction: row !important;
-}
-
-/* Bubble Kanan untuk Tian */
-.bubble-right.tian {
-    margin-left: auto !important;
-    position: relative !important; /* Agar gambar profil bisa diposisikan absolut */
-    padding-right: 70px !important; /* Beri ruang untuk gambar profil di kanan */
-    display: flex !important;
-    flex-direction: column !important; /* Teks tetap pada satu kolom */
-}
-
-/* Arrow Bubble untuk Tian */
-.bubble-right.tian::after {
-    border-width: 10px 0 10px 15px !important;
-    border-color: transparent !important;
-    right: -15px !important;
-    top: 25px !important;
-}
-
-/* Styling khusus untuk Profile Pic Tian */
-.bubble-right.tian .profile-pic {
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 50% !important;
-    position: absolute !important; /* Agar gambar selalu berada di pojok kanan atas */
-    top: 10px !important; /* Jarak dari atas bubble */
-    right: 10px !important; /* Jarak dari kanan bubble */
-}
-
-/* Konten Dialog untuk Tian */
-.bubble-right.tian .dialog-content {
-    font-size: 1rem !important;
-    line-height: 1.2 !important;
-    color: #555555 !important; /* Tetap warna asli */
-    text-align: left !important; /* Teks selalu rata kiri */
-    padding-right: 70px !important; /* Beri ruang agar teks tidak tertutupi gambar profil */
-}
-
-/* Kelas khusus untuk setiap karakter */
-.tian {
-    background-color: #E7FBE6 !important; /* Hijau Mint Pastel */
-}
-
-.tian::after {
-    border-color: transparent transparent transparent #E7FBE6 !important;
-}
-
-/* Fani: Biru Langit, Sedikit Lebih Putih (#D1E9F6) */
-.fani {
-    background-color: #D1E9F6 !important; /* Biru Langit, sedikit lebih putih */
-}
-
-.fani::after {
-    border-color: transparent #D1E9F6 transparent transparent !important;
-}
-
-/* Diana dan Lainnya: Abu-abu Muda (#F3EEEA) */
-.diana, .lainnya {
-    background-color: #F3EEEA !important; /* Abu-abu Muda */
-}
-
-.diana::after,
-.lainnya::after {
-    border-color: transparent #F3EEEA transparent transparent !important;
-}
-
-/* Responsif untuk layar kecil */
-@media screen and (max-width: 600px) {
+    /* CSS Variables untuk Mode Day dan Night */
+    :root {
+        --background-color: #FAF7F0 !important;
+        --text-color: #333333 !important;
+        --border-color: #cccccc !important;
+        --icon-color: #e74c3c !important;
+        --button-background: #f0f0f0 !important;
+        --button-color: #333333 !important;
+        --nar-background:  !important; 
+    }
+    
+    .night-mode {
+        --background-color: #001f3f !important; /* Biru Tua */
+        --text-color: #ecf0f1 !important;
+        --border-color: #34495e !important;
+        --icon-color: #e74c3c !important;
+        --button-background: #34495e !important;
+        --button-color: #ecf0f1 !important;
+        --nar-background: #fff !important;
+    }
+    
+    /* Styling untuk body */
+    body {
+        background-color: var(--background-color) !important;
+        color: var(--text-color) !important;
+        
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.5s, color 0.5s !important;
+    }
+    
+    /* Sembunyikan elemen tertentu */
+    .header, #scroll-header-new, footer {
+        display: none !important;
+    }
+    
+    /* Styling untuk class: post-title */
+    .post-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 2rem !important;
+        font-weight: normal !important;
+        color: var(--text-color) !important;
+        text-align: center !important;
+        margin: 10px 0 !important;
+    }
+    
+    .post-title::before, 
+    .post-title::after {
+        display: none !important;
+    }
+    
+    /* Header Cerita */
+    .story-header {
+        text-align: center !important;
+        
+        background-color: var(--background-color) !important;
+        
+    }
+    
     .story-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 2rem !important;
+        font-weight: normal !important;
+        color: var(--text-color) !important;
+        margin: 0 !important;
+    }
+    
+    /* Toggle Switch Container */
+    /* Tidak Diperlukan karena tombol akan berada di fixed bottom-left */
+    
+    /* Toggle Button Styling */
+    /* Dihapus karena tombol akan fixed di bawah */
+    
+    /* Header Bab */
+    .chapter-header {
+        text-align: center !important;
+        margin: 20px 0 !important;
+    }
+    
+    .chapter-title {
         font-size: 1.5em !important;
+        color: var(--text-color) !important;
+        margin: 0 !important;
     }
-    .bubble {
-        max-width: 100% !important;
+    
+    /* Elemen Latar */
+    .background-section {
+        display: flex !important;
+        align-items: center !important;
+        border: 1px dashed var(--border-color) !important;
         padding: 10px !important;
+        margin: 15px !important;
+        font-weight: bold !important;
+        font-size: 1rem !important;
+        border-radius: 5px !important;
+        color: var(--text-color) !important;
     }
-    .bubble-right.tian .profile-pic {
-        width: 50px !important;
-        height: 50px !important;
-        top: 8px !important;
-        right: 8px !important;
+    
+    .background-section .icon {
+        color: var(--icon-color) !important;
+        font-size: 1.2rem !important;
+        margin-right: 10px !important;
     }
-    .bubble-right.tian .dialog-content {
-        font-size: 0.9rem !important;
-        padding-right: 60px !important; /* Kurangi padding untuk ruang gambar profil pada layar kecil */
+    
+    .background-section .label {
+        margin-right: 5px !important;
+        color: var(--text-color) !important;
     }
-}
+    
+    /* Section Dialog */
+    .dialog-section {
+        margin: 20px !important;
+    }
+    
+    /* Narator */
+    .narrator {
+        font-style: italic !important;
+        color: var(--nar-background) !important;
+        margin-bottom: 15px !important;
+        padding: 10px !important;
+        background: !important
+        border-radius: 10px !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Bubble Percakapan */
+    .bubble {
+        position: relative !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        max-width: 75% !important;
+        padding: 15px !important;
+        margin-bottom: 20px !important;
+        border-radius: 20px !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+        background-color: inherit !important; /* Warna ditentukan oleh kelas karakter */
+    }
+    
+    .bubble::after {
+        content: "" !important;
+        position: absolute !important;
+        width: 0 !important;
+        height: 0 !important;
+        border-style: solid !important;
+    }
+    
+    /* Bubble Kiri (Fani, Diana, Lainnya) */
+    .bubble-left {
+        margin-right: auto !important;
+        flex-direction: row !important;
+    }
+    
+    .bubble-left::after {
+        border-width: 10px 15px 10px 0 !important;
+        border-color: transparent !important;
+        left: -15px !important;
+        top: 25px !important;
+    }
+    
+    /* Bubble Kanan (Tian) */
+    .bubble-right {
+        margin-left: auto !important;
+        flex-direction: row-reverse !important;
+    }
+    
+    .bubble-right::after {
+        border-width: 10px 0 10px 15px !important;
+        border-color: transparent !important;
+        right: -15px !important;
+        top: 25px !important;
+    }
+    
+    /* Kelas khusus untuk setiap karakter */
+    
+    /* Tian: Hijau Mint Pastel (#E7FBE6) */
+    .tian {
+        background-color: #E7FBE6 !important; /* Hijau Mint Pastel */
+    }
+    
+    .tian::after {
+        border-color: transparent transparent transparent #E7FBE6 !important;
+    }
+    
+    /* Fani: Biru Langit, Sedikit Lebih Putih (#D1E9F6) */
+    .fani {
+        background-color: #D1E9F6 !important; /* Biru Langit, sedikit lebih putih */
+    }
+    
+    .fani::after {
+        border-color: transparent #D1E9F6 transparent transparent !important;
+    }
+    
+    /* Diana dan Lainnya: Abu-abu Muda (#F3EEEA) */
+    .diana, .lainnya {
+        background-color: #F3EEEA !important; /* Abu-abu Muda */
+    }
+    
+    .diana::after,
+    .lainnya::after {
+        border-color: transparent #F3EEEA transparent transparent !important;
+    }
+    
+    /* Styling untuk profile-pic */
+    .profile-pic {
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 50% !important;
+        margin: 10px !important;
+    }
+    
+    /* Profil Tian (Kiri) */
+    .profile-left {
+        align-self: flex-start !important;
+        margin-right: 10px !important;
+    }
+    
+    /* Profil Fani, Diana, dan Lainnya (Kanan) */
+    .profile-right {
+        align-self: flex-start !important;
+        margin-left: 10px !important;
+    }
+    
+    /* Konten Dialog */
+    .dialog-content {
+        font-size: 1rem !important;
+        line-height: 1.2 !important;
+        color: #555555 !important; /* Tetap warna asli */
+    }
+    
+    .dialog-name {
+        display: block !important;
+        font-weight: bold !important;
+        margin-bottom: 5px !important;
+        margin-top: 10px !important;
+    }
+    
+    /* Gambar dalam Bubble */
+    .bubble-image {
+        margin-top: 10px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        aspect-ratio: 9 / 16 !important;
+        border-radius: 10px !important;
+    }
+    
+    /* Floating Night Mode Button Styling */
+    .night-mode-button {
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 20px !important;
+        background-color: var(--button-background) !important;
+        color: var(--button-color) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 20px !important;
+        padding: 10px 20px !important;
+        cursor: pointer !important;
+        font-size: 1rem !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+        transition: background-color 0.3s, color 0.3s !important;
+        z-index: 1000 !important;
+    }
+    
+    .night-mode-button:hover {
+        background-color: var(--border-color) !important;
+    }
+    
+    /* Responsif untuk layar kecil */
+    @media screen and (max-width: 600px) {
+        .story-title {
+            font-size: 1.5em !important;
+        }
+        .chapter-title {
+            font-size: 1.2em !important;
+        }
+        .bubble {
+            max-width: 100% !important;
+            padding: 10px !important;
+        }
+        .profile-pic {
+            width: 50px !important;
+            height: 50px !important;
+            margin: 8px !important;
+        }
+        .narrator {
+            margin-bottom: 15px !important;
+        }
+        .night-mode-button {
+            font-size: 0.9rem !important;
+            padding: 8px 16px !important;
+        }
+    }
