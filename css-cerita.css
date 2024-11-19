@@ -80,29 +80,38 @@ footer {
 }
 
 
-/* Styling untuk Background Section dengan Background Color dan Judul yang Benar */
+/* Elemen Latar */
 .background-section {
-    background-color: var(--ltr-bg); /* Tambahkan warna latar belakang */
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 5px;
-    color: var(--text-color);
-    font-size: 1rem;
+    display: flex !important;
+    flex-direction: column; /* Mengatur elemen anak secara vertikal */
+    align-items: flex-start !important; /* Menyelaraskan konten ke kiri */
+    border: 1px dashed var(--border-color) !important;
+    padding: 10px !important;
+    margin: 15px !important;
+    font-weight: bold !important;
+    font-size: 1rem !important;
+    border-radius: 5px !important;
+    color: var(--text-color) !important;
 }
 
 .background-section .header {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Memberi jarak antara header dan teks */
+}
+
+.background-section .icon {
+    color: var(--icon-color) !important;
+    font-size: 1.2rem !important;
+    margin-right: 5px !important;
 }
 
 .background-section .label {
-    font-weight: bold;
-    color: var(--text-color);
-    font-size: 1.2rem;
+    color: var(--text-color) !important;
 }
 
 .background-section .content {
-    margin: 0;
-    line-height: 1.5;
+    font-weight: normal; /* Mengatur teks konten menjadi normal */
 }
 
 
