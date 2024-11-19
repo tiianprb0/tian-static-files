@@ -1,4 +1,5 @@
-/* CSS Variables untuk Mode Day dan Night */
+
+  /* CSS Variables untuk Mode Day dan Night */
 :root {
     --background-color: #FAF7F0 !important;
     --text-color: #333333 !important;
@@ -288,38 +289,33 @@ footer {
 }
 
 /* Penyesuaian khusus untuk Tian */
-
-/* Mengubah bubble Tian agar profil selalu di pojok kanan atas dan teks rata kiri */
 .bubble-right.tian {
     position: relative !important;
-    flex-direction: row !important; /* Mengatur ulang arah flex */
-    padding-right: 90px !important; /* Memberi ruang untuk foto profil */
+    flex-direction: row !important;
+    padding-right: 0px !important; /* Kurangi nilai padding-right */
     margin-left: auto !important;
     margin-right: 0 !important;
 }
 
-/* Posisi foto profil Tian */
-.bubble-right.tian .profile-pic {
+.bubble-right.tian .profile-tian {
     position: absolute !important;
-    top: 15px !important; /* Sesuaikan dengan padding atas bubble */
-    right: 15px !important; /* Sesuaikan dengan padding kanan bubble */
+    top: 15px !important;
+    right: 5px !important; /* Kurangi nilai right */
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
     margin: 0 !important;
 }
 
-/* Menyesuaikan teks dalam bubble Tian */
 .bubble-right.tian .dialog-content {
-    text-align: left !important; /* Membuat teks rata kiri */
+    text-align: left !important;
     margin-right: 0 !important;
     margin-left: 0 !important;
+    max-width: calc(100% - 75px) !important; /* Sesuaikan dengan padding-right */
 }
 
-/* Jika ada nama karakter di atas teks */
 .bubble-right.tian .dialog-name {
     text-align: left !important;
     margin-right: 0 !important;
 }
 
-/* Mengatur agar teks tidak tertutup oleh profil */
-.bubble-right.tian .dialog-content {
-    max-width: calc(100% - 90px) !important; /* Mengurangi lebar maksimal dengan lebar profil dan margin */
-}
