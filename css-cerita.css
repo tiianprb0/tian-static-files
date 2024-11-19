@@ -28,45 +28,11 @@ body {
     transition: background-color 0.5s, color 0.5s !important;
 }
 
-/* Sembunyikan elemen tertentu */
-.header, #scroll-header-new, footer {
-    display: none !important;
-}
-
-/* Styling untuk class: post-title */
-.post-title {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 2rem !important;
-    font-weight: normal !important;
-    color: var(--text-color) !important;
-    text-align: center !important;
-    margin: 10px 0 !important;
-}
-
-.post-title::before, 
-.post-title::after {
-    display: none !important;
-}
-
-/* Header Cerita */
-.story-header {
-    text-align: center !important;
-    background-color: var(--background-color) !important;
-}
-
-.story-title {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 2rem !important;
-    font-weight: normal !important;
-    color: var(--text-color) !important;
-    margin: 0 !important;
-}
-
-/* Bubble Percakapan */
+/* Bubble Percakapan Umum */
 .bubble {
     position: relative !important;
     display: flex !important;
-    flex-direction: column !important;
+    align-items: flex-start !important;
     max-width: 75% !important;
     padding: 15px !important;
     margin-bottom: 20px !important;
@@ -75,18 +41,46 @@ body {
     background-color: inherit !important; /* Warna ditentukan oleh kelas karakter */
 }
 
-/* Bubble Kanan (Tian) */
-.bubble-right {
-    margin-left: auto !important;
-    position: relative !important; /* Agar gambar profil bisa diatur secara absolut */
-    padding-right: 70px !important; /* Beri ruang untuk gambar profil */
+/* Bubble Kiri (Fani, Diana, Lainnya) */
+.bubble-left {
+    margin-right: auto !important;
+    flex-direction: row !important;
 }
 
-.bubble-right::after {
+/* Bubble Kanan untuk Tian */
+.bubble-right.tian {
+    margin-left: auto !important;
+    position: relative !important; /* Agar gambar profil bisa diposisikan absolut */
+    padding-right: 70px !important; /* Beri ruang untuk gambar profil di kanan */
+    display: flex !important;
+    flex-direction: column !important; /* Teks tetap pada satu kolom */
+}
+
+/* Arrow Bubble untuk Tian */
+.bubble-right.tian::after {
     border-width: 10px 0 10px 15px !important;
     border-color: transparent !important;
     right: -15px !important;
     top: 25px !important;
+}
+
+/* Styling khusus untuk Profile Pic Tian */
+.bubble-right.tian .profile-pic {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50% !important;
+    position: absolute !important; /* Agar gambar selalu berada di pojok kanan atas */
+    top: 10px !important; /* Jarak dari atas bubble */
+    right: 10px !important; /* Jarak dari kanan bubble */
+}
+
+/* Konten Dialog untuk Tian */
+.bubble-right.tian .dialog-content {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+    color: #555555 !important; /* Tetap warna asli */
+    text-align: left !important; /* Teks selalu rata kiri */
+    padding-right: 70px !important; /* Beri ruang agar teks tidak tertutupi gambar profil */
 }
 
 /* Kelas khusus untuk setiap karakter */
@@ -117,32 +111,6 @@ body {
     border-color: transparent #F3EEEA transparent transparent !important;
 }
 
-/* Styling untuk profile-pic */
-.profile-pic {
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 50% !important;
-    position: absolute !important; /* Agar gambar selalu berada di pojok kanan atas */
-    top: 10px !important; /* Jarak dari atas bubble */
-    right: 10px !important; /* Jarak dari kanan bubble */
-}
-
-/* Konten Dialog */
-.dialog-content {
-    font-size: 1rem !important;
-    line-height: 1.2 !important;
-    color: #555555 !important; /* Tetap warna asli */
-    text-align: left !important; /* Teks selalu rata kiri */
-    padding-right: 70px !important; /* Beri ruang agar teks tidak tertutupi gambar profil */
-}
-
-.dialog-name {
-    display: block !important;
-    font-weight: bold !important;
-    margin-bottom: 5px !important;
-    margin-top: 10px !important;
-}
-
 /* Responsif untuk layar kecil */
 @media screen and (max-width: 600px) {
     .story-title {
@@ -152,13 +120,13 @@ body {
         max-width: 100% !important;
         padding: 10px !important;
     }
-    .profile-pic {
+    .bubble-right.tian .profile-pic {
         width: 50px !important;
         height: 50px !important;
         top: 8px !important;
         right: 8px !important;
     }
-    .dialog-content {
+    .bubble-right.tian .dialog-content {
         font-size: 0.9rem !important;
         padding-right: 60px !important; /* Kurangi padding untuk ruang gambar profil pada layar kecil */
     }
