@@ -77,29 +77,29 @@ footer {
     margin: 0 !important;
 }
 
-/* Elemen Latar */
+/* Styling Minimalis untuk Background Section */
 .background-section {
-    display: flex !important;
-    align-items: center !important;
-    border: 1px dashed var(--border-color) !important;
-    padding: 10px !important;
-    margin: 15px !important;
-    font-weight: bold !important;
-    font-size: 1rem !important;
-    border-radius: 5px !important;
-    color: var(--text-color) !important;
+    display: flex;
+    align-items: flex-start;
+    border-left: 4px solid var(--border-color);
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
 .background-section .icon {
-    color: var(--icon-color) !important;
-    font-size: 1.2rem !important;
-    margin-right: 10px !important;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    color: var(--icon-color);
 }
 
 .background-section .label {
-    margin-right: 5px !important;
-    color: var(--text-color) !important;
+    font-weight: bold;
+    margin-right: 5px;
+    color: var(--text-color);
 }
+
 
 /* Section Dialog */
 .dialog-section {
