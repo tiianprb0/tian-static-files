@@ -106,16 +106,16 @@ footer {
     margin: 20px !important;
 }
 
-/* Narator */
-.narrator {
-    font-style: italic !important;
-    color: var(--text-color) !important;
-    margin-bottom: 15px !important;
-    padding: 10px !important;
-    background: var(--nar-background) !important;
-    border-radius: 10px !important;
-    font-size: 1rem !important;
-}
+   /* Narator */
+    .narrator {
+        font-style: italic !important;
+        color: var(--nar-background) !important;
+        margin-bottom: 15px !important;
+        padding: 10px !important;
+        background: !important
+        border-radius: 10px !important;
+        font-size: 1rem !important;
+    }
 
 /* Bubble Percakapan */
 .bubble {
