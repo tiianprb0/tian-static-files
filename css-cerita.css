@@ -7,7 +7,7 @@
     --icon-color: #e74c3c !important;
     --button-background: #f0f0f0 !important;
     --button-color: #333333 !important;
-    --nar-background: #ffffff !important;
+    --nar-background: !important;
 }
 
 .night-mode {
