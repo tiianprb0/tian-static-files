@@ -82,7 +82,7 @@ footer {
 
 /* Styling untuk Background Section dengan Background Color dan Judul yang Benar */
 .background-section {
-    background-color: var(--background-color); /* Tambahkan warna latar belakang */
+    background-color: var(--ltr-bg); /* Tambahkan warna latar belakang */
     padding: 15px;
     margin: 15px 0;
     border-radius: 5px;
