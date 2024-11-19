@@ -77,9 +77,10 @@ footer {
     margin: 0 !important;
 }
 
-/* Styling untuk Background Section dengan Border Dashed dan Teks di Bawah Header */
+
+/* Styling untuk Background Section dengan Background Color dan Judul yang Benar */
 .background-section {
-    border: 1px dashed var(--border-color);
+    background-color: var(--background-color); /* Tambahkan warna latar belakang */
     padding: 15px;
     margin: 15px 0;
     border-radius: 5px;
@@ -88,20 +89,13 @@ footer {
 }
 
 .background-section .header {
-    display: flex;
-    align-items: center;
     margin-bottom: 10px;
-}
-
-.background-section .icon {
-    margin-right: 5px;
-    font-size: 1.2rem;
-    color: var(--icon-color);
 }
 
 .background-section .label {
     font-weight: bold;
     color: var(--text-color);
+    font-size: 1.2rem;
 }
 
 .background-section .content {
