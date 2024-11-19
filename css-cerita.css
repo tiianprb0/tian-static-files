@@ -1,4 +1,4 @@
-/* CSS Variables untuk Mode Day dan Night */
+/* hi Variables untuk Mode Day dan Night */
 :root {
     --background-color: #FAF7F0 !important;
     --text-color: #333333 !important;
@@ -152,7 +152,7 @@ body {
 /* Bubble Kanan (Tian) */
 .bubble-right {
     margin-left: auto !important; /* Menjaga bubble tetap di sisi kanan */
-    flex-direction: row-reverse !important; /* Gambar di kanan teks */
+    flex-direction: row-reverse !important; /* Menempatkan gambar di sisi kanan dan teks di sisi kiri */
 }
 
 .bubble-right::after {
@@ -200,28 +200,9 @@ body {
     margin: 10px !important;
 }
 
-/* Profil Tian (Kanan) */
+/* Profil Kanan (Tian) */
 .profile-right {
-    /* Hapus properti absolute positioning */
-    /* position: absolute !important; */
-    /* margin-left: 0 !important; */
-    margin-left: 10px !important; /* Tambahkan jarak antara gambar dan bubble */
-}
-
-/* Tambahkan CSS khusus untuk profile-pic Tian */
-.bubble-right.tian .profile-pic {
-    /* Hapus posisi absolut */
-    position: static !important;
-    /* Atur margin untuk penempatan */
-    margin-left: 10px !important; /* Spasi antara gambar dan bubble */
-    /* Border dan background jika diinginkan */
-    border: 2px solid var(--background-color) !important; /* Opsional: untuk memberi border */
-    background-color: var(--background-color) !important; /* Opsional: untuk latar belakang */
-}
-
-/* Sesuaikan padding pada bubble-right untuk ruang gambar profil jika diperlukan */
-.bubble-right.tian {
-    padding-top: 0 !important; /* Tidak perlu padding tambahan karena gambar dalam flow */
+    margin-left: 10px !important; /* Memberikan jarak antara gambar dan bubble */
 }
 
 /* Konten Dialog */
@@ -229,6 +210,7 @@ body {
     font-size: 1rem !important;
     line-height: 1.2 !important;
     color: #555555 !important; /* Tetap warna asli */
+    text-align: left !important; /* Teks selalu rata kiri */
 }
 
 .dialog-name {
@@ -298,9 +280,5 @@ body {
         margin-left: 8px !important; /* Spasi sedikit lebih kecil pada layar kecil */
         width: 50px !important;
         height: 50px !important;
-    }
-    
-    .bubble-right.tian {
-        padding-top: 0 !important; /* Tidak perlu padding tambahan */
     }
 }
