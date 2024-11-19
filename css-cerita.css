@@ -85,8 +85,8 @@ footer {
     display: flex !important;
     flex-direction: column; /* Mengatur elemen anak secara vertikal */
     align-items: flex-start !important; /* Menyelaraskan konten ke kiri */
-    border: 1px dashed var(--border-color) !important;
-    padding: 10px !important;
+    border: 2px dashed var(--border-color) !important;
+    padding: 5px !important;
     margin: 15px !important;
     font-weight: bold !important;
     font-size: 1rem !important;
