@@ -77,15 +77,16 @@ footer {
     margin: 0 !important;
 }
 
-/* Styling Minimalis untuk Background Section */
+/* Styling Minimalis untuk Background Section dengan Border Dashed */
 .background-section {
     display: flex;
     align-items: flex-start;
-    border-left: 4px solid var(--border-color);
+    border: 1px dashed var(--border-color);
     padding: 10px;
     margin: 15px 0;
     font-size: 1rem;
     color: var(--text-color);
+    border-radius: 5px;
 }
 
 .background-section .icon {
@@ -94,11 +95,21 @@ footer {
     color: var(--icon-color);
 }
 
+.background-section .content {
+    display: flex;
+    flex-direction: column;
+}
+
 .background-section .label {
     font-weight: bold;
-    margin-right: 5px;
+    margin-bottom: 5px;
     color: var(--text-color);
 }
+
+.background-section p {
+    margin: 0;
+}
+
 
 
 /* Section Dialog */
