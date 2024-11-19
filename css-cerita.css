@@ -6,7 +6,7 @@
     --icon-color: #e74c3c !important;
     --button-background: #f0f0f0 !important;
     --button-color: #333333 !important;
-    --nar-background: !important;
+    --nar-background: #ffffff !important;
 }
 
 .night-mode {
@@ -16,7 +16,7 @@
     --icon-color: #e74c3c !important;
     --button-background: #34495e !important;
     --button-color: #ecf0f1 !important;
-    --nar-background: #fff !important;
+    --nar-background: #ffffff !important;
 }
 
 /* Styling untuk body */
@@ -108,10 +108,10 @@ footer {
 /* Narator */
 .narrator {
     font-style: italic !important;
-    color: var(--nar-background) !important;
+    color: var(--text-color) !important;
     margin-bottom: 15px !important;
     padding: 10px !important;
-    background: !important;
+    background: var(--nar-background) !important;
     border-radius: 10px !important;
     font-size: 1rem !important;
 }
@@ -219,7 +219,7 @@ footer {
 /* Konten Dialog */
 .dialog-content {
     font-size: 1rem !important;
-    line-height: 1.2 !important;
+    line-height: 1.5 !important;
     color: #555555 !important; /* Tetap warna asli */
     flex: 1 !important; /* Agar dialog-content mengambil sisa ruang */
 }
@@ -310,10 +310,16 @@ footer {
 .bubble-right.tian .dialog-content {
     text-align: left !important; /* Membuat teks rata kiri */
     margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 
 /* Jika ada nama karakter di atas teks */
 .bubble-right.tian .dialog-name {
     text-align: left !important;
     margin-right: 0 !important;
+}
+
+/* Mengatur agar teks tidak tertutup oleh profil */
+.bubble-right.tian .dialog-content {
+    max-width: calc(100% - 90px) !important; /* Mengurangi lebar maksimal dengan lebar profil dan margin */
 }
