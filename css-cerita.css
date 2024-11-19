@@ -8,6 +8,7 @@
     --button-background: #f0f0f0 !important;
     --button-color: #333333 !important;
     --nar-background: !important;
+    --ltr-bg: #FFE3E3;
 }
 
 .night-mode {
@@ -18,6 +19,7 @@
     --button-background: #34495e !important;
     --button-color: #ecf0f1 !important;
     --nar-background: #ffffff !important;
+    --ltr-bg: #FFE3E3;
 }
 
 /* Styling untuk body */
