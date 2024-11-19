@@ -1,4 +1,4 @@
-/* hi Variables untuk Mode Day dan Night */
+/* wkwkw Variables untuk Mode Day dan Night */
 :root {
     --background-color: #FAF7F0 !important;
     --text-color: #333333 !important;
@@ -152,7 +152,10 @@ body {
 /* Bubble Kanan (Tian) */
 .bubble-right {
     margin-left: auto !important; /* Menjaga bubble tetap di sisi kanan */
-    flex-direction: row-reverse !important; /* Menempatkan gambar di sisi kanan dan teks di sisi kiri */
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important; /* Teks tetap rata kiri */
+    flex-direction: row-reverse !important; /* Gambar di kanan, teks di kiri */
 }
 
 .bubble-right::after {
@@ -202,7 +205,8 @@ body {
 
 /* Profil Kanan (Tian) */
 .profile-right {
-    margin-left: 10px !important; /* Memberikan jarak antara gambar dan bubble */
+    margin-left: 10px !important; /* Jarak antara gambar dan bubble */
+    align-self: flex-start !important; /* Agar gambar sejajar dengan atas bubble */
 }
 
 /* Konten Dialog */
@@ -211,6 +215,7 @@ body {
     line-height: 1.2 !important;
     color: #555555 !important; /* Tetap warna asli */
     text-align: left !important; /* Teks selalu rata kiri */
+    flex-grow: 1 !important; /* Memastikan teks memenuhi ruang yang tersisa dan tidak bergeser */
 }
 
 .dialog-name {
