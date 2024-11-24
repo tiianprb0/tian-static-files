@@ -2,7 +2,7 @@
   "name": "Tian's Blog",
   "short_name": "TianBlog",
 "start_url": "https://arc-tian.blogspot.com/",
-"scope": "https://arc-tian.blogspot.com/"
+"scope": "https://arc-tian.blogspot.com/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007BFF",
