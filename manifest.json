@@ -1,7 +1,7 @@
 {
-  "name": "Tian's App",
-  "short_name": "TianApp",
-  "start_url": "/?utm_source=homescreen&amp;utm_medium=pwa",
+  "name": "Tian's Blog",
+  "short_name": "TianBlog",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007BFF",
