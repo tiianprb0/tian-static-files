@@ -1,20 +1,20 @@
 {
   "name": "Tian's App",
   "short_name": "TianApp",
-  "start_url": "/",
+  "start_url": "/?utm_source=homescreen&amp;utm_medium=pwa",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007BFF",
   "icons": [
     {
       "src": "https://via.placeholder.com/192",
-      "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
       "src": "https://via.placeholder.com/512",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
