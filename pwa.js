@@ -1,85 +1,78 @@
-
-  // Deteksi apakah aplikasi dijalankan dalam mode standalone
-  const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-
-  // Deteksi apakah browser adalah Safari
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-  // Tampilkan banner "Add to Home Screen" hanya untuk Safari yang belum diinstal
-  const safariInstallPrompt = document.getElementById('safariInstallPrompt');
-  if (!isStandalone && isSafari && safariInstallPrompt) {
-    safariInstallPrompt.style.display = 'block'; // Tampilkan instruksi
-  }
-
-  // Sembunyikan banner jika aplikasi sudah diinstal
-  if (isStandalone && safariInstallPrompt) {
-    safariInstallPrompt.style.display = 'none'; // Sembunyikan instruksi
-  }
-
-  // Register Service Worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/serviceworker.js')
-      .then(registration => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      })
-      .catch(error => {
-        console.log('Service Worker registration failed:', error);
-      });
-  }
-
-  // Handle beforeinstallprompt event (untuk browser selain Safari)
-  let deferredPrompt;
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); // Mencegah prompt default
-    deferredPrompt = e;
-  });
-
-  // Deteksi ketika aplikasi berhasil diinstal
-  window.addEventListener('appinstalled', () => {
-    console.log('PWA was installed');
-    if (safariInstallPrompt) safariInstallPrompt.style.display = 'none'; // Sembunyikan banner
-  });
-
-  // Navigasi AJAX untuk GitHub Pages
-  document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('a');
-
-    links.forEach(link => {
-      const url = link.getAttribute('href');
-
-      // Pastikan hanya memproses tautan internal
-      if (url && (url.startsWith('/') || url.startsWith('./') || url.startsWith('../'))) {
-        link.addEventListener('click', (e) => {
-          e.preventDefault(); // Cegah reload halaman
-
-          // Muat halaman menggunakan fetch API
-          fetch(url)
-            .then(response => response.text())
-            .then(html => {
-              // Parsing HTML respon
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
-
-              // Ganti isi <body> dengan konten halaman baru
-              const newContent = doc.body.innerHTML;
-              document.body.innerHTML = newContent;
-
-              // Perbarui URL di address bar tanpa reload
-              history.pushState(null, '', url);
-
-              // Jalankan ulang script setelah navigasi (opsional)
-              console.log('Navigasi AJAX selesai untuk URL:', url);
-            })
-            .catch(error => {
-              console.error('Kesalahan saat navigasi:', error);
-            });
-        });
-      }
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .register('/serviceworker.js')
+    .then((registration) => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch((error) => {
+      console.log('Service Worker registration failed:', error);
     });
-  });
+}
 
-  // Tangani navigasi melalui tombol back/forward browser
-  window.addEventListener('popstate', () => {
-    location.reload(); // Reload halaman saat tombol back/forward ditekan
-  });
+// Deteksi mode standalone dengan lebih baik
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
 
+// Deteksi Safari
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+// Tangani banner untuk Safari
+document.addEventListener('DOMContentLoaded', () => {
+  const safariInstallPrompt = document.getElementById('safariInstallPrompt');
+
+  if (!isStandalone && isSafari && safariInstallPrompt) {
+    safariInstallPrompt.style.display = 'block'; // Tampilkan banner
+  }
+
+  if (isStandalone && safariInstallPrompt) {
+    safariInstallPrompt.style.display = 'none'; // Sembunyikan banner
+  }
+});
+
+// Deteksi saat aplikasi berhasil diinstal
+window.addEventListener('appinstalled', () => {
+  console.log('PWA berhasil diinstal');
+  const safariInstallPrompt = document.getElementById('safariInstallPrompt');
+  if (safariInstallPrompt) safariInstallPrompt.style.display = 'none'; // Sembunyikan notifikasi
+});
+
+// Navigasi AJAX untuk GitHub Pages atau Blogspot
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('a');
+
+  links.forEach((link) => {
+    const url = link.getAttribute('href');
+
+    // Tangani hanya tautan internal
+    if (url && (url.startsWith('/p/') || url.match(/\d{4}\/\d{2}\/.+\.html$/))) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Cegah reload halaman
+
+        // Navigasi AJAX
+        fetch(url)
+          .then((response) => response.text())
+          .then((html) => {
+            // Parsing halaman baru
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Ganti isi body tanpa reload
+            const newContent = doc.body.innerHTML;
+            document.body.innerHTML = newContent;
+
+            // Perbarui URL di address bar
+            history.pushState(null, '', url);
+
+            // Jalankan ulang script atau inisialisasi ulang
+            console.log('Navigasi ke:', url);
+          })
+          .catch((error) => console.error('Navigasi AJAX gagal:', error));
+      });
+    }
+  });
+});
+
+// Tangani tombol back/forward pada browser
+window.addEventListener('popstate', () => {
+  location.reload(); // Reload halaman saat back/forward
+});
