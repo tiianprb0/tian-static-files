@@ -84,19 +84,20 @@
   },
   "services": {
     "wellness_massage": [
-      { "name": "Foot Relax", "description": "Therapeutic Pressure on Point" },
-      { "name": "Foot SPA", "description": "Foot Relax with Scrub for a Soft & Fresh Result" },
-      { "name": "Relaxation Back Massage", "description": "Upper Dry Body Massage" },
-      { "name": "Aromatherapy Touch Massage", "description": "Traditional Javanese Essential Oil" },
-      { "name": "Aromatic Candle Massage", "description": "Lomi-Lomi Hawaiian Candle for Moisturizing skin" },
-      { "name": "Sport Massage", "description": "Stretching & Elasticity Massage" },
-      { "name": "Holistic Massage", "description": "Traditional Herbs & Spices Steamed Compress Ball" },
-      { "name": "Healing Stone Massage", "description": "Warm Natural Stones with Oil Traditional Massage" },
-      { "name": "Slimming-Fat Burn Massage", "description": "Burning Sensation at Flabby Area" },
-      { "name": "Detox Lymphatic Massage with Infrared Hot Blanket", "description": "Purge Toxins, Promotes Blood Circulation" },
-      { "name": "Body Scrub", "description": "" },
-      { "name": "Body Wrap", "description": "" },
-      { "name": "Hydrotherapy Bath", "description": "" }
+      { "nama": "Foot Relax", "deskripsi": "Tekanan terapeutik pada titik tertentu." },
+      { "nama": "Foot SPA", "deskripsi": "Foot Relax dengan scrub untuk hasil kulit yang lembut dan segar." },
+      { "nama": "Relaxation Back Massage", "deskripsi": "Pijat pada bagian atas tubuh tanpa minyak." },
+      { "nama": "Aromatherapy Touch Massage", "deskripsi": "Pijat dengan minyak esensial tradisional Jawa." },
+      { "nama": "Aromatic Candle Massage", "deskripsi": "Pijat dengan lilin Lomi-Lomi Hawaii untuk melembapkan kulit." },
+      { "nama": "Sport Massage", "deskripsi": "Pijat untuk peregangan dan elastisitas otot." },
+      { "nama": "Holistic Massage", "deskripsi": "Pijat dengan bola rempah-rempah tradisional yang dikukus." },
+      { "nama": "Healing Stone Massage", "deskripsi": "Pijat menggunakan batu alam hangat dan minyak tradisional." },
+      { "nama": "Slimming-Fat Burn Massage", "deskripsi": "Pijat dengan sensasi panas untuk area berlemak." },
+      { "nama": "Detox Lymphatic Massage with Infrared Hot Blanket", "deskripsi": "Membantu mengeluarkan racun dan meningkatkan sirkulasi darah." },
+      { "nama": "Body Scrub", "deskripsi": "Perawatan untuk mengangkat sel kulit mati." },
+      { "nama": "Body Wrap", "deskripsi": "Perawatan tubuh untuk membantu melembapkan kulit." },
+      { "nama": "Hydrotherapy Bath", "deskripsi": "Mandi relaksasi menggunakan terapi air." }
+
     ],
     "hair_services": [
       "Shampoo, Blow Dry & Styling",
