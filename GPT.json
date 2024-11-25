@@ -1,28 +1,152 @@
 {
-    "InformasiUmum": [
-        "ESKA memiliki 8 cabang Wellness Massage (Eska Nagoya Hill, Eska Mega Mall, Eska Grand Batam Mall, Eska Kepri Mall, Eska Bayfront Mall, Eska Wyndham Panbil, Eska Marriott, Grand Eska Wellness).",
-        "Jam buka seluruh outlet wellness kecuali Grand Eska Wellness dan Eska Marriott buka dari jam 10am ke 10pm setiap hari.",
-        "Untuk Eska Marriott dan Grand Eska Wellness, Jumat dan Sabtu buka dari jam 10am ke 12am, sisa hari sama.",
-        "Memiliki 1 cabang Aesthetic Clinic bernama Eska Aesthetic Clinic & MediSpa.",
-        "Kami memiliki dokter-dokter spesialis dengan pengalaman lebih dari 10 tahun."
+  "about": {
+    "established": 2008,
+    "mission": "Memberikan layanan perawatan kesehatan dan relaksasi yang holistik.",
+    "contact": {
+      "hotline": "https://wa.me/628117799333"
+    }
+  },
+  "branches": {
+    "wellness": [
+      "Eska Nagoya Hill",
+      "Eska Mega Mall",
+      "Eska Grand Batam Mall",
+      "Eska Bayfront Mall",
+      "Eska Kepri Mall",
+      "Eska Wyndham Panbil",
+      "Grand Eska Wellness",
+      "Eska Marriott"
     ],
-    "Lokasi": [
-        "Klinik kami berlokasi di Jalan Sehat No. 123, Jakarta.",
-        "Anda bisa menggunakan taksi atau ojek online dari bandara ke klinik kami."
-    ],
-    "Treatment": [
-        "Kami menawarkan treatment kecantikan, fisioterapi, dan konsultasi kesehatan."
-    ],
-    "Hotel": [
-        "Ya, terdapat Hotel Sehat yang berjarak 5 menit dari klinik kami."
-    ],
-    "Promo": [
-        "Kami sedang mengadakan promo diskon 20% untuk treatment kecantikan hingga akhir bulan."
-    ],
-    "Clinic": [
-        "Klinik kami dilengkapi dengan ruang perawatan modern, ruang konsultasi, dan area tunggu nyaman."
-    ],
-    "Transport": [
-        "Anda bisa menggunakan bus nomor 10 yang berhenti di depan klinik atau naik ojek online."
+    "aesthetic_clinic": ["Eska Aesthetic Clinic"],
+    "hotels": ["Eska Hotel", "Grand Eska Hotel & Suites"]
+  },
+  "locations": {
+    "Eska Nagoya Hill": {
+      "nearby": ["Nagoya Hill Mall", "BCS Mall", "Grand Batam Mall", "Ferry Terminal Harbour Bay"]
+    },
+    "Eska Grand Batam Mall": {
+      "nearby": ["Grand Batam Mall", "BCS Mall", "Ferry Terminal Harbour Bay"]
+    },
+    "Eska Mega Mall": {
+      "nearby": ["Ferry Terminal Batam Centre", "Mega Mall", "Pusat Kota Batam"]
+    },
+    "Eska Bayfront Mall": {
+      "nearby": ["Ferry Terminal Harbour Bay"]
+    },
+    "Eska Kepri Mall": {
+      "nearby": ["Kepri Mall", "Eska Hotel", "Montigo Resort"]
+    },
+    "Eska Wyndham Panbil": {
+      "nearby": ["Panbil Mall", "Wyndham Panbil Hotel", "Montigo Resort"]
+    },
+    "Grand Eska Wellness": {
+      "nearby": ["Ferry Terminal Harbour Bay", "Nagoya Hill Mall", "Grand Batam Mall", "BCS Mall", "Grand Eska Hotel & Suites"]
+    },
+    "Eska Marriott": {
+      "nearby": ["Ferry Terminal Harbour Bay", "Marriott Hotel"]
+    }
+  },
+  "operational_hours": {
+    "general": {
+      "open": "10am",
+      "close": "10pm",
+      "days": "Everyday"
+    },
+    "exceptions": [
+      {
+        "branch": ["Grand Eska Wellness", "Eska Marriott"],
+        "friday_saturday": {
+          "open": "10am",
+          "close": "12am"
+        },
+        "other_days": {
+          "open": "10am",
+          "close": "10pm"
+        }
+      }
     ]
+  },
+  "services": {
+    "wellness_massage": [
+      { "name": "Foot Relax", "description": "Therapeutic Pressure on Point" },
+      { "name": "Foot SPA", "description": "Foot Relax with Scrub for a Soft & Fresh Result" },
+      { "name": "Relaxation Back Massage", "description": "Upper Dry Body Massage" },
+      { "name": "Aromatherapy Touch Massage", "description": "Traditional Javanese Essential Oil" },
+      { "name": "Aromatic Candle Massage", "description": "Lomi-Lomi Hawaiian Candle for Moisturizing skin" },
+      { "name": "Sport Massage", "description": "Stretching & Elasticity Massage" },
+      { "name": "Holistic Massage", "description": "Traditional Herbs & Spices Steamed Compress Ball" },
+      { "name": "Healing Stone Massage", "description": "Warm Natural Stones with Oil Traditional Massage" },
+      { "name": "Slimming-Fat Burn Massage", "description": "Burning Sensation at Flabby Area" },
+      { "name": "Detox Lymphatic Massage with Infrared Hot Blanket", "description": "Purge Toxins, Promotes Blood Circulation" },
+      { "name": "Body Scrub", "description": "" },
+      { "name": "Body Wrap", "description": "" },
+      { "name": "Hydrotherapy Bath", "description": "" }
+    ],
+    "hair_services": [
+      "Shampoo, Blow Dry & Styling",
+      "Hair Manicure",
+      "Coloring",
+      "Coloring Plus",
+      "Highlight",
+      "Rebonding / Straight Diamond",
+      "Smoothing / Collagen Sculpting",
+      "Curl Wave Perm",
+      "Nano Japanese / Korean Perm"
+    ],
+    "hair_treatment": [
+      "4 Steps Hair Botox",
+      "Keratin Care",
+      "Anion Blue Nano Mist",
+      "Organic Care"
+    ],
+    "hair_spa": [
+      {
+        "name": "Hydratherapie Intense Moisture Cream",
+        "description": "For Normal to Dry & Coarse Hair"
+      },
+      {
+        "name": "Colorcaretherapie Protective Cream",
+        "description": "Deeply Moisturizes and Intensifies Shine for Color-Treated Hair"
+      },
+      {
+        "name": "Scalptherapie Invigorating Balm",
+        "description": "Invigorates Scalp and Conditions Hair with Kolanut & Mint"
+      }
+    ],
+    "hair_mask": [
+      {
+        "name": "Scalpure",
+        "description": "For Oily Scalp, Dandruff & Prevent Hair Loss. Naturally Soothes Irritation, Helps Regulate Sebum Production"
+      }
+    ]
+  },
+  "packages": {
+    "all_in": [
+      { "name": "2 in 1", "description": "The Natural Soothing Facial | Aromatherapy Touch Massage" },
+      { "name": "3 in 1", "description": "Hair Spa | Foot Relax | Aromatherapy Touch Massage" },
+      { "name": "4 in 1", "description": "Hair Spa | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
+      { "name": "5 in 1", "description": "Hair Spa | Classic Manicure & Pedicure | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
+      { "name": "6 in 1", "description": "Hair Spa | Classic Manicure & Pedicure | Foot Relax | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" }
+    ],
+    "express": [
+      { "name": "Hair Foot Spa", "description": "Hair Spa | Foot SPA with Scrub" },
+      { "name": "Head to Toe", "description": "Hair Spa | Foot Relax | Classic Manicure & Pedicure" },
+      { "name": "Head to Pretty Nail", "description": "Hair Spa | Classic Manicure & Pedicure" },
+      { "name": "Head to Shiny Nails", "description": "Hair Spa | Express Gel Polish Manicure & Pedicure" }
+    ],
+    "double_spa_indulgences": [
+      {
+        "name": "True Transformation for TWO",
+        "description": "Aromatherapy Touch Massage | Chocolate Body Scrub | Chocolate Body Masque | Chocolate Salt Relaxing Jacuzzi Bath | V-Spa Ratus for lady. Complimentary Drinks : Chocolate Drink"
+      },
+      {
+        "name": "Senses of Fragrance for TWO",
+        "description": "Healing Stone Massage | Aroma Ear Candling | Aromatic Coffee Body Scrub | Aromatic Coffee Body Masque | Coffee Salt Body Glow Jacuzzi Bath | V-Spa Ratus for lady. Complimentary Drinks : Aromatic Coffee Drink"
+      },
+      {
+        "name": "Keep Young Detox Spa for TWO",
+        "description": "Caviar Non-Surgical Facial | Detox Lymphatic Massage with Infrared Hot Blanket | Green Tea Body Scrub | Green Tea Body Masque | Green Tea Soak Jacuzzi Bath | V-Spa Ratus for lady | Hair Spa. Complimentary Drinks : Detox Drink"
+      }
+    ]
+  }
 }
