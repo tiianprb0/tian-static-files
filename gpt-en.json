@@ -1,72 +1,88 @@
 {
   "about": {
-    "established": 2008,
-    "mission": "Memberikan layanan perawatan kesehatan dan relaksasi yang holistik.",
+    "established_since": 2008,
+    "mission": "Providing holistic health, relaxation, and spa services for mind and body.",
     "contact": {
-      "hotline": "https://wa.me/628117799333"
+      "hotline": "https://wa.me/628117799333",
+      "keywords": ["contact", "hotline", "WhatsApp", "customer service", "support number"]
     }
   },
   "branches": {
     "wellness": [
-      "Eska Nagoya Hill",
-      "Eska Mega Mall",
-      "Eska Grand Batam Mall",
-      "Eska Bayfront Mall",
-      "Eska Kepri Mall",
-      "Eska Wyndham Panbil",
-      "Grand Eska Wellness",
-      "Eska Marriott"
+      { "name": "Eska Nagoya Hill", "keywords": ["Nagoya", "Hill", "spa", "relax", "wellness center"] },
+      { "name": "Eska Mega Mall", "keywords": ["Mega", "Mall", "relaxation", "spa", "wellness services"] },
+      { "name": "Eska Grand Batam Mall", "keywords": ["Grand Batam", "Mall", "relax", "spa", "wellness experience"] },
+      { "name": "Eska Bayfront Mall", "keywords": ["Bayfront", "Mall", "relaxation", "spa", "wellness therapy"] },
+      { "name": "Eska Kepri Mall", "keywords": ["Kepri", "Mall", "spa", "relaxing", "wellness programs"] },
+      { "name": "Eska Wyndham Panbil", "keywords": ["Wyndham", "Panbil", "relaxation", "spa", "wellness retreat"] },
+      { "name": "Grand Eska Wellness", "keywords": ["Grand Eska", "Wellness", "relax", "spa", "holistic therapy"] },
+      { "name": "Eska Marriott", "keywords": ["Marriott", "hotel", "relax", "spa", "luxury wellness"] }
     ],
-    "aesthetic_clinic": ["Eska Aesthetic Clinic"],
-    "hotels": ["Eska Hotel", "Grand Eska Hotel & Suites"]
+    "aesthetic_clinic": [
+      { "name": "Eska Aesthetic Clinic", "keywords": ["aesthetic", "skin clinic", "beauty care", "facial treatment"] }
+    ],
+    "hotel": [
+      { "name": "Eska Hotel", "keywords": ["hotel", "lodging", "Eska", "stay"] },
+      { "name": "Grand Eska Hotel & Suites", "keywords": ["hotel", "suites", "lodging", "Grand Eska"] }
+    ]
   },
-  "locations": {
+  "location": {
     "Eska Nagoya Hill": {
-      "nearby": ["Nagoya Hill Mall", "BCS Mall", "Grand Batam Mall", "Ferry Terminal Harbour Bay"]
+      "nearby": ["Nagoya Hill Mall", "BCS Mall", "Grand Batam Mall", "Ferry Terminal Harbour Bay"],
+      "keywords": ["close to", "mall", "ferry terminal", "Harbour Bay"]
     },
     "Eska Grand Batam Mall": {
-      "nearby": ["Grand Batam Mall", "BCS Mall", "Ferry Terminal Harbour Bay"]
+      "nearby": ["Grand Batam Mall", "BCS Mall", "Ferry Terminal Harbour Bay"],
+      "keywords": ["mall", "ferry terminal", "Harbour Bay area"]
     },
     "Eska Mega Mall": {
-      "nearby": ["Ferry Terminal Batam Centre", "Mega Mall", "Pusat Kota Batam"]
+      "nearby": ["Ferry Terminal Batam Centre", "Mega Mall", "Batam City Center"],
+      "keywords": ["Batam Centre", "city area", "Mega Mall location"]
     },
     "Eska Bayfront Mall": {
-      "nearby": ["Ferry Terminal Harbour Bay"]
+      "nearby": ["Ferry Terminal Harbour Bay"],
+      "keywords": ["Bayfront", "mall", "ferry terminal", "Harbour Bay vicinity"]
     },
     "Eska Kepri Mall": {
-      "nearby": ["Kepri Mall", "Eska Hotel", "Montigo Resort"]
+      "nearby": ["Kepri Mall", "Eska Hotel", "Montigo Resort"],
+      "keywords": ["Kepri area", "mall", "near Montigo", "Eska lodging"]
     },
     "Eska Wyndham Panbil": {
-      "nearby": ["Panbil Mall", "Wyndham Panbil Hotel", "Montigo Resort"]
+      "nearby": ["Panbil Mall", "Wyndham Panbil Hotel", "Montigo Resort"],
+      "keywords": ["Panbil", "mall nearby", "Montigo location", "Wyndham hotel"]
     },
     "Grand Eska Wellness": {
-      "nearby": ["Ferry Terminal Harbour Bay", "Nagoya Hill Mall", "Grand Batam Mall", "BCS Mall", "Grand Eska Hotel & Suites"]
+      "nearby": ["Ferry Terminal Harbour Bay", "Nagoya Hill Mall", "Grand Batam Mall", "BCS Mall", "Grand Eska Hotel & Suites"],
+      "keywords": ["Grand Eska location", "ferry terminal", "mall access", "Harbour Bay"]
     },
     "Eska Marriott": {
-      "nearby": ["Ferry Terminal Harbour Bay", "Marriott Hotel"]
+      "nearby": ["Ferry Terminal Harbour Bay", "Marriott Hotel"],
+      "keywords": ["Marriott", "ferry terminal", "Harbour Bay", "luxury hotel"]
     }
   },
   "operational_hours": {
     "general": {
-      "open": "10am",
-      "close": "10pm",
-      "days": "Everyday"
+      "open": "10:00 AM",
+      "close": "10:00 PM",
+      "days": "Daily",
+      "keywords": ["opening hours", "operating time", "business hours", "schedule"]
     },
     "exceptions": [
       {
-        "branch": ["Grand Eska Wellness", "Eska Marriott"],
+        "branches": ["Grand Eska Wellness", "Eska Marriott"],
         "friday_saturday": {
-          "open": "10am",
-          "close": "12am"
+          "open": "10:00 AM",
+          "close": "12:00 AM"
         },
         "other_days": {
-          "open": "10am",
-          "close": "10pm"
-        }
+          "open": "10:00 AM",
+          "close": "10:00 PM"
+        },
+        "keywords": ["late hours", "Marriott", "Grand Eska", "extended schedule"]
       }
     ]
   },
-  "services": {
+  "services_treatment": {
     "wellness_massage": [
       { "name": "Foot Relax", "description": "Therapeutic Pressure on Point" },
       { "name": "Foot SPA", "description": "Foot Relax with Scrub for a Soft & Fresh Result" },
