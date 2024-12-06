@@ -3,7 +3,7 @@
     "berdiri_sejak": 2008,
     "misi": "Memberikan layanan perawatan kesehatan, relaksasi, dan spa yang holistik untuk tubuh dan pikiran.",
     "kontak": {
-      "hotline": "https://wa.me/628117799333",
+      "nomor_wa": "https://wa.me/628117799333",
       "kata_kunci": ["hubungi", "kontak", "whatsapp", "layanan pelanggan", "nomor telepon"]
     }
   },
@@ -12,203 +12,381 @@
       "nama": "Eska Nagoya Hill",
       "jenis": "wellness",
       "kata_kunci": ["Nagoya", "Hill", "spa", "relaksasi", "wellness"],
-      "lokasi_dekat": ["Nagoya Hill Mall", "BCS Mall", "Grand Batam Mall", "Ferry Terminal Harbour Bay"],
-      "kata_kunci_lokasi": ["dekat", "mall", "terminal ferry", "harbour bay"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": null
-      }
+      },
+      "lokasi_dekat": ["Nagoya Hill Mall", "BCS Mall", "Grand Batam Mall", "Ferry Terminal Harbour Bay"],
+      "kata_kunci_lokasi": ["dekat", "mall", "terminal ferry", "harbour bay"]
     },
     {
       "nama": "Eska Mega Mall",
       "jenis": "wellness",
       "kata_kunci": ["Mega", "Mall", "relaksasi", "spa", "wellness"],
-      "lokasi_dekat": ["Ferry Terminal Batam Centre", "Mega Mall", "Pusat Kota Batam"],
-      "kata_kunci_lokasi": ["batam centre", "lokasi", "mega mall", "kota batam"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": null
-      }
+      },
+      "lokasi_dekat": ["Ferry Terminal Batam Centre", "Mega Mall", "Pusat Kota Batam"],
+      "kata_kunci_lokasi": ["batam centre", "lokasi", "mega mall", "kota batam"]
     },
     {
       "nama": "Eska Grand Batam Mall",
       "jenis": "wellness",
       "kata_kunci": ["Grand Batam", "Mall", "relaksasi", "spa", "wellness"],
-      "lokasi_dekat": ["Grand Batam Mall", "BCS Mall", "Ferry Terminal Harbour Bay"],
-      "kata_kunci_lokasi": ["mall", "terminal ferry", "harbour bay"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": null
-      }
+      },
+      "lokasi_dekat": ["Grand Batam Mall", "BCS Mall", "Ferry Terminal Harbour Bay"],
+      "kata_kunci_lokasi": ["mall", "terminal ferry", "harbour bay"]
     },
     {
       "nama": "Eska Bayfront Mall",
       "jenis": "wellness",
       "kata_kunci": ["Bayfront", "Mall", "relaksasi", "spa", "wellness"],
-      "lokasi_dekat": ["Ferry Terminal Harbour Bay"],
-      "kata_kunci_lokasi": ["bayfront", "mall", "terminal ferry", "harbour bay"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": null
-      }
+      },
+      "lokasi_dekat": ["Ferry Terminal Harbour Bay"],
+      "kata_kunci_lokasi": ["bayfront", "mall", "terminal ferry", "harbour bay"]
     },
     {
       "nama": "Eska Kepri Mall",
       "jenis": "wellness",
       "kata_kunci": ["Kepri", "Mall", "relaksasi", "spa", "wellness"],
-      "lokasi_dekat": ["Kepri Mall", "Eska Hotel", "Montigo Resort"],
-      "kata_kunci_lokasi": ["kepri", "mall", "hotel", "montigo"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": null
-      }
+      },
+      "lokasi_dekat": ["Kepri Mall", "Eska Hotel", "Montigo Resort"],
+      "kata_kunci_lokasi": ["kepri", "mall", "hotel", "montigo"]
     },
     {
       "nama": "Eska Wyndham Panbil",
       "jenis": "wellness",
       "kata_kunci": ["Wyndham", "Panbil", "relaksasi", "spa", "wellness"],
-      "lokasi_dekat": ["Panbil Mall", "Wyndham Panbil Hotel", "Montigo Resort"],
-      "kata_kunci_lokasi": ["panbil", "hotel", "mall", "montigo"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": null
-      }
+      },
+      "lokasi_dekat": ["Panbil Mall", "Wyndham Panbil Hotel", "Montigo Resort"],
+      "kata_kunci_lokasi": ["panbil", "hotel", "mall", "montigo"]
     },
     {
       "nama": "Grand Eska Wellness",
       "jenis": "wellness",
       "kata_kunci": ["Grand Eska", "Wellness", "relaksasi", "spa", "wellness"],
-      "lokasi_dekat": ["Ferry Terminal Harbour Bay", "Nagoya Hill Mall", "Grand Batam Mall", "BCS Mall", "Grand Eska Hotel & Suites"],
-      "kata_kunci_lokasi": ["grand eska", "terminal ferry", "mall", "harbour bay"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": {
           "cabang": ["Grand Eska Wellness", "Eska Marriott"],
-          "jumat_sabtu": { "buka": "10.00", "tutup": "24.00" },
-          "hari_lain": { "buka": "10.00", "tutup": "22.00" }
+          "jumat_sabtu": {
+            "buka": "10.00",
+            "tutup": "24.00"
+          },
+          "hari_lain": {
+            "buka": "10.00",
+            "tutup": "22.00"
+          }
         }
-      }
+      },
+      "lokasi_dekat": ["Ferry Terminal Harbour Bay", "Nagoya Hill Mall", "Grand Batam Mall", "BCS Mall", "Grand Eska Hotel & Suites"],
+      "kata_kunci_lokasi": ["grand eska", "terminal ferry", "mall", "harbour bay"]
     },
     {
       "nama": "Eska Marriott",
       "jenis": "wellness",
       "kata_kunci": ["Marriott", "hotel", "relaksasi", "spa", "wellness"],
-      "lokasi_dekat": ["Ferry Terminal Harbour Bay", "Marriott Hotel"],
-      "kata_kunci_lokasi": ["marriott", "terminal ferry", "hotel", "harbour bay"],
       "jam_operasional": {
-        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "umum": {
+          "buka": "10.00",
+          "tutup": "22.00",
+          "hari": "Setiap hari"
+        },
         "pengecualian": {
           "cabang": ["Grand Eska Wellness", "Eska Marriott"],
-          "jumat_sabtu": { "buka": "10.00", "tutup": "24.00" },
-          "hari_lain": { "buka": "10.00", "tutup": "22.00" }
+          "jumat_sabtu": {
+            "buka": "10.00",
+            "tutup": "24.00"
+          },
+          "hari_lain": {
+            "buka": "10.00",
+            "tutup": "22.00"
+          }
         }
-      }
+      },
+      "lokasi_dekat": ["Ferry Terminal Harbour Bay", "Marriott Hotel"],
+      "kata_kunci_lokasi": ["marriott", "terminal ferry", "hotel", "harbour bay"]
     },
     {
       "nama": "Eska Aesthetic Clinic",
       "jenis": "aesthetic_clinic",
       "kata_kunci": ["aesthetic", "klinik kecantikan", "perawatan kulit", "wajah"],
+      "jam_operasional": null,
       "lokasi_dekat": [],
-      "kata_kunci_lokasi": [],
-      "jam_operasional": null
+      "kata_kunci_lokasi": []
     },
     {
       "nama": "Eska Hotel",
       "jenis": "hotel",
       "kata_kunci": ["hotel", "penginapan", "Eska"],
+      "jam_operasional": null,
       "lokasi_dekat": [],
-      "kata_kunci_lokasi": [],
-      "jam_operasional": null
+      "kata_kunci_lokasi": []
     },
     {
       "nama": "Grand Eska Hotel & Suites",
       "jenis": "hotel",
       "kata_kunci": ["hotel", "suites", "penginapan", "Grand Eska"],
+      "jam_operasional": null,
       "lokasi_dekat": [],
-      "kata_kunci_lokasi": [],
-      "jam_operasional": null
+      "kata_kunci_lokasi": []
     }
   ],
   "services": {
     "wellness_massage": [
-      { "nama": "Foot Relax", "deskripsi": "Tekanan terapeutik pada titik tertentu." },
-      { "nama": "Foot SPA", "deskripsi": "Foot Relax dengan scrub untuk hasil kulit yang lembut dan segar." },
-      { "nama": "Relaxation Back Massage", "deskripsi": "Pijat pada bagian atas tubuh tanpa minyak." },
-      { "nama": "Aromatherapy Touch Massage", "deskripsi": "Pijat dengan minyak esensial tradisional Jawa." },
-      { "nama": "Aromatic Candle Massage", "deskripsi": "Pijat dengan lilin Lomi-Lomi Hawaii untuk melembapkan kulit." },
-      { "nama": "Sport Massage", "deskripsi": "Pijat untuk peregangan dan elastisitas otot." },
-      { "nama": "Holistic Massage", "deskripsi": "Pijat dengan bola rempah-rempah tradisional yang dikukus." },
-      { "nama": "Healing Stone Massage", "deskripsi": "Pijat menggunakan batu alam hangat dan minyak tradisional." },
-      { "nama": "Slimming-Fat Burn Massage", "deskripsi": "Pijat dengan sensasi panas untuk area berlemak." },
-      { "nama": "Detox Lymphatic Massage with Infrared Hot Blanket", "deskripsi": "Membantu mengeluarkan racun dan meningkatkan sirkulasi darah." },
-      { "nama": "Body Scrub", "deskripsi": "Perawatan untuk mengangkat sel kulit mati." },
-      { "nama": "Body Wrap", "deskripsi": "Perawatan tubuh untuk membantu melembapkan kulit." },
-      { "nama": "Hydrotherapy Bath", "deskripsi": "Mandi relaksasi menggunakan terapi air." }
+      {
+        "nama": "Foot Relax",
+        "deskripsi": "Tekanan terapeutik pada titik tertentu.",
+        "kata_kunci": ["foot", "relax", "pijat"]
+      },
+      {
+        "nama": "Foot SPA",
+        "deskripsi": "Foot Relax dengan scrub untuk hasil kulit yang lembut dan segar.",
+        "kata_kunci": ["foot spa", "scrub", "kulit lembut"]
+      },
+      {
+        "nama": "Relaxation Back Massage",
+        "deskripsi": "Pijat pada bagian atas tubuh tanpa minyak.",
+        "kata_kunci": ["relaxation", "back massage", "pijat tanpa minyak"]
+      },
+      {
+        "nama": "Aromatherapy Touch Massage",
+        "deskripsi": "Pijat dengan minyak esensial tradisional Jawa.",
+        "kata_kunci": ["aromatherapy", "pijat", "minyak esensial"]
+      },
+      {
+        "nama": "Aromatic Candle Massage",
+        "deskripsi": "Pijat dengan lilin Lomi-Lomi Hawaii untuk melembapkan kulit.",
+        "kata_kunci": ["aromatic candle", "pijat lilin", "melembapkan kulit"]
+      },
+      {
+        "nama": "Sport Massage",
+        "deskripsi": "Pijat untuk peregangan dan elastisitas otot.",
+        "kata_kunci": ["sport", "massage", "otot"]
+      },
+      {
+        "nama": "Holistic Massage",
+        "deskripsi": "Pijat dengan bola rempah-rempah tradisional yang dikukus.",
+        "kata_kunci": ["holistic", "pijat", "bola rempah"]
+      },
+      {
+        "nama": "Healing Stone Massage",
+        "deskripsi": "Pijat menggunakan batu alam hangat dan minyak tradisional.",
+        "kata_kunci": ["healing stone", "pijat batu alam", "minyak tradisional"]
+      },
+      {
+        "nama": "Slimming-Fat Burn Massage",
+        "deskripsi": "Pijat dengan sensasi panas untuk area berlemak.",
+        "kata_kunci": ["slimming", "fat burn", "pijat panas"]
+      },
+      {
+        "nama": "Detox Lymphatic Massage with Infrared Hot Blanket",
+        "deskripsi": "Membantu mengeluarkan racun dan meningkatkan sirkulasi darah.",
+        "kata_kunci": ["detox", "lymphatic", "infrared", "hot blanket"]
+      },
+      {
+        "nama": "Body Scrub",
+        "deskripsi": "Perawatan untuk mengangkat sel kulit mati.",
+        "kata_kunci": ["body scrub", "sel kulit mati", "perawatan kulit"]
+      },
+      {
+        "nama": "Body Wrap",
+        "deskripsi": "Perawatan tubuh untuk membantu melembapkan kulit.",
+        "kata_kunci": ["body wrap", "melembapkan kulit", "perawatan tubuh"]
+      },
+      {
+        "nama": "Hydrotherapy Bath",
+        "deskripsi": "Mandi relaksasi menggunakan terapi air.",
+        "kata_kunci": ["hydrotherapy", "mandi relaksasi", "terapi air"]
+      }
     ],
     "hair_services": [
-      "Shampoo, Blow Dry & Styling",
-      "Hair Manicure",
-      "Coloring",
-      "Coloring Plus",
-      "Highlight",
-      "Rebonding / Straight Diamond",
-      "Smoothing / Collagen Sculpting",
-      "Curl Wave Perm",
-      "Nano Japanese / Korean Perm"
+      {
+        "nama": "Shampoo, Blow Dry & Styling",
+        "kata_kunci": ["shampoo", "blow dry", "styling"]
+      },
+      {
+        "nama": "Hair Manicure",
+        "kata_kunci": ["hair manicure", "perawatan rambut"]
+      },
+      {
+        "nama": "Coloring",
+        "kata_kunci": ["coloring", "pewarnaan rambut"]
+      },
+      {
+        "nama": "Coloring Plus",
+        "kata_kunci": ["coloring plus", "pewarnaan rambut plus"]
+      },
+      {
+        "nama": "Highlight",
+        "kata_kunci": ["highlight", "penyorotan rambut"]
+      },
+      {
+        "nama": "Rebonding / Straight Diamond",
+        "kata_kunci": ["rebonding", "straight diamond", "rambut lurus"]
+      },
+      {
+        "nama": "Smoothing / Collagen Sculpting",
+        "kata_kunci": ["smoothing", "collagen sculpting", "perataan rambut"]
+      },
+      {
+        "nama": "Curl Wave Perm",
+        "kata_kunci": ["curl wave perm", "permanen gelombang"]
+      },
+      {
+        "nama": "Nano Japanese / Korean Perm",
+        "kata_kunci": ["nano perm", "japanese perm", "korean perm", "permanen rambut"]
+      }
     ],
     "hair_treatment": [
-      "4 Steps Hair Botox",
-      "Keratin Care",
-      "Anion Blue Nano Mist",
-      "Organic Care"
+      {
+        "nama": "4 Steps Hair Botox",
+        "kata_kunci": ["hair botox", "perawatan rambut"]
+      },
+      {
+        "nama": "Keratin Care",
+        "kata_kunci": ["keratin care", "perawatan keratin"]
+      },
+      {
+        "nama": "Anion Blue Nano Mist",
+        "kata_kunci": ["anion blue", "nano mist", "perawatan rambut"]
+      },
+      {
+        "nama": "Organic Care",
+        "kata_kunci": ["organic care", "perawatan organik"]
+      }
     ],
     "hair_spa": [
       {
         "nama": "Hydratherapie Intense Moisture Cream",
-        "deskripsi": "For Normal to Dry & Coarse Hair"
+        "deskripsi": "For Normal to Dry & Coarse Hair",
+        "kata_kunci": ["hydratherapie", "intense moisture", "hair cream"]
       },
       {
         "nama": "Colorcaretherapie Protective Cream",
-        "deskripsi": "Deeply Moisturizes and Intensifies Shine for Color-Treated Hair"
+        "deskripsi": "Deeply Moisturizes and Intensifies Shine for Color-Treated Hair",
+        "kata_kunci": ["colorcaretherapie", "protective cream", "color-treated hair"]
       },
       {
         "nama": "Scalptherapie Invigorating Balm",
-        "deskripsi": "Invigorates Scalp and Conditions Hair with Kolanut & Mint"
+        "deskripsi": "Invigorates Scalp and Conditions Hair with Kolanut & Mint",
+        "kata_kunci": ["scalptherapie", "invigorating balm", "scalp care"]
       }
     ],
     "hair_mask": [
       {
         "nama": "Scalpure",
-        "deskripsi": "For Oily Scalp, Dandruff & Prevent Hair Loss. Naturally Soothes Irritation, Helps Regulate Sebum Production"
+        "deskripsi": "For Oily Scalp, Dandruff & Prevent Hair Loss. Naturally Soothes Irritation, Helps Regulate Sebum Production",
+        "kata_kunci": ["scalpure", "hair mask", "oily scalp", "dandruff", "hair loss"]
       }
     ]
   },
   "packages": {
     "all_in": [
-      { "nama": "2 in 1", "deskripsi": "The Natural Soothing Facial | Aromatherapy Touch Massage" },
-      { "nama": "3 in 1", "deskripsi": "Hair Spa | Foot Relax | Aromatherapy Touch Massage" },
-      { "nama": "4 in 1", "deskripsi": "Hair Spa | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
-      { "nama": "5 in 1", "deskripsi": "Hair Spa | Classic Manicure & Pedicure | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
-      { "nama": "6 in 1", "deskripsi": "Hair Spa | Classic Manicure & Pedicure | Foot Relax | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" }
+      {
+        "nama": "2 in 1",
+        "deskripsi": "The Natural Soothing Facial | Aromatherapy Touch Massage",
+        "kata_kunci": ["2 in 1", "facial", "aromatherapy massage"]
+      },
+      {
+        "nama": "3 in 1",
+        "deskripsi": "Hair Spa | Foot Relax | Aromatherapy Touch Massage",
+        "kata_kunci": ["3 in 1", "hair spa", "foot relax", "aromatherapy massage"]
+      },
+      {
+        "nama": "4 in 1",
+        "deskripsi": "Hair Spa | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque",
+        "kata_kunci": ["4 in 1", "hair spa", "aromatherapy massage", "body scrub", "body masque"]
+      },
+      {
+        "nama": "5 in 1",
+        "deskripsi": "Hair Spa | Classic Manicure & Pedicure | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque",
+        "kata_kunci": ["5 in 1", "hair spa", "classic manicure", "pedicure", "aromatherapy massage", "body scrub", "body masque"]
+      },
+      {
+        "nama": "6 in 1",
+        "deskripsi": "Hair Spa | Classic Manicure & Pedicure | Foot Relax | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque",
+        "kata_kunci": ["6 in 1", "hair spa", "classic manicure", "pedicure", "foot relax", "aromatherapy massage", "body scrub", "body masque"]
+      }
     ],
     "express": [
-      { "nama": "Hair Foot Spa", "deskripsi": "Hair Spa | Foot SPA dengan Scrub" },
-      { "nama": "Head to Toe", "deskripsi": "Hair Spa | Foot Relax | Classic Manicure & Pedicure" },
-      { "nama": "Head to Pretty Nail", "deskripsi": "Hair Spa | Classic Manicure & Pedicure" },
-      { "nama": "Head to Shiny Nails", "deskripsi": "Hair Spa | Express Gel Polish Manicure & Pedicure" }
+      {
+        "nama": "Hair Foot Spa",
+        "deskripsi": "Hair Spa | Foot SPA dengan Scrub",
+        "kata_kunci": ["hair foot spa", "hair spa", "foot spa", "scrub"]
+      },
+      {
+        "nama": "Head to Toe",
+        "deskripsi": "Hair Spa | Foot Relax | Classic Manicure & Pedicure",
+        "kata_kunci": ["head to toe", "hair spa", "foot relax", "classic manicure", "pedicure"]
+      },
+      {
+        "nama": "Head to Pretty Nail",
+        "deskripsi": "Hair Spa | Classic Manicure & Pedicure",
+        "kata_kunci": ["head to pretty nail", "hair spa", "classic manicure", "pedicure"]
+      },
+      {
+        "nama": "Head to Shiny Nails",
+        "deskripsi": "Hair Spa | Express Gel Polish Manicure & Pedicure",
+        "kata_kunci": ["head to shiny nails", "hair spa", "express gel polish", "manicure", "pedicure"]
+      }
     ],
     "double_spa_indulgences": [
       {
         "nama": "True Transformation for TWO",
-        "deskripsi": "Aromatherapy Touch Massage | Chocolate Body Scrub | Chocolate Body Masque | Chocolate Salt Relaxing Jacuzzi Bath | V-Spa Ratus untuk wanita. Minuman Complimentary: Chocolate Drink"
+        "deskripsi": "Aromatherapy Touch Massage | Chocolate Body Scrub | Chocolate Body Masque | Chocolate Salt Relaxing Jacuzzi Bath | V-Spa Ratus untuk wanita. Minuman Complimentary: Chocolate Drink",
+        "kata_kunci": ["true transformation for two", "aromatherapy massage", "chocolate body scrub", "chocolate body masque", "jacuzzi bath", "v-spa", "chocolate drink"]
       },
       {
         "nama": "Senses of Fragrance for TWO",
-        "deskripsi": "Healing Stone Massage | Aroma Ear Candling | Aromatic Coffee Body Scrub | Aromatic Coffee Body Masque | Coffee Salt Body Glow Jacuzzi Bath | V-Spa Ratus untuk wanita. Minuman Complimentary: Aromatic Coffee Drink"
+        "deskripsi": "Healing Stone Massage | Aroma Ear Candling | Aromatic Coffee Body Scrub | Aromatic Coffee Body Masque | Coffee Salt Body Glow Jacuzzi Bath | V-Spa Ratus untuk wanita. Minuman Complimentary: Aromatic Coffee Drink",
+        "kata_kunci": ["senses of fragrance for two", "healing stone massage", "aroma ear candling", "aromatic coffee body scrub", "aromatic coffee body masque", "coffee salt body glow", "jacuzzi bath", "v-spa", "aromatic coffee drink"]
       },
       {
         "nama": "Keep Young Detox Spa for TWO",
-        "deskripsi": "Caviar Non-Surgical Facial | Detox Lymphatic Massage with Infrared Hot Blanket | Green Tea Body Scrub | Green Tea Body Masque | Green Tea Soak Jacuzzi Bath | V-Spa Ratus untuk wanita | Hair Spa. Minuman Complimentary: Detox Drink"
+        "deskripsi": "Caviar Non-Surgical Facial | Detox Lymphatic Massage with Infrared Hot Blanket | Green Tea Body Scrub | Green Tea Body Masque | Green Tea Soak Jacuzzi Bath | V-Spa Ratus untuk wanita | Hair Spa. Minuman Complimentary: Detox Drink",
+        "kata_kunci": ["keep young detox spa for two", "caviar facial", "detox lymphatic massage", "infrared hot blanket", "green tea body scrub", "green tea body masque", "green tea soak", "jacuzzi bath", "v-spa", "hair spa", "detox drink"]
       }
     ]
   }
