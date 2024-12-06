@@ -7,81 +7,128 @@
       "kata_kunci": ["hubungi", "kontak", "whatsapp", "layanan pelanggan", "nomor telepon"]
     }
   },
-  "cabang": {
-    "wellness": [
-      { "nama": "Eska Nagoya Hill", "kata_kunci": ["Nagoya", "Hill", "spa", "relaksasi", "wellness"] },
-      { "nama": "Eska Mega Mall", "kata_kunci": ["Mega", "Mall", "relaksasi", "spa", "wellness"] },
-      { "nama": "Eska Grand Batam Mall", "kata_kunci": ["Grand Batam", "Mall", "relaksasi", "spa", "wellness"] },
-      { "nama": "Eska Bayfront Mall", "kata_kunci": ["Bayfront", "Mall", "relaksasi", "spa", "wellness"] },
-      { "nama": "Eska Kepri Mall", "kata_kunci": ["Kepri", "Mall", "relaksasi", "spa", "wellness"] },
-      { "nama": "Eska Wyndham Panbil", "kata_kunci": ["Wyndham", "Panbil", "relaksasi", "spa", "wellness"] },
-      { "nama": "Grand Eska Wellness", "kata_kunci": ["Grand Eska", "Wellness", "relaksasi", "spa", "wellness"] },
-      { "nama": "Eska Marriott", "kata_kunci": ["Marriott", "hotel", "relaksasi", "spa", "wellness"] }
-    ],
-    "aesthetic_clinic": [
-      { "nama": "Eska Aesthetic Clinic", "kata_kunci": ["aesthetic", "klinik kecantikan", "perawatan kulit", "wajah"] }
-    ],
-    "hotel": [
-      { "nama": "Eska Hotel", "kata_kunci": ["hotel", "penginapan", "Eska"] },
-      { "nama": "Grand Eska Hotel & Suites", "kata_kunci": ["hotel", "suites", "penginapan", "Grand Eska"] }
-    ]
-  },
-  "lokasi": {
-    "Eska Nagoya Hill": {
-      "dekat": ["Nagoya Hill Mall", "BCS Mall", "Grand Batam Mall", "Ferry Terminal Harbour Bay"],
-      "kata_kunci": ["dekat", "mall", "terminal ferry", "harbour bay"]
-    },
-    "Eska Grand Batam Mall": {
-      "dekat": ["Grand Batam Mall", "BCS Mall", "Ferry Terminal Harbour Bay"],
-      "kata_kunci": ["mall", "terminal ferry", "harbour bay"]
-    },
-    "Eska Mega Mall": {
-      "dekat": ["Ferry Terminal Batam Centre", "Mega Mall", "Pusat Kota Batam"],
-      "kata_kunci": ["batam centre", "lokasi", "mega mall", "kota batam"]
-    },
-    "Eska Bayfront Mall": {
-      "dekat": ["Ferry Terminal Harbour Bay"],
-      "kata_kunci": ["bayfront", "mall", "terminal ferry", "harbour bay"]
-    },
-    "Eska Kepri Mall": {
-      "dekat": ["Kepri Mall", "Eska Hotel", "Montigo Resort"],
-      "kata_kunci": ["kepri", "mall", "hotel", "montigo"]
-    },
-    "Eska Wyndham Panbil": {
-      "dekat": ["Panbil Mall", "Wyndham Panbil Hotel", "Montigo Resort"],
-      "kata_kunci": ["panbil", "hotel", "mall", "montigo"]
-    },
-    "Grand Eska Wellness": {
-      "dekat": ["Ferry Terminal Harbour Bay", "Nagoya Hill Mall", "Grand Batam Mall", "BCS Mall", "Grand Eska Hotel & Suites"],
-      "kata_kunci": ["grand eska", "terminal ferry", "mall", "harbour bay"]
-    },
-    "Eska Marriott": {
-      "dekat": ["Ferry Terminal Harbour Bay", "Marriott Hotel"],
-      "kata_kunci": ["marriott", "terminal ferry", "hotel", "harbour bay"]
-    }
-  },
-  "jam_operasional": {
-    "umum": {
-      "buka": "10.00",
-      "tutup": "22.00",
-      "hari": "Setiap hari",
-      "kata_kunci": ["jam buka", "jam operasional", "waktu kerja", "jadwal"]
-    },
-    "pengecualian": [
-      {
-        "cabang": ["Grand Eska Wellness", "Eska Marriott"],
-        "jumat_sabtu": {
-          "buka": "10.00",
-          "tutup": "24.00"
-        },
-        "hari_lain": {
-          "buka": "10.00",
-          "tutup": "22.00"
-        },
-        "kata_kunci": ["jam buka", "jam tutup", "marriott", "grand eska", "jadwal"]
+  "cabang": [
+    {
+      "nama": "Eska Nagoya Hill",
+      "jenis": "wellness",
+      "kata_kunci": ["Nagoya", "Hill", "spa", "relaksasi", "wellness"],
+      "lokasi_dekat": ["Nagoya Hill Mall", "BCS Mall", "Grand Batam Mall", "Ferry Terminal Harbour Bay"],
+      "kata_kunci_lokasi": ["dekat", "mall", "terminal ferry", "harbour bay"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": null
       }
-    ]
-  },
+    },
+    {
+      "nama": "Eska Mega Mall",
+      "jenis": "wellness",
+      "kata_kunci": ["Mega", "Mall", "relaksasi", "spa", "wellness"],
+      "lokasi_dekat": ["Ferry Terminal Batam Centre", "Mega Mall", "Pusat Kota Batam"],
+      "kata_kunci_lokasi": ["batam centre", "lokasi", "mega mall", "kota batam"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": null
+      }
+    },
+    {
+      "nama": "Eska Grand Batam Mall",
+      "jenis": "wellness",
+      "kata_kunci": ["Grand Batam", "Mall", "relaksasi", "spa", "wellness"],
+      "lokasi_dekat": ["Grand Batam Mall", "BCS Mall", "Ferry Terminal Harbour Bay"],
+      "kata_kunci_lokasi": ["mall", "terminal ferry", "harbour bay"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": null
+      }
+    },
+    {
+      "nama": "Eska Bayfront Mall",
+      "jenis": "wellness",
+      "kata_kunci": ["Bayfront", "Mall", "relaksasi", "spa", "wellness"],
+      "lokasi_dekat": ["Ferry Terminal Harbour Bay"],
+      "kata_kunci_lokasi": ["bayfront", "mall", "terminal ferry", "harbour bay"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": null
+      }
+    },
+    {
+      "nama": "Eska Kepri Mall",
+      "jenis": "wellness",
+      "kata_kunci": ["Kepri", "Mall", "relaksasi", "spa", "wellness"],
+      "lokasi_dekat": ["Kepri Mall", "Eska Hotel", "Montigo Resort"],
+      "kata_kunci_lokasi": ["kepri", "mall", "hotel", "montigo"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": null
+      }
+    },
+    {
+      "nama": "Eska Wyndham Panbil",
+      "jenis": "wellness",
+      "kata_kunci": ["Wyndham", "Panbil", "relaksasi", "spa", "wellness"],
+      "lokasi_dekat": ["Panbil Mall", "Wyndham Panbil Hotel", "Montigo Resort"],
+      "kata_kunci_lokasi": ["panbil", "hotel", "mall", "montigo"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": null
+      }
+    },
+    {
+      "nama": "Grand Eska Wellness",
+      "jenis": "wellness",
+      "kata_kunci": ["Grand Eska", "Wellness", "relaksasi", "spa", "wellness"],
+      "lokasi_dekat": ["Ferry Terminal Harbour Bay", "Nagoya Hill Mall", "Grand Batam Mall", "BCS Mall", "Grand Eska Hotel & Suites"],
+      "kata_kunci_lokasi": ["grand eska", "terminal ferry", "mall", "harbour bay"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": {
+          "cabang": ["Grand Eska Wellness", "Eska Marriott"],
+          "jumat_sabtu": { "buka": "10.00", "tutup": "24.00" },
+          "hari_lain": { "buka": "10.00", "tutup": "22.00" }
+        }
+      }
+    },
+    {
+      "nama": "Eska Marriott",
+      "jenis": "wellness",
+      "kata_kunci": ["Marriott", "hotel", "relaksasi", "spa", "wellness"],
+      "lokasi_dekat": ["Ferry Terminal Harbour Bay", "Marriott Hotel"],
+      "kata_kunci_lokasi": ["marriott", "terminal ferry", "hotel", "harbour bay"],
+      "jam_operasional": {
+        "umum": { "buka": "10.00", "tutup": "22.00", "hari": "Setiap hari" },
+        "pengecualian": {
+          "cabang": ["Grand Eska Wellness", "Eska Marriott"],
+          "jumat_sabtu": { "buka": "10.00", "tutup": "24.00" },
+          "hari_lain": { "buka": "10.00", "tutup": "22.00" }
+        }
+      }
+    },
+    {
+      "nama": "Eska Aesthetic Clinic",
+      "jenis": "aesthetic_clinic",
+      "kata_kunci": ["aesthetic", "klinik kecantikan", "perawatan kulit", "wajah"],
+      "lokasi_dekat": [],
+      "kata_kunci_lokasi": [],
+      "jam_operasional": null
+    },
+    {
+      "nama": "Eska Hotel",
+      "jenis": "hotel",
+      "kata_kunci": ["hotel", "penginapan", "Eska"],
+      "lokasi_dekat": [],
+      "kata_kunci_lokasi": [],
+      "jam_operasional": null
+    },
+    {
+      "nama": "Grand Eska Hotel & Suites",
+      "jenis": "hotel",
+      "kata_kunci": ["hotel", "suites", "penginapan", "Grand Eska"],
+      "lokasi_dekat": [],
+      "kata_kunci_lokasi": [],
+      "jam_operasional": null
+    }
+  ],
   "services": {
     "wellness_massage": [
       { "nama": "Foot Relax", "deskripsi": "Tekanan terapeutik pada titik tertentu." },
@@ -97,7 +144,6 @@
       { "nama": "Body Scrub", "deskripsi": "Perawatan untuk mengangkat sel kulit mati." },
       { "nama": "Body Wrap", "deskripsi": "Perawatan tubuh untuk membantu melembapkan kulit." },
       { "nama": "Hydrotherapy Bath", "deskripsi": "Mandi relaksasi menggunakan terapi air." }
-
     ],
     "hair_services": [
       "Shampoo, Blow Dry & Styling",
@@ -118,51 +164,51 @@
     ],
     "hair_spa": [
       {
-        "name": "Hydratherapie Intense Moisture Cream",
-        "description": "For Normal to Dry & Coarse Hair"
+        "nama": "Hydratherapie Intense Moisture Cream",
+        "deskripsi": "For Normal to Dry & Coarse Hair"
       },
       {
-        "name": "Colorcaretherapie Protective Cream",
-        "description": "Deeply Moisturizes and Intensifies Shine for Color-Treated Hair"
+        "nama": "Colorcaretherapie Protective Cream",
+        "deskripsi": "Deeply Moisturizes and Intensifies Shine for Color-Treated Hair"
       },
       {
-        "name": "Scalptherapie Invigorating Balm",
-        "description": "Invigorates Scalp and Conditions Hair with Kolanut & Mint"
+        "nama": "Scalptherapie Invigorating Balm",
+        "deskripsi": "Invigorates Scalp and Conditions Hair with Kolanut & Mint"
       }
     ],
     "hair_mask": [
       {
-        "name": "Scalpure",
-        "description": "For Oily Scalp, Dandruff & Prevent Hair Loss. Naturally Soothes Irritation, Helps Regulate Sebum Production"
+        "nama": "Scalpure",
+        "deskripsi": "For Oily Scalp, Dandruff & Prevent Hair Loss. Naturally Soothes Irritation, Helps Regulate Sebum Production"
       }
     ]
   },
   "packages": {
     "all_in": [
-      { "name": "2 in 1", "description": "The Natural Soothing Facial | Aromatherapy Touch Massage" },
-      { "name": "3 in 1", "description": "Hair Spa | Foot Relax | Aromatherapy Touch Massage" },
-      { "name": "4 in 1", "description": "Hair Spa | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
-      { "name": "5 in 1", "description": "Hair Spa | Classic Manicure & Pedicure | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
-      { "name": "6 in 1", "description": "Hair Spa | Classic Manicure & Pedicure | Foot Relax | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" }
+      { "nama": "2 in 1", "deskripsi": "The Natural Soothing Facial | Aromatherapy Touch Massage" },
+      { "nama": "3 in 1", "deskripsi": "Hair Spa | Foot Relax | Aromatherapy Touch Massage" },
+      { "nama": "4 in 1", "deskripsi": "Hair Spa | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
+      { "nama": "5 in 1", "deskripsi": "Hair Spa | Classic Manicure & Pedicure | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" },
+      { "nama": "6 in 1", "deskripsi": "Hair Spa | Classic Manicure & Pedicure | Foot Relax | Aromatherapy Touch Massage | Seasonal Body Scrub | Seasonal Body Masque" }
     ],
     "express": [
-      { "name": "Hair Foot Spa", "description": "Hair Spa | Foot SPA with Scrub" },
-      { "name": "Head to Toe", "description": "Hair Spa | Foot Relax | Classic Manicure & Pedicure" },
-      { "name": "Head to Pretty Nail", "description": "Hair Spa | Classic Manicure & Pedicure" },
-      { "name": "Head to Shiny Nails", "description": "Hair Spa | Express Gel Polish Manicure & Pedicure" }
+      { "nama": "Hair Foot Spa", "deskripsi": "Hair Spa | Foot SPA dengan Scrub" },
+      { "nama": "Head to Toe", "deskripsi": "Hair Spa | Foot Relax | Classic Manicure & Pedicure" },
+      { "nama": "Head to Pretty Nail", "deskripsi": "Hair Spa | Classic Manicure & Pedicure" },
+      { "nama": "Head to Shiny Nails", "deskripsi": "Hair Spa | Express Gel Polish Manicure & Pedicure" }
     ],
     "double_spa_indulgences": [
       {
-        "name": "True Transformation for TWO",
-        "description": "Aromatherapy Touch Massage | Chocolate Body Scrub | Chocolate Body Masque | Chocolate Salt Relaxing Jacuzzi Bath | V-Spa Ratus for lady. Complimentary Drinks : Chocolate Drink"
+        "nama": "True Transformation for TWO",
+        "deskripsi": "Aromatherapy Touch Massage | Chocolate Body Scrub | Chocolate Body Masque | Chocolate Salt Relaxing Jacuzzi Bath | V-Spa Ratus untuk wanita. Minuman Complimentary: Chocolate Drink"
       },
       {
-        "name": "Senses of Fragrance for TWO",
-        "description": "Healing Stone Massage | Aroma Ear Candling | Aromatic Coffee Body Scrub | Aromatic Coffee Body Masque | Coffee Salt Body Glow Jacuzzi Bath | V-Spa Ratus for lady. Complimentary Drinks : Aromatic Coffee Drink"
+        "nama": "Senses of Fragrance for TWO",
+        "deskripsi": "Healing Stone Massage | Aroma Ear Candling | Aromatic Coffee Body Scrub | Aromatic Coffee Body Masque | Coffee Salt Body Glow Jacuzzi Bath | V-Spa Ratus untuk wanita. Minuman Complimentary: Aromatic Coffee Drink"
       },
       {
-        "name": "Keep Young Detox Spa for TWO",
-        "description": "Caviar Non-Surgical Facial | Detox Lymphatic Massage with Infrared Hot Blanket | Green Tea Body Scrub | Green Tea Body Masque | Green Tea Soak Jacuzzi Bath | V-Spa Ratus for lady | Hair Spa. Complimentary Drinks : Detox Drink"
+        "nama": "Keep Young Detox Spa for TWO",
+        "deskripsi": "Caviar Non-Surgical Facial | Detox Lymphatic Massage with Infrared Hot Blanket | Green Tea Body Scrub | Green Tea Body Masque | Green Tea Soak Jacuzzi Bath | V-Spa Ratus untuk wanita | Hair Spa. Minuman Complimentary: Detox Drink"
       }
     ]
   }
