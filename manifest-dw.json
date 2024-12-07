@@ -1,7 +1,7 @@
 {
   "name": "Tian's Blog",
   "short_name": "TianBlog",
-"start_url": https://arc-tian.blogspot.com/p/downloader.html?m=1",
+"start_url": "https://arc-tian.blogspot.com/p/downloader.html",
 "scope": "https://arc-tian.blogspot.com/",
   "display": "standalone",
   "background_color": "#ffffff",
