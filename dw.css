@@ -1,0 +1,302 @@
+
+  
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+            max-width: 1400px;
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+      /* Styling untuk class: post-title */
+.post-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2rem !important;
+    font-weight: normal !important;
+    color: var(--text-color) !important;
+    text-align: center !important;
+    margin: 50px 0 !important;
+
+}
+        /* Sembunyikan elemen tertentu */
+        .header,
+        #scroll-header-new,
+        footer {
+            display: none !important;
+        }
+        .container {
+            max-width: 1200px;
+            padding: 30px; 
+            background: #fff;
+            margin: 40px auto;
+            border: 2px dashed #a0a0a0;
+            border-radius: 12px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .platform-select, .input-url, .additional-options select {
+            width: 100%;
+            padding: 12px 40px 12px 12px;
+            font-size: 16px;
+            border: none;
+            border-bottom: 2px dashed #a0a0a0;
+            background-color: transparent;
+            color: #333;
+            appearance: none;
+            outline: none;
+            transition: border-color 0.3s;
+            border-radius: 4px;
+        }
+
+        .platform-select::placeholder, .input-url::placeholder {
+            color: #aaa;
+        }
+
+        .platform-select:focus, .input-url:focus, .additional-options select:focus {
+            border-bottom-color: #6a5acd;
+        }
+
+        .platform-select {
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="%236a5acd" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 10px 7px;
+        }
+
+        .download-button {
+            width: 100%;
+            padding: 14px 0;
+            background-color: #6a5acd;
+            color: #ffffff;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .download-button:hover {
+            background-color: #8470ff;
+            transform: translateY(-2px);
+        }
+
+        .download-button:active {
+            transform: translateY(0px);
+        }
+
+        .paste-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            padding: 0 12px;
+            background-color: #20b2aa;
+            color: #ffffff;
+            font-size: 14px;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .paste-button:hover {
+            background-color: #40e0d0;
+            transform: translateY(-2px);
+        }
+
+        .paste-button:active {
+            transform: translateY(0px);
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            background-color: #e6ffe6;
+        }
+
+        .download-link {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #ff7f50;
+            color: #ffffff;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 10px 5px;
+        }
+
+        .download-link:hover {
+            background-color: #ff9472;
+            transform: translateY(-2px);
+        }
+
+        .download-link:active {
+            transform: translateY(0px);
+        }
+
+        .loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .cute-spinner {
+            width: 50px;
+            height: 50px;
+            background: #6a5acd;
+            border-radius: 50%;
+            position: relative;
+            animation: cute-spin 1.5s linear infinite;
+        }
+
+        .cute-spinner::before, .cute-spinner::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: #ffffff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: cute-bounce 1.5s ease-in-out infinite;
+        }
+
+        .cute-spinner::after {
+            animation-delay: 0.75s;
+        }
+
+        @keyframes cute-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes cute-bounce {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.5); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .download-button {
+                font-size: 16px;
+            }
+
+            .paste-button {
+                font-size: 12px;
+            }
+
+            .platform-select, .input-url, .additional-options select {
+                font-size: 16px;
+            }
+
+            .download-link {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .cute-spinner {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .download-button {
+                font-size: 14px;
+            }
+
+            .paste-button {
+                font-size: 10px;
+            }
+
+            .platform-select, .input-url, .additional-options select {
+                font-size: 14px;
+            }
+
+            .download-link {
+                font-size: 12px;
+                padding: 8px 16px;
+                margin: 8px 4px;
+            }
+
+            .cute-spinner {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .additional-options label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .additional-options select {
+            margin-bottom: 20px;
+        }
+
+        .multi-download-button {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .multi-download-button a.download-link,
+        .multi-download-button button.download-link {
+            flex: 1 1 calc(33% - 20px);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .multi-download-button a.download-link,
+            .multi-download-button button.download-link {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .multi-download-button a.download-link,
+            .multi-download-button button.download-link {
+                flex: 1 1 100%;
+            }
+        }
+
+        .ig-inputs {
+            display: none;
+        }
+
+        .youtube-options {
+            display: none;
+        }
+
+        /* Set form text size to 14px */
+        .ig-inputs p {
+            font-size: 14px;
+        }
+  
