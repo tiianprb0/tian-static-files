@@ -1,19 +1,19 @@
 {
   "name": "Tian's Blog",
   "short_name": "TianBlog",
-  "start_url": "https://arc-tian.blogspot.com/p/downloader.html",  // Pastikan URL ini bisa diakses
-  "scope": "https://arc-tian.blogspot.com/",  // Tentukan batasan aplikasi, bisa sesuaikan jika hanya ingin mencakup sebagian situs
-  "display": "standalone",  // Menjalankan aplikasi tanpa UI browser
-  "background_color": "#ffffff",  // Warna latar belakang saat loading
-  "theme_color": "#007BFF",  // Warna tema yang akan muncul di UI browser
+  "start_url": "https://arc-tian.blogspot.com/",
+  "scope": "https://arc-tian.blogspot.com/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007BFF",
   "icons": [
     {
-      "src": "https://via.placeholder.com/192",  // Ganti dengan URL ikon yang sesuai
+      "src": "https://via.placeholder.com/192",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://via.placeholder.com/512",  // Ganti dengan URL ikon yang sesuai
+      "src": "https://via.placeholder.com/512",
       "sizes": "512x512",
       "type": "image/png"
     }
