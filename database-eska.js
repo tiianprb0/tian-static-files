@@ -412,7 +412,7 @@ const keywords = {
       'aromatic candle massage', 'sport massage', 'holistic massage', 'healing stone massage',
       'slimming-fat burn massage', 'detox lymphatic massage with infrared hot blanket',
       // Kata Kunci Baru
-      'body scrub', 'body wrap', 'hydrotherapy bath',
+      'body scrub', 'body wrap', 'hydrotherapy bath', 'massage', 'pijat', 'treatment',
       // Kata Kunci Berhubungan/Sinonim
       'exfoliation', 'spa treatment', 'infrared therapy', 'lymphatic drainage',
       'detox treatment', 'thermal blanket', 'fat burning massage', 'lymph detox',
