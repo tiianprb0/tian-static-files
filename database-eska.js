@@ -333,49 +333,120 @@
     }
   };
   
-  // Daftar Kata Kunci untuk Deteksi Topik dengan Pemetaan Spesifik
-  const keywords = {
-    operatingHours: { 
-      keys: ['jam buka', 'jam operasional', 'jam kerja', 'waktu buka', 'waktu operasional'],
-      priority: 0,
-      databasePath: 'operatingHours'
-    },
-    services: { 
-      keys: ['services', 'layanan', 'treatment', 'pijatan', 'terapi', 'layanan kami', 'pelayanan'],
-      priority: 1,
-      databasePath: 'services'
-    },
-    packages: { 
-      keys: ['packages', 'paket', 'bundling', 'paket kami','promotion', 'promo'],
-      priority: 2,
-      databasePath: 'packages' // Mengubah databasePath menjadi 'packages'
-    },
-    promo: { 
-      keys: ['promo', 'offers', 'promotion', 'eska promo', 'discount','disc', 'diskon'],
-      priority: 3,
-      databasePath: 'promo'
-    },
-    menu: { 
-      keys: ['harga', 'menu', 'pricelist', 'price list', 'catalogue','katalog', 'biaya'],
-      priority: 4,
-      databasePath: 'menu'
-    },
-    massage: { 
-      keys: ['Foot Relax', 'Foot SPA', 'Back Massage', 'Aromatherapy Touch', 'Aromatic Candle','Sport', 'Detox Lymphatic', 'Healing Stone','Slimming-Fat', 'Holistic Massage'],
-      priority: 5,
-      databasePath: 'massage' // Mengarah ke 'services' karena 'massage' adalah subkategori
-    },
-    hotel: { 
-      keys: ['hotel', 'akomodasi', 'kamar', 'suite', 'room', 'penginapan', 'grand eska hotel', 'eska hotel'],
-      priority: 6,
-      databasePath: 'hotel'
-    },
-    branches: { // Menambahkan kategori branches
-      keys: ['branch', 'cabang', 'lokasi', 'lokasi cabang', 'alamat cabang', 'outlet', 'nh', 'mm', 'gbm', 'kpm', 'bfm', 'ges', 'wyndham'],
-      priority: 7,
-      databasePath: 'branches'
-    }
-  };
+// Daftar Kata Kunci untuk Deteksi Topik dengan Pemetaan Spesifik
+const keywords = {
+  operatingHours: { 
+    keys: [
+      'jam buka', 'jam operasional', 'jam kerja', 'waktu buka', 'waktu operasional',
+      // Kata Kunci Berhubungan/Sinonim
+      'buka', 'waktu buka', 'jam layanan', 'jam pelayanan', 'jadwal buka',
+      'hari buka', 'jam tutup', 'jam operasional harian', 'jam operasional minggu',
+      'jam kerja harian', 'jam pelayanan kami', 'jam operasional kami'
+    ],
+    priority: 0,
+    databasePath: 'operatingHours'
+  },
+  services: { 
+    keys: [
+      // Kata Kunci Asli
+      'services', 'layanan', 'treatment', 'pijatan', 'terapi', 'layanan kami', 'pelayanan',
+      // Kata Kunci Baru dari kategori salon
+      'shampoo', 'blow dry & styling', 'hair manicure', 'coloring', 'coloring plus', 
+      'highlight', 'rebonding / straight diamond', 'smoothing / collagen sculpting', 
+      'curl wave perm', 'nano japanese / korean perm',
+      // Kata Kunci Baru dari kategori hairCare
+      '4 steps hair botox', 'keratin care', 'anion blue nano mist', 'organic care',
+      // Kata Kunci Baru dari kategori hairSpa
+      'hydratherapie intense moisture cream', 'colorcaretherapie protective cream', 
+      'scalptherapie invigorating balm',
+      // Kata Kunci Baru dari kategori hairMask
+      'scalpure',
+      // Kata Kunci Berhubungan/Sinonim
+      'cuci rambut', 'pencucian rambut', 'styling rambut', 'perawatan rambut', 
+      'perawatan salon', 'manicure rambut', 'warna rambut', 'highlight rambut', 
+      'perataan rambut', 'smoothing rambut', 'permen rambut', 'perawatan keratin', 
+      'botox rambut', 'mist nano anion', 'perawatan organik', 'krim kelembapan intens', 
+      'krim pelindung colorcare', 'balm penguat kulit kepala', 'masker rambut', 
+      'perawatan scalp', 'hydrotherapy', 'perawatan hidrologi'
+    ],
+    priority: 1,
+    databasePath: 'services'
+  },
+  packages: { 
+    keys: [
+      'packages', 'paket', 'bundling', 'paket kami', 'paket spesial',
+      // Kata Kunci Berhubungan/Sinonim
+      'promo paket', 'paket bundling', 'paket layanan', 'paket harga', 'paket diskon',
+      'paket terjangkau', 'paket eksklusif', 'paket lengkap', 'paket hemat',
+      'bundling layanan', 'bundling harga', 'bundling spesial'
+    ],
+    priority: 2,
+    databasePath: 'packages' // Menambahkan kata kunci spesifik
+  },
+  promo: { 
+    keys: [
+      'promo', 'offers', 'eska promo', 'discount', 'disc', 'diskon', 'diskon spesial', 'penawaran terbatas',
+      // Kata Kunci Berhubungan/Sinonim
+      'penawaran', 'diskon besar', 'promo spesial', 'flash sale', 'penjualan cepat',
+      'diskon waktu terbatas', 'promo akhir tahun', 'penawaran eksklusif', 'diskon khusus',
+      'obral', 'diskon member', 'diskon loyalitas', 'promo bundling', 'promo paket'
+    ],
+    priority: 3,
+    databasePath: 'promo'
+  },
+  menu: { 
+    keys: [
+      'harga', 'menu', 'pricelist', 'price list', 'catalogue', 'katalog', 'biaya',
+      // Kata Kunci Berhubungan/Sinonim
+      'daftar harga', 'harga layanan', 'harga paket', 'harga promo', 'daftar menu',
+      'menu layanan', 'harga terjangkau', 'biaya layanan', 'biaya paket', 'daftar biaya',
+      'menu harga', 'harga terperinci', 'harga lengkap', 'katalog harga'
+    ],
+    priority: 4,
+    databasePath: 'menu'
+  },
+  massage: { 
+    keys: [
+      // Kata Kunci Asli
+      'foot relax', 'foot spa', 'relaxation back massage', 'aromatherapy touch massage',
+      'aromatic candle massage', 'sport massage', 'holistic massage', 'healing stone massage',
+      'slimming-fat burn massage', 'detox lymphatic massage with infrared hot blanket',
+      // Kata Kunci Baru
+      'body scrub', 'body wrap', 'hydrotherapy bath',
+      // Kata Kunci Berhubungan/Sinonim
+      'exfoliation', 'spa treatment', 'infrared therapy', 'lymphatic drainage',
+      'detox treatment', 'thermal blanket', 'fat burning massage', 'lymph detox',
+      'aromatherapy massage', 'candle therapy', 'hot stone massage', 'lymphatic massage'
+    ],
+    priority: 5,
+    databasePath: 'services' // Diubah untuk mencerminkan subkategori
+  },
+  hotel: { 
+    keys: [
+      'hotel', 'akomodasi', 'kamar', 'suite', 'room', 'penginapan', 'grand eska hotel', 'eska hotel',
+      // Kata Kunci Berhubungan/Sinonim
+      'penginapan mewah', 'kamar hotel', 'suite hotel', 'reservasi kamar', 'booking hotel',
+      'penginapan nyaman', 'hotel terdekat', 'hotel bintang lima', 'akomodasi hotel',
+      'kamar suite', 'room booking', 'suite room', 'penginapan keluarga', 'hotel pusat kota',
+      'hotel dekat bandara', 'hotel eksklusif', 'hotel butik', 'hotel economy'
+    ],
+    priority: 6,
+    databasePath: 'hotel'
+  },
+  branches: { // Menambahkan kategori branches
+    keys: [
+      'branch', 'cabang', 'lokasi', 'lokasi cabang', 'alamat cabang', 'outlet', 'nh', 'mm', 'gbm', 'kpm', 'bfm', 'ges', 'wyndham',
+      // Kata Kunci Berhubungan/Sinonim
+      'cabang terdekat', 'lokasi outlet', 'alamat lokasi', 'cabang kami', 'outlet terdekat',
+      'lokasi kami', 'alamat kami', 'outlet lokasi', 'cabang baru', 'lokasi baru',
+      'penambahan cabang', 'cabang pusat', 'cabang regional', 'lokasi strategis',
+      'outlet utama', 'outlet tambahan', 'cabang cabang', 'lokasi layanan'
+    ],
+    priority: 7,
+    databasePath: 'branches'
+  }
+};
+
 
   // Riwayat Chat (Menyimpan dua riwayat terakhir)
   let chatHistory = [];
