@@ -252,7 +252,7 @@ position: relative;
     }
 
     .message.bot {
-      justify-content: flex-start;
+      justify-content: flex-start;text-align:left;
       flex-direction: row; /* Changed from column to row */
       align-items: flex-start;
     }
