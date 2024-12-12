@@ -315,6 +315,7 @@
       2. Sertakan link jika tersedia
       3. Jangan menambahkan menu yang tidak ada di database
       4. jika pengguna tidak menyebutkan branch mana, tanya kembali ke pengguna
+      5. jangan pernah menyebutkan harga, berikan saja link menu
       `,
       hotel: `
       Saat memberikan informasi hotel:
@@ -692,7 +693,7 @@
   // Fungsi untuk Menambahkan Data ke Prompt
   function buildPrompt(userQuestion, detectedTopics) {
     let languageText = getLanguageText(); // Menangkap teks bahasa yang sesuai
-    let prompt = `Kamu atau nama kamu adalah EVA (Eska Virtual Assistant), bot andal dengan bahasa ${languageText} sebagai bahasa utama yang bertugas menjawab pertanyaan customer berdasarkan informasi berikut:\n\n`;
+    let prompt = `Kamu atau nama kamu adalah EVA (Eska Virtual Assistant), asisten bot andal dan ramah dengan bahasa ${languageText} sebagai bahasa utama yang bertugas menjawab pertanyaan customer berdasarkan informasi berikut:\n\n`;
 
     // Sertakan Informasi Umum
     prompt += `${databases.generalInfo.outlet.firstOutlet} Memiliki tagline "${databases.generalInfo.outlet.tagline}".\n\n`;
