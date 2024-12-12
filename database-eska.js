@@ -315,7 +315,7 @@
       2. Sertakan link jika tersedia
       3. Jangan menambahkan menu yang tidak ada di database
       4. jika pengguna tidak menyebutkan branch mana, tanya kembali ke pengguna
-      5. jangan pernah menyebutkan harga, berikan saja link menu
+      5. jika ditanya harga atau biaya jangan menyebutkan harga, beri link menu
       `,
       hotel: `
       Saat memberikan informasi hotel:
