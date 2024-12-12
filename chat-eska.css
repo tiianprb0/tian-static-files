@@ -1,0 +1,412 @@
+
+    /* Tombol untuk Tautan di Pesan Bot */
+    .message-button {
+      display: block; /* Agar tombol tampil di baris sendiri */
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #153A33; /* Hijau Gelap */
+      color: #FFFFFF;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-align: center;
+    }
+
+    .message-button:hover {
+      background-color: #99BEA4; /* Hijau Medium */
+      transform: scale(1.05);
+    }
+    
+    /* Styling untuk class: post-title */
+    .post-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 2rem !important;
+        font-weight: normal !important;
+        color: var(--text-color) !important;
+        text-align: center !important;
+        margin: 50px 0 !important;
+    }
+
+    /* Sembunyikan elemen tertentu */
+    .header,
+    #scroll-header-new,
+    footer {
+        display: none !important;
+    }
+
+    /* Chatbot Button */
+    #chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #153A33; /* Hijau Gelap */
+      color: #FFFFFF;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    #chatbot-button:hover {
+      background-color: #99BEA4; /* Hijau Medium */
+      transform: scale(1.1);
+    }
+
+    /* Chatbot Overlay */
+    #chatbot-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none; /* Tersembunyi secara default */
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    /* Chatbot Container */
+    #chatbot-container {
+      width: 400px;
+      max-width: 90%;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      background-color: #FFFFFF; /* Putih */
+      display: flex;
+      flex-direction: column;
+      max-height: 80vh;
+      animation: slideIn 0.3s ease-in-out;
+      position: relative;
+    }
+
+    /* Chat Header */
+    #chat-header {
+      background-color: #FFFFFF; /* Putih */
+      color: #000000; /* Hitam */
+      padding: 15px 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      font-weight: 400; /* Berat tipis */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Avatar Bot di Header */
+    #chat-header .avatar-header {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-image: url('https://imgx.parapuan.co/crop/0x0:0x0/x/photo/2023/01/27/karinajpg-20230123020721jpg-20230127122335.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Close Button */
+    #close-chatbot {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: #000000; /* Hitam */
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    #close-chatbot:hover {
+      color: #99BEA4; /* Hijau Medium saat hover */
+    }
+
+    /* Important Message Button */
+.tooltip-container {
+position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.tooltip-trigger {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px 10px;
+    font-weight: 100;
+    font-size: 12px;
+    font-family: 'Plus Jakarta', sans-serif;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip-content {
+    visibility: hidden;
+    width: 100%;
+    background-color: #f3f3f3;
+    color: #333;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tooltip-container:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+    /* Chat Window */
+    #chat-window {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: #FFFFFF; /* Warna putih */
+    }
+
+    /* Chat Input Area */
+    #chat-input-area {
+      display: flex;
+      /* border-top: 1px solid #99BEA4; */ /* Dihapus */
+      padding: 10px 15px;
+      background-color: #ffffff; /* Abu-abu diubah menjadi putih */
+    }
+
+    /* User Input */
+    #user-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid #99BEA4; /* Hijau Medium */
+      border-radius: 25px;
+      font-size: 16px; /* Diubah dari 14px ke 16px untuk mencegah zoom */
+      background-color: #FAFBFC; /* Abu-abu sangat terang */
+      color: #153A33; /* Hijau Gelap */
+      outline: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: border-color 0.3s;
+    }
+
+    #user-input::placeholder {
+      color: #A0A8B8;
+    }
+
+    #user-input:focus {
+      border-color: #153A33; /* Hijau Gelap saat fokus */
+    }
+
+    /* Send Button */
+    #send-button {
+      margin-left: 10px;
+      padding: 12px 20px;
+      background-color: #153A33; /* Hijau Gelap */
+      border: none;
+      color: #FFFFFF;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background-color 0.3s, transform 0.2s;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    #send-button:hover {
+      background-color: #99BEA4; /* Hijau Medium */
+      transform: scale(1.05);
+    }
+
+    /* Message Styles */
+    .message {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row; /* default */
+    }
+
+    .message.user {
+      justify-content: flex-end;
+    }
+
+    .message.bot {
+      justify-content: flex-start;
+      flex-direction: row; /* Changed from column to row */
+      align-items: flex-start;
+    }
+
+    /* Avatar Bot */
+    .message.bot .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-image: url('https://imgx.parapuan.co/crop/0x0:0x0/x/photo/2023/01/27/karinajpg-20230123020721jpg-20230127122335.jpg');
+      background-size: cover;
+      background-position: center;
+      margin-right: 10px; /* Space between avatar and content */
+    }
+
+    /* Content Container untuk Bot */
+    .message.bot .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 80%;
+    }
+
+    /* Bubble Text */
+    .message .text {
+      padding: 10px 15px;
+      border-radius: 15px;
+      font-size: 15px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .message.bot .text {
+      background-color: #f5f5f5; /* Hijau Terang diubah menjadi #f5f5f5 */
+      color: #000000; /* Hitam */
+      border-bottom-left-radius: 0;
+    }
+
+    .message.user .text {
+      background-color: #153A33; /* Hijau Gelap */
+      color: #FFFFFF;
+      border-bottom-right-radius: 0;
+    }
+
+    /* Loading Animation */
+    .loading {
+      display: flex;
+      flex-direction: row; /* Mengatur agar loading horizontal */
+      align-items: center;
+    }
+
+    .loading .dot {
+      height: 8px;
+      width: 8px;
+      margin: 0 4px;
+      background-color: #153A33; /* Hijau Gelap */
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1.4s infinite both;
+    }
+
+    .loading .dot:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .loading .dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loading .dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes bounce {
+      0%, 80%, 100% {
+        transform: scale(0);
+      }
+      40% {
+        transform: scale(1);
+      }
+    }
+
+    /* Scrollbar Styling */
+    #chat-window::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    #chat-window::-webkit-scrollbar-track {
+      background: #f5f5f5; /* Diubah sesuai background bot */
+    }
+
+    #chat-window::-webkit-scrollbar-thumb {
+      background-color: #99BEA4; /* Hijau Medium */
+      border-radius: 4px;
+    }
+
+    /* Keyframes for Fade In and Slide In */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Responsif */
+    @media (max-width: 500px) {
+      #chatbot-container {
+        width: 90%;
+      }
+
+      #chat-header {
+        padding: 12px 15px;
+        font-size: 1.2em;
+      }
+
+      .tooltip {
+        width: 80%;
+      }
+
+      #chat-window {
+        padding: 15px;
+      }
+
+      #chat-input-area {
+        padding: 8px 10px;
+      }
+
+      #user-input {
+        padding: 10px 12px;
+        font-size: 16px; /* Diubah dari 14px ke 16px */
+      }
+
+      #send-button {
+        padding: 10px 18px;
+        font-size: 16px; /* Diubah dari 14px ke 16px */
+      }
+
+      #important-message-button {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+
+    /* Styling for Lists in Bot Messages */
+    .message.bot .text ul {
+      margin: 10px 0;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    .message.bot .text p {
+      margin: 10px 0;
+    }
