@@ -327,7 +327,7 @@
       1. Sebutkan jam operasional sesuai dengan cabang dan hari yang ditanyakan
       2. Gunakan informasi spesifik jika tersedia
       3. Jangan menambahkan jam operasional yang tidak ada di database
-      4. ingat selalu bahwa jumat dan sabtu grand eska wellness dan eska marriot buka lebih lama
+      4. sebelum menjawab, kamu bisa menggunakan sistem kamu untuk mengetahui hari ini hari apa untuk menjawab
       `
     }
   };
