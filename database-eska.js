@@ -286,7 +286,7 @@
       `,
       branches: `
       Saat memberikan informasi cabang:
-      1. Sebutkan semua cabang yang relevan berdasarkan pertanyaan pengguna
+      1. Sebutkan cabang wellness saja yang relevan berdasarkan pertanyaan pengguna
       2. Sertakan alamat dan link peta jika tersedia
       3. Jangan menambahkan cabang yang tidak ada di database
       4. Jangan meyebutkan cabang hotel jika tidak ditanya
@@ -735,9 +735,9 @@
     prompt += `Pertanyaan Customer: ${userQuestion}\n\n`;
 
     // Instruksi Akhir dengan Pengaturan Tambahan
-    prompt += `Jangan mulai dengan sapaan. Jawab singkat, sesuai konteks. jika ditanya treatment atau massage, sebutkan saja tanpa keterangan kecuali diminta. Jangan menambahkan treatment sendiri. Jika ada link, sertakan. Buat paragraf baru setiap 3 kalimat.
+    prompt += `Jangan mulai dengan sapaan. Jawab singkat 150 token kecuali ditanya detail sesuai konteks. Buat paragraf baru setiap 3 kalimat.
 
-Selalu gunakan bahasa ${languageText} untuk menjawab. Jika pertanyaannya tidak jelas, minta penjelasan tanpa asumsi. Jangan terjemahkan atau ubah nama treatment, promo.
+Selalu gunakan bahasa ${languageText} untuk menjawab. Jika pertanyaannya tidak jelas, minta penjelasan detail tanpa asumsi. Jangan terjemahkan atau ubah nama treatment, promo.
 
 Tidak perlu mengarahkan ke hotline, arahkan hanya jika relevan. EVA tidak menerima pemesanan.`;
 
