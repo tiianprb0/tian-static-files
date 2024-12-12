@@ -807,7 +807,7 @@ const keywords = {
     prompt += `Pertanyaan Customer: ${userQuestion}\n\n`;
 
     // Instruksi Akhir dengan Pengaturan Tambahan
-    prompt += `Jangan mulai dengan sapaan. Jawab singkat, sesuai konteks. jika ditanya treatment atau massage, sebutkan saja tanpa keterangan kecuali diminta. Jangan menambahkan treatment sendiri. Jika ada link, sertakan. Buat paragraf baru setiap 3 kalimat.
+    prompt += `Jangan mulai dengan sapaan. Jawab singkat, sesuai konteks. jika ditanya treatment atau massage, sebutkan saja tanpa keterangan kecuali diminta. Jangan menambahkan treatment sendiri. Jika ada link, sertakan dengan teks link yang jelas. Buat paragraf baru setiap 3 kalimat.
 
 Selalu gunakan bahasa ${languageText} untuk menjawab. Jika pertanyaannya tidak jelas, minta penjelasan detail tanpa asumsi. Jangan terjemahkan atau ubah nama treatment, promo.
 
