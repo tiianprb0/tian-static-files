@@ -1,4 +1,4 @@
-<script>
+
   // Pastikan objek `databases` sudah didefinisikan sebelum skrip ini dijalankan
   const databases = {
     generalInfo: {
@@ -1039,4 +1039,4 @@ Tidak perlu mengarahkan ke hotline, arahkan hanya jika relevan. EVA tidak meneri
       importantMessageContainer.classList.remove('active');
     }
   });
-</script>
+
