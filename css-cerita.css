@@ -504,8 +504,8 @@ footer {
   position: relative !important;
   display: flex !important;
   align-items: flex-start !important;
-  flex-direction: row-reverse !important; /* Mengubah arah flex */
-  padding-right: 15px !important; /* Menyesuaikan padding */
+  flex-direction: row-reverse !important;
+  padding-right: 15px !important;
   margin-left: auto !important;
   margin-right: 0 !important;
 }
@@ -513,15 +513,15 @@ footer {
 .bubble-right.tian::after {
   border-width: 10px 0 10px 15px !important;
   border-color: transparent !important;
-  border-left-color: inherit !important;
+  border-left-color: var(--bubble-tian) !important; /* Menggunakan warna bubble Tian */
   right: -15px !important;
   top: 25px !important;
 }
 
 /* Profil Tian di sebelah kanan */
 .bubble-right.tian .profile-tian {
-  align-self: flex-end !important; /* Memastikan profil di sebelah kanan */
-  margin-left: 10px !important; /* Memberikan jarak antara profil dan konten */
+  align-self: flex-end !important;
+  margin-left: 10px !important;
   margin-right: 0 !important;
 }
 
