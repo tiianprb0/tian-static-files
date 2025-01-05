@@ -194,47 +194,51 @@ footer {
 
 /* Bubble Percakapan */
 .bubble {
-  position: relative !important;
-  display: flex !important;
-  align-items: flex-start !important;
-  max-width: 75% !important;
-  padding: 15px !important;
-  margin-bottom: 20px !important;
-  border-radius: 20px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-  background-color: inherit !important;
-  transition: background-color 0.5s, color 0.5s !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    max-width: 75% !important;
+    padding: 15px !important;
+    margin-bottom: 20px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    background-color: inherit !important; /* Warna ditentukan oleh kelas karakter */
 }
+
 .bubble::after {
-  content: "" !important;
-  position: absolute !important;
-  width: 0 !important;
-  height: 0 !important;
-  border-style: solid !important;
+    content: "" !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-style: solid !important;
 }
-/* Bubble Kiri */
+
+/* Bubble Kiri (Fani, Diana, Lainnya) */
 .bubble-left {
-  margin-right: auto !important;
-  flex-direction: row !important;
+    margin-right: auto !important;
+    flex-direction: row !important;
 }
+
 .bubble-left::after {
-  border-width: 10px 15px 10px 0 !important;
-  border-color: transparent !important;
-  border-right-color: inherit !important;
-  left: -15px !important;
-  top: 25px !important;
+    border-width: 10px 15px 10px 0 !important;
+    border-color: transparent !important;
+    border-right-color: inherit !important;
+    left: -15px !important;
+    top: 25px !important;
 }
-/* Bubble Kanan */
+
+/* Bubble Kanan (Tian) */
 .bubble-right {
-  margin-left: auto !important;
-  flex-direction: row-reverse !important;
+    margin-left: auto !important;
+    flex-direction: row-reverse !important;
 }
+
 .bubble-right::after {
-  border-width: 10px 0 10px 15px !important;
-  border-color: transparent !important;
-  border-left-color: inherit !important;
-  right: -15px !important;
-  top: 25px !important;
+    border-width: 10px 0 10px 15px !important;
+    border-color: transparent !important;
+    border-left-color: inherit !important;
+    right: -15px !important;
+    top: 25px !important;
 }
 
 /* ====================================== */
