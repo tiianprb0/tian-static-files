@@ -240,11 +240,17 @@ footer {
   margin-right: 15px; /* Jarak dari tepi kanan, sama dengan lebar anak panah */
 }
 
-/* Bubble Kanan (Tian) */
-.bubble-right {
-  margin-left: auto;
-  flex-direction: row-reverse;
-  margin-right: 15px; /* Jarak dari tepi kanan, sama dengan lebar anak panah */
+.bubble-right::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent var(--bubble-color);
+  right: -15px; /* Posisi anak panah */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* ====================================== */
