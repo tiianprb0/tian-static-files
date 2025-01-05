@@ -235,8 +235,9 @@ footer {
 
 /* Bubble Kanan (Tian) */
 .bubble-right {
-    margin-left: auto !important;
-    flex-direction: row-reverse !important;
+  margin-left: auto;
+  flex-direction: row-reverse;
+  margin-right: 15px; /* Jarak dari tepi kanan, sama dengan lebar anak panah */
 }
 
 .bubble-right::after {
