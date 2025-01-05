@@ -499,30 +499,41 @@ footer {
 /* ====================================== */
 /* Penyesuaian Khusus Bubble Tian         */
 /* ====================================== */
+/* Bubble Kanan (Tian) */
 .bubble-right.tian {
   position: relative !important;
-  flex-direction: row !important;
-  padding-right: 0px !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  flex-direction: row-reverse !important; /* Mengubah arah flex */
+  padding-right: 15px !important; /* Menyesuaikan padding */
   margin-left: auto !important;
   margin-right: 0 !important;
 }
-.bubble-right.tian .profile-tian {
-  position: absolute !important;
-  top: 15px !important;
-  right: 5px !important;
-  width: 60px !important;
-  height: 60px !important;
-  border-radius: 50% !important;
-  margin: 0 !important;
+
+.bubble-right.tian::after {
+  border-width: 10px 0 10px 15px !important;
+  border-color: transparent !important;
+  border-left-color: inherit !important;
+  right: -15px !important;
+  top: 25px !important;
 }
+
+/* Profil Tian di sebelah kanan */
+.bubble-right.tian .profile-tian {
+  align-self: flex-end !important; /* Memastikan profil di sebelah kanan */
+  margin-left: 10px !important; /* Memberikan jarak antara profil dan konten */
+  margin-right: 0 !important;
+}
+
+/* Konten Dialog Tian */
 .bubble-right.tian .dialog-content {
   text-align: left !important;
   margin-right: 0 !important;
   margin-left: 0 !important;
   max-width: calc(100% - 75px) !important;
 }
+
 .bubble-right.tian .dialog-name {
   text-align: left !important;
   margin-right: 0 !important;
 }
-
