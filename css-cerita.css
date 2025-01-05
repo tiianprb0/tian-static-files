@@ -215,16 +215,22 @@ footer {
 
 /* Bubble Kiri (Fani, Diana, Lainnya) */
 .bubble-left {
-    margin-right: auto !important;
-    flex-direction: row !important;
+  margin-right: auto;
+  flex-direction: row;
+  margin-left: 15px; /* Jarak dari tepi kiri, sama dengan lebar anak panah */
 }
 
 .bubble-left::after {
-    border-width: 10px 15px 10px 0 !important;
-    border-color: transparent !important;
-    border-right-color: inherit !important;
-    left: -15px !important;
-    top: 25px !important;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent var(--bubble-color) transparent transparent;
+  left: -15px; /* Posisi anak panah */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Bubble Kanan (Tian) */
