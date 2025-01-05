@@ -1,332 +1,524 @@
 
-  /* CSS Variables untuk Mode Day dan Night */
+/* ====================================== */
+/*  Mode Day & Night - Variabel Global    */
+/* ====================================== */
 :root {
-    --background-color: #FAF7F0 !important;
-    --text-color: #333333 !important;
-    --border-color: #cccccc !important;
-    --icon-color: #e74c3c !important;
-    --button-background: #f0f0f0 !important;
-    --button-color: #333333 !important;
-    --nar-background: !important;
-    --ltr-bg: #FFE3E3;
+  /* Latar & teks (day mode) */
+  --background-color: #FAF7F0;
+  --text-color: #333333;
+  --border-color: #cccccc;
+  --icon-color: #e74c3c;
+  --button-background: #f0f0f0;
+  --button-color: #333333;
+
+  /* Teks di bubble (day mode) */
+  --bubble-text: #3A3A3A;
+
+  /* Narator day mode */
+  --nar-background: #333333;
+
+  /* Warna bubble (day mode, tanpa hijau/pink) */
+  --bubble-tian: #FAD6A5;    /* Pastel Orange */
+  --bubble-fani: #F2D2BD;    /* Pastel Peach */
+  --bubble-diana: #F6F3BD;   /* Pastel Yellow */
+  --bubble-lainnya: #DED7B2; /* Pastel Taupe */
+  --bubble-leony: #D9CFE7;   /* Pastel Lavender */
+  --bubble-steven: #BCD4E6;  /* Baby Blue */
+
+  /* Warna ekspresi (day mode) */
+  --bubble-tian-expression-bg: #E8B274;    /* Lebih gelap dari #FAD6A5 */
+  --bubble-fani-expression-bg: #D1A09E;    /* Lebih gelap dari #F2D2BD */
+  --bubble-diana-expression-bg: #E0D19A;   /* Lebih gelap dari #F6F3BD */
+  --bubble-lainnya-expression-bg: #C4B48E; /* Lebih gelap dari #DED7B2 */
+  --bubble-leony-expression-bg: #B3A4C3;   /* Lebih gelap dari #D9CFE7 */
+  --bubble-steven-expression-bg: #9BB0C5;  /* Lebih gelap dari #BCD4E6 */
+
+  /* Ekspresi teks (day mode) */
+  --expression-text-day: #000; /* Hitam */
 }
 
 .night-mode {
-    --background-color: #001f3f !important; /* Biru Tua */
-    --text-color: #ecf0f1 !important;
-    --border-color: #34495e !important;
-    --icon-color: #e74c3c !important;
-    --button-background: #34495e !important;
-    --button-color: #ecf0f1 !important;
-    --nar-background: #ffffff !important;
-    --ltr-bg: #021121;
+  /* Latar & teks (dark mode) */
+  --background-color: #1a1a2e;
+  --text-color: #e0e0e0;
+  --border-color: #162447;
+  --icon-color: #e74c3c;
+  --button-background: #162447;
+  --button-color: #e0e0e0;
+
+  /* Teks di bubble (dark mode) */
+  --bubble-text: #e0e0e0;
+
+  /* Narator dark mode */
+  --nar-background: #e0e0e0;
+
+  /* Warna bubble (dark mode, lebih gelap) */
+  --bubble-tian: #8b5e3c;    
+  --bubble-fani: #9b6e4d;    
+  --bubble-diana: #bfa16a;   
+  --bubble-lainnya: #a89a6d; 
+  --bubble-leony: #7b5c82;   
+  --bubble-steven: #6c7a99;  
+
+  /* Warna ekspresi (dark mode) */
+  --bubble-tian-expression-bg: #6b4c2e;    /* Lebih gelap dari #8b5e3c */
+  --bubble-fani-expression-bg: #7a5c3f;    /* Lebih gelap dari #9b6e4d */
+  --bubble-diana-expression-bg: #a38c5f;   /* Lebih gelap dari #bfa16a */
+  --bubble-lainnya-expression-bg: #8b8063; /* Lebih gelap dari #a89a6d */
+  --bubble-leony-expression-bg: #61456a;   /* Lebih gelap dari #7b5c82 */
+  --bubble-steven-expression-bg: #53607a;  /* Lebih gelap dari #6c7a99 */
+
+  /* Ekspresi teks (dark mode) */
+  --expression-text-night: #ffffff; /* Putih */
 }
 
-/* Styling untuk body */
+/* ====================================== */
+/*       Body & Elemen Tersembunyi        */
+/* ====================================== */
 body {
-    background-color: var(--background-color) !important;
-    color: var(--text-color) !important;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.5s, color 0.5s !important;
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s, color 0.5s !important;
 }
 
-/* Sembunyikan elemen tertentu */
 .header,
 #scroll-header-new,
 footer {
-    display: none !important;
+  display: none !important;
 }
 
-/* Styling untuk class: post-title */
+/* ====================================== */
+/*         Cover Cerita (1:1)             */
+/* ====================================== */
+.cover-container {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.cover-cerita {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ====================================== */
+/*            Judul Posting               */
+/* ====================================== */
 .post-title {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 2rem !important;
-    font-weight: normal !important;
-    color: var(--text-color) !important;
-    text-align: center !important;
-    margin: 10px 0 !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 2rem !important;
+  font-weight: normal !important;
+  color: var(--text-color) !important;
+  text-align: center !important;
+  margin: 10px 0 !important;
 }
-
 .post-title::before,
 .post-title::after {
-    display: none !important;
+  display: none !important;
 }
 
-/* Header Cerita */
 .story-header {
-    text-align: center !important;
-    background-color: var(--background-color) !important;
+  text-align: center !important;
+  background-color: var(--background-color) !important;
 }
-
 .story-title {
-    font-family: 'Playfair Display', serif !important;
-    font-size: 2rem !important;
-    font-weight: normal !important;
-    color: var(--text-color) !important;
-    margin: 0 !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 2rem !important;
+  font-weight: normal !important;
+  color: var(--text-color) !important;
+  margin: 0 !important;
 }
 
 /* Header Bab */
 .chapter-header {
-    text-align: center !important;
-    margin: 20px 0 !important;
+  text-align: center !important;
+  margin: 20px 0 !important;
 }
-
 .chapter-title {
-    font-size: 1.5em !important;
-    color: var(--text-color) !important;
-    margin: 0 !important;
+  font-size: 1.5em !important;
+  color: var(--text-color) !important;
+  margin: 0 !important;
 }
 
-
-/* Elemen Latar */
+/* ====================================== */
+/*         Elemen Latar (Info)            */
+/* ====================================== */
 .background-section {
-    border: 1px dashed var(--border-color) !important;
-    padding: 10px !important;
-    margin: 15px !important;
-    font-size: 1rem !important;
-    border-radius: 5px !important;
-    color: var(--text-color) !important;
-    font-weight: normal !important; /* Mengatur font-weight default menjadi normal */
+  border: 1px dashed var(--border-color) !important;
+  padding: 10px !important;
+  margin: 15px !important;
+  font-size: 1rem !important;
+  border-radius: 5px !important;
+  color: var(--text-color) !important;
+  font-weight: normal !important;
 }
-
 .background-section .icon {
-    color: var(--icon-color) !important;
-    font-size: 1.2rem !important;
-    margin-right: 5px !important;
-    display: inline; /* Menampilkan ikon secara inline */
+  color: var(--icon-color) !important;
+  font-size: 1.2rem !important;
+  margin-right: 5px !important;
+  display: inline;
 }
-
 .background-section .label {
-    color: var(--text-color) !important;
-    font-weight: bold; /* Membuat label menjadi tebal */
-    display: inline; /* Menampilkan label secara inline */
+  color: var(--text-color) !important;
+  font-weight: bold;
+  display: inline;
 }
-
 .background-section .label::after {
-    content: "";
-    display: block; /* Memaksa konten setelah label dimulai di baris baru */
+  content: "";
+  display: block;
 }
 
-
-
-
-/* Section Dialog */
+/* ====================================== */
+/*            Bagian Dialog               */
+/* ====================================== */
 .dialog-section {
-    margin: 20px !important;
+  margin: 20px !important;
 }
 
-   /* Narator */
-    .narrator {
-        font-style: italic !important;
-        color: var(--nar-background) !important;
-        margin-bottom: 15px !important;
-        padding: 10px !important;
-        background: !important
-        border-radius: 10px !important;
-        font-size: 1rem !important;
-    }
+/* Narator */
+.narrator {
+  font-style: italic !important;
+  color: var(--nar-background) !important;
+  margin-bottom: 15px !important;
+  padding: 10px !important;
+  background: none !important;
+  border-radius: 10px !important;
+  font-size: 1rem !important;
+}
 
 /* Bubble Percakapan */
 .bubble {
-    position: relative !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    max-width: 75% !important;
-    padding: 15px !important;
-    margin-bottom: 20px !important;
-    border-radius: 20px !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-    background-color: inherit !important; /* Warna ditentukan oleh kelas karakter */
+  position: relative !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  max-width: 75% !important;
+  padding: 15px !important;
+  margin-bottom: 20px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  background-color: inherit !important;
+  transition: background-color 0.5s, color 0.5s !important;
 }
-
 .bubble::after {
-    content: "" !important;
-    position: absolute !important;
-    width: 0 !important;
-    height: 0 !important;
-    border-style: solid !important;
+  content: "" !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-style: solid !important;
 }
-
-/* Bubble Kiri (Fani, Diana, Lainnya) */
+/* Bubble Kiri */
 .bubble-left {
-    margin-right: auto !important;
-    flex-direction: row !important;
+  margin-right: auto !important;
+  flex-direction: row !important;
 }
-
 .bubble-left::after {
-    border-width: 10px 15px 10px 0 !important;
-    border-color: transparent !important;
-    border-right-color: inherit !important;
-    left: -15px !important;
-    top: 25px !important;
+  border-width: 10px 15px 10px 0 !important;
+  border-color: transparent !important;
+  border-right-color: inherit !important;
+  left: -15px !important;
+  top: 25px !important;
 }
-
-/* Bubble Kanan (Tian) */
+/* Bubble Kanan */
 .bubble-right {
-    margin-left: auto !important;
-    flex-direction: row-reverse !important;
+  margin-left: auto !important;
+  flex-direction: row-reverse !important;
 }
-
 .bubble-right::after {
-    border-width: 10px 0 10px 15px !important;
-    border-color: transparent !important;
-    border-left-color: inherit !important;
-    right: -15px !important;
-    top: 25px !important;
+  border-width: 10px 0 10px 15px !important;
+  border-color: transparent !important;
+  border-left-color: inherit !important;
+  right: -15px !important;
+  top: 25px !important;
 }
 
-/* Kelas khusus untuk setiap karakter */
-
-/* Tian: Hijau Mint Pastel (#E7FBE6) */
+/* ====================================== */
+/*   Kelas untuk Warna Bubble Tiap Tokoh  */
+/*   (Memakai CSS Variable)               */
+/* ====================================== */
 .tian {
-    background-color: #E7FBE6 !important; /* Hijau Mint Pastel */
+  background-color: var(--bubble-tian) !important;
 }
-
 .tian::after {
-    border-left-color: #E7FBE6 !important; /* Warna segitiga sesuai dengan bubble */
+  border-left-color: var(--bubble-tian) !important;
 }
 
-/* Fani: Biru Langit, Sedikit Lebih Putih (#D1E9F6) */
 .fani {
-    background-color: #D1E9F6 !important; /* Biru Langit, sedikit lebih putih */
+  background-color: var(--bubble-fani) !important;
 }
-
 .fani::after {
-    border-right-color: #D1E9F6 !important;
+  border-right-color: var(--bubble-fani) !important;
 }
 
-/* Diana dan Lainnya: Abu-abu Muda (#F3EEEA) */
-.diana,
+.diana {
+  background-color: var(--bubble-diana) !important;
+}
+.diana::after {
+  border-right-color: var(--bubble-diana) !important;
+}
+
 .lainnya {
-    background-color: #F3EEEA !important; /* Abu-abu Muda */
+  background-color: var(--bubble-lainnya) !important;
 }
-
-.diana::after,
 .lainnya::after {
-    border-right-color: #F3EEEA !important;
+  border-right-color: var(--bubble-lainnya) !important;
 }
 
-/* Styling untuk profile-pic */
+.leony {
+  background-color: var(--bubble-leony) !important;
+}
+.leony::after {
+  border-right-color: var(--bubble-leony) !important;
+}
+
+.steven {
+  background-color: var(--bubble-steven) !important;
+}
+.steven::after {
+  border-right-color: var(--bubble-steven) !important;
+}
+
+/* ====================================== */
+/*         Profil Pemeran (CSS Only)      */
+/* ====================================== */
 .profile-pic {
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 50% !important;
-    margin: 10px !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  margin: 10px !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+/* Foto profil (ganti link di sini jika perlu) */
+.pic-tian {
+  background-image: url("https://i.ibb.co/M595dFT/A9-B22315-CBF7-41-A1-BA0-D-B5-D5-A48-B73-ED.jpg") !important;
+}
+.pic-fani {
+  background-image: url("https://i.ibb.co/pR5st4d/IMG-6162.jpg") !important;
+}
+.pic-diana {
+  background-image: url("https://i.ibb.co/0Zjdt2N/IMG-3570.jpg") !important;
+}
+.pic-lainnya {
+  background-image: url("https://i.ibb.co/ssvdZfG/IMG-1449.webp") !important;
+}
+.pic-leony {
+  background-image: url("https://via.placeholder.com/60x60?text=Leony") !important;
+}
+.pic-steven {
+  background-image: url("https://via.placeholder.com/60x60?text=Steven") !important;
 }
 
-/* Profil Kiri (Fani, Diana, Lainnya) */
+/* Profil Kiri / Right */
 .profile-left {
-    align-self: flex-start !important;
-    margin-right: 10px !important;
+  align-self: flex-start !important;
+  margin-right: 10px !important;
 }
-
-/* Profil Kanan (Tian) */
 .profile-right {
-    align-self: flex-start !important;
-    margin-left: 10px !important;
+  align-self: flex-start !important;
+  margin-left: 10px !important;
 }
 
-/* Konten Dialog */
+/* ====================================== */
+/*      Konten Dialog (Text di Bubble)    */
+/* ====================================== */
 .dialog-content {
-    font-size: 1rem !important;
-    line-height: 1.5 !important;
-    color: #555555 !important; /* Tetap warna asli */
-    flex: 1 !important; /* Agar dialog-content mengambil sisa ruang */
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  color: var(--bubble-text) !important;
+  flex: 1 !important;
+  transition: color 0.5s !important;
 }
-
 .dialog-name {
-    display: block !important;
-    font-weight: bold !important;
-    margin-bottom: 5px !important;
-    margin-top: 10px !important;
+  display: block !important;
+  font-weight: bold !important;
+  margin-bottom: 5px !important;
+  margin-top: 10px !important;
 }
 
-/* Gambar dalam Bubble */
+/* ====================================== */
+/*   Ekspresi - Background & Teks Terpisah */
+/* ====================================== */
+.dialog-expression {
+  position: relative !important;
+  display: inline-block !important;
+  margin-bottom: 6px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-size: 0.9rem !important;
+  padding: 2px 4px !important;
+  background-color: var(--current-expression-bg) !important;
+  color: var(--current-expression-text) !important;
+}
+
+/* Selector untuk mengatur warna ekspresi berdasarkan karakter dan mode */
+.tian .dialog-expression {
+  --current-expression-bg: var(--bubble-tian-expression-bg);
+  --current-expression-text: var(--expression-text-day);
+}
+
+.fani .dialog-expression {
+  --current-expression-bg: var(--bubble-fani-expression-bg);
+  --current-expression-text: var(--expression-text-day);
+}
+
+.diana .dialog-expression {
+  --current-expression-bg: var(--bubble-diana-expression-bg);
+  --current-expression-text: var(--expression-text-day);
+}
+
+.lainnya .dialog-expression {
+  --current-expression-bg: var(--bubble-lainnya-expression-bg);
+  --current-expression-text: var(--expression-text-day);
+}
+
+.leony .dialog-expression {
+  --current-expression-bg: var(--bubble-leony-expression-bg);
+  --current-expression-text: var(--expression-text-day);
+}
+
+.steven .dialog-expression {
+  --current-expression-bg: var(--bubble-steven-expression-bg);
+  --current-expression-text: var(--expression-text-day);
+}
+
+/* Dark mode ekspresi */
+.night-mode .tian .dialog-expression {
+  --current-expression-bg: var(--bubble-tian-expression-bg);
+  --current-expression-text: var(--expression-text-night);
+}
+
+.night-mode .fani .dialog-expression {
+  --current-expression-bg: var(--bubble-fani-expression-bg);
+  --current-expression-text: var(--expression-text-night);
+}
+
+.night-mode .diana .dialog-expression {
+  --current-expression-bg: var(--bubble-diana-expression-bg);
+  --current-expression-text: var(--expression-text-night);
+}
+
+.night-mode .lainnya .dialog-expression {
+  --current-expression-bg: var(--bubble-lainnya-expression-bg);
+  --current-expression-text: var(--expression-text-night);
+}
+
+.night-mode .leony .dialog-expression {
+  --current-expression-bg: var(--bubble-leony-expression-bg);
+  --current-expression-text: var(--expression-text-night);
+}
+
+.night-mode .steven .dialog-expression {
+  --current-expression-bg: var(--bubble-steven-expression-bg);
+  --current-expression-text: var(--expression-text-night);
+}
+
+/* Gambar di dalam Bubble */
 .bubble-image {
-    margin-top: 10px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    aspect-ratio: 9 / 16 !important;
-    border-radius: 10px !important;
+  margin-top: 10px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  aspect-ratio: 9 / 16 !important;
+  border-radius: 10px !important;
 }
 
-/* Floating Night Mode Button Styling */
+/* ====================================== */
+/*   Image di Luar Bubble (9:16)          */
+/* ====================================== */
+.ilustration-916-container {
+  width: 100% !important;
+  margin: 20px auto !important;
+}
+.ilustration-916 {
+  width: 100% !important;
+  aspect-ratio: 9 / 16 !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+}
+
+/* ====================================== */
+/*   Tombol Night Mode Mengambang         */
+/* ====================================== */
 .night-mode-button {
-    position: fixed !important;
-    bottom: 20px !important;
-    left: 20px !important;
-    background-color: var(--button-background) !important;
-    color: var(--button-color) !important;
-    border: 1px solid var(--border-color) !important;
-    border-radius: 20px !important;
-    padding: 10px 20px !important;
-    cursor: pointer !important;
-    font-size: 1rem !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-    transition: background-color 0.3s, color 0.3s !important;
-    z-index: 1000 !important;
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  background-color: var(--button-background) !important;
+  color: var(--button-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 20px !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+  font-size: 1rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  transition: background-color 0.3s, color 0.3s !important;
+  z-index: 1000 !important;
 }
-
 .night-mode-button:hover {
-    background-color: var(--border-color) !important;
+  background-color: var(--border-color) !important;
 }
 
-/* Responsif untuk layar kecil */
+/* ====================================== */
+/*   Responsif untuk Layar Kecil          */
+/* ====================================== */
 @media screen and (max-width: 600px) {
-    .story-title {
-        font-size: 1.5em !important;
-    }
-    .chapter-title {
-        font-size: 1.2em !important;
-    }
-    .bubble {
-        max-width: 100% !important;
-        padding: 10px !important;
-    }
-    .profile-pic {
-        width: 50px !important;
-        height: 50px !important;
-        margin: 8px !important;
-    }
-    .narrator {
-        margin-bottom: 15px !important;
-    }
-    .night-mode-button {
-        font-size: 0.9rem !important;
-        padding: 8px 16px !important;
-    }
+  .story-title {
+    font-size: 1.5em !important;
+  }
+  .chapter-title {
+    font-size: 1.2em !important;
+  }
+  .bubble {
+    max-width: 100% !important;
+    padding: 10px !important;
+  }
+  .profile-pic {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 8px !important;
+  }
+  .narrator {
+    margin-bottom: 15px !important;
+  }
+  .night-mode-button {
+    font-size: 0.9rem !important;
+    padding: 8px 16px !important;
+  }
 }
 
-/* Penyesuaian khusus untuk Tian */
+/* ====================================== */
+/* Penyesuaian Khusus Bubble Tian         */
+/* ====================================== */
 .bubble-right.tian {
-    position: relative !important;
-    flex-direction: row !important;
-    padding-right: 0px !important; /* Kurangi nilai padding-right */
-    margin-left: auto !important;
-    margin-right: 0 !important;
+  position: relative !important;
+  flex-direction: row !important;
+  padding-right: 0px !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
 }
-
 .bubble-right.tian .profile-tian {
-    position: absolute !important;
-    top: 15px !important;
-    right: 5px !important; /* Kurangi nilai right */
-    width: 60px !important;
-    height: 60px !important;
-    border-radius: 50% !important;
-    margin: 0 !important;
+  position: absolute !important;
+  top: 15px !important;
+  right: 5px !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  margin: 0 !important;
 }
-
 .bubble-right.tian .dialog-content {
-    text-align: left !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-    max-width: calc(100% - 75px) !important; /* Sesuaikan dengan padding-right */
+  text-align: left !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  max-width: calc(100% - 75px) !important;
 }
-
 .bubble-right.tian .dialog-name {
-    text-align: left !important;
-    margin-right: 0 !important;
+  text-align: left !important;
+  margin-right: 0 !important;
 }
 
