@@ -505,15 +505,17 @@ footer {
   display: flex !important;
   align-items: flex-start !important;
   flex-direction: row-reverse !important;
-  padding-right: 15px !important;
+  padding: 15px !important; /* Padding diatur agar konten tidak terlalu dekat dengan tepi */
   margin-left: auto !important;
   margin-right: 0 !important;
+  width: calc(100% - 80px) !important; /* Lebar bubble menyesuaikan, dikurangi space untuk profil */
+  max-width: none !important; /* Menghapus batasan lebar maksimum */
 }
 
 .bubble-right.tian::after {
   border-width: 10px 0 10px 15px !important;
   border-color: transparent !important;
-  border-left-color: var(--bubble-tian) !important; /* Menggunakan warna bubble Tian */
+  border-left-color: var(--bubble-tian) !important; /* Warna anak panah sesuai bubble */
   right: -15px !important;
   top: 25px !important;
 }
@@ -530,7 +532,7 @@ footer {
   text-align: left !important;
   margin-right: 0 !important;
   margin-left: 0 !important;
-  max-width: calc(100% - 75px) !important;
+  width: 100% !important; /* Konten mengisi lebar bubble */
 }
 
 .bubble-right.tian .dialog-name {
