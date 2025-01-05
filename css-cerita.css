@@ -302,13 +302,14 @@ footer {
 /* ====================================== */
 /*         Profil Pemeran (CSS Only)      */
 /* ====================================== */
+/* Profil Gambar */
 .profile-pic {
-  width: 60px !important;
-  height: 60px !important;
-  border-radius: 50% !important;
-  margin: 10px !important;
-  background-position: center !important;
-  background-size: cover !important;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 10px; /* Jarak antara gambar profil dan konten */
+  background-position: center;
+  background-size: cover;
 }
 /* Foto profil (ganti link di sini jika perlu) */
 .pic-tian {
