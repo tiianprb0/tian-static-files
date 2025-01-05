@@ -343,18 +343,18 @@ footer {
 /* ====================================== */
 /*      Konten Dialog (Text di Bubble)    */
 /* ====================================== */
+/* Konten Dialog */
 .dialog-content {
-  font-size: 1rem !important;
-  line-height: 1.5 !important;
-  color: var(--bubble-text) !important;
-  flex: 1 !important;
-  transition: color 0.5s !important;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--bubble-text);
+  flex: 1;
 }
+
 .dialog-name {
-  display: block !important;
-  font-weight: bold !important;
-  margin-bottom: 5px !important;
-  margin-top: 10px !important;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 /* ====================================== */
