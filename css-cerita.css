@@ -240,12 +240,11 @@ footer {
   margin-right: 15px; /* Jarak dari tepi kanan, sama dengan lebar anak panah */
 }
 
-.bubble-right::after {
-    border-width: 10px 0 10px 15px !important;
-    border-color: transparent !important;
-    border-left-color: inherit !important;
-    right: -15px !important;
-    top: 25px !important;
+/* Bubble Kanan (Tian) */
+.bubble-right {
+  margin-left: auto;
+  flex-direction: row-reverse;
+  margin-right: 15px; /* Jarak dari tepi kanan, sama dengan lebar anak panah */
 }
 
 /* ====================================== */
